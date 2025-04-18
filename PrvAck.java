@@ -1,3 +1,6 @@
+import java.awt.ItemSelectable;
+import java.io.BufferedReader;
+import java.io.Reader;
 import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.HashMap;
 
@@ -68,5 +71,33 @@ class ContainerType{ //realized not all containers need the information an npc w
         this.containerID = containerID;
         this.containerCategory= containerCategory;
     }
+
+}
+
+class DataIO {//this classs calls the corrosponding txt files, parses and reads corrosponding values
+    public HashMap<String, GenericItem> itemMasterList = new HashMap();
+    public HashMap<String, GenericNPC> npcMasterList = new HashMap();
+
+        public void loadItems(String filePath = "resources/items.txt") { //access the file path of items master list
+            try (BufferedReader itemReader = new BufferedReader(new FileReader("resources/ItemSelectable.txt"))) { //just says try to create a new file parser/reader
+            String Line; //starting a new string line
+
+            while ((Line = Reader.readLine()) != null); //says as long as current line is not null then continue
+                String[] data = Line.split("|"); //simply saying at each | the line is broken and continue to next value
+
+            }
+
+        }
+
+         public void loadNPCs(String filePath = "resources/masterNPC.txt") { //access the file path of items master list
+            try (BufferedReader itemReader = new BufferedReader(new FileReader("resources/masterNPC.txt"))) { //just says try to create a new file parser/reader
+            String Line; //starting a new string line
+
+            while ((Line = Reader.readLine()) != null); //says as long as current line is not null then continue
+                String[] data = Line.split("|"); //simply saying at each | the line is broken and continue to next value
+
+            }
+
+        }
 
 }
