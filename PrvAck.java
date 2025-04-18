@@ -1,3 +1,4 @@
+import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.HashMap;
 
 public class PrvAck{
@@ -15,7 +16,7 @@ class GenericItem{ //this is the class that is used for every single item in the
     int baseDamage; //will not be applicable to every item but by defining it here, and then assigning it in the txt we will save a lot of time and effort
     int baseArmor; //same as baseDamage, as in may be null for some items but will make adjusting and balancing worlds easier
     
-        public GenericItem genericItem (String  itemName, String itemID, String itemDescription, double itemValue, double itemWeight, int itemDamage, int itemArmor) {  //this is matching the paremeter to instances of each variable
+        public GenericItem(String  itemName, String itemID, String itemDescription, double itemValue, double itemWeight, int itemDamage, int itemArmor) {  //this is matching the paremeter to instances of each variable
             this.itemName = itemName;
             this.itemID = itemID;
             this.itemDescription = itemDescription;
@@ -36,7 +37,7 @@ class GenericNPC{
     boolean npcCanCombat; //this will be a check to see if npc can be attacked by player or not, well one check of many, probably
     String npcFaction; //can be null but if, and big if we want to have reputation based on faction this will help
 
-        public GenericNPC genericNPC ( String npcName, String npcID, String npcDescription, int npcHealth, boolean npcCanCombat, String npcFaction) {
+        public GenericNPC( String npcName, String npcID, String npcDescription, int npcHealth, boolean npcCanCombat, String npcFaction) {
             this.npcName = npcName;
             this.npcID = npcID;
             this.npcDescription = npcDescription;
@@ -53,6 +54,19 @@ class WorldContainers{ //this is a class built off of hashmaps, these hashmaps w
 
     public WorldContainers() { 
         inventoryContents = new HashMap<>();
+    }
+
+}
+
+class ContainerType{ //realized not all containers need the information an npc would have assigned to them, so this class checks if chest or npc and then if npc assigns proper attributes
+
+    String containerID;
+    String containerCategory;
+
+    public ContainerType(String containerID, String containerCategory) {
+
+        this.containerID = containerID;
+        this.containerCategory= containerCategory;
     }
 
 }
