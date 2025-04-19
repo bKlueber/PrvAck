@@ -100,4 +100,18 @@ class DataIO {//this classs calls the corrosponding txt files, parses and reads 
 
         }
 
+
+class PlayerValues{ //this classs is going to control player base stats, including health, invnetory sizee, base damage (from strength rolls, for example)
+
+
 }
+
+class BuildPlayerRolls { //this is going to be for when the player starts the game and creates their characdter, if we are using d20 for combat figured we could d20 base stats?
+
+}
+
+class PlayerClasses { /*i was thinking keeep it  simple with just three classes, hacking/tech, strength/tank/meleee, and stealth/rranged, was cosidering having unique ability for each
+                        but don't know if i should make class effect base stats? Maybe thats a stretch goal. Was planning on using bolean check and then looping to give access to unique skills per class
+
+}
+
