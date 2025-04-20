@@ -1,8 +1,9 @@
-import java.awt.ItemSelectable;
 import java.io.BufferedReader;
 import java.io.Reader;
-import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.HashMap;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.Writer;
 
 public class PrvAck{
 //right now nothing to add here
@@ -74,12 +75,12 @@ class ContainerType{ //realized not all containers need the information an npc w
 
 }
 
-class DataIO {//this classs calls the corrosponding txt files, parses and reads corrosponding values
+class DataIO {//this classs calls the corrosponding txt files, parses, writes and reads corrosponding values
     public HashMap<String, GenericItem> itemMasterList = new HashMap();
     public HashMap<String, GenericNPC> npcMasterList = new HashMap();
 
         public void loadItems(String filePath = "resources/items.txt") { //access the file path of items master list
-            try (BufferedReader itemReader = new BufferedReader(new FileReader("resources/ItemSelectable.txt"))) { //just says try to create a new file parser/reader
+            try (BufferedReader itemReader = new BufferedReader(new FileReader("resources/items.txt"))) { //just says try to create a new file parser/reader
             String Line; //starting a new string line
 
             while ((Line = Reader.readLine()) != null); //says as long as current line is not null then continue
@@ -93,10 +94,19 @@ class DataIO {//this classs calls the corrosponding txt files, parses and reads 
             try (BufferedReader itemReader = new BufferedReader(new FileReader("resources/masterNPC.txt"))) { //just says try to create a new file parser/reader
             String Line; //starting a new string line
 
-            while ((Line = Reader.readLine()) != null); //says as long as current line is not null then continue
-                String[] data = Line.split("|"); //simply saying at each | the line is broken and continue to next value
+            while ((Line = itemReader.readLine()) != null); //says as long as current line is not null then continue
+                String[] data = Line.split("|/"); //simply saying at each | the line is broken and continue to next value
 
             }
+        public void writeItems() {
+            
+        try{
+            BufferdWriter  itemWriter = new BufferedWriter(new FileWriter("resources/items.txt"));
+            itemWriter.write("This is a test.");
+            itemWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace(); //this is just saying try to write to this file and if you cant print where the error occured in the stack
+        } 
 
         }
 
@@ -113,7 +123,7 @@ class PlayerValues{ //this classs is going to control player base stats, includi
 
 }
 
-class BuildPlayerRolls { //this is going to be for when the player starts the game and creates their characdter, if we are using d20 for combat figured we could d20 base stats?
+class BuildPlayerRolls { //this will be the class that takes all player info and compiles it for the game. stats, class, gender, etc
 
 }
 
@@ -122,15 +132,20 @@ class PlayerClasses { /*i was thinking keeep it  simple with just three classes,
                         skills per class*/
     StrengthBuild userChoseSTR;
     DexterityBuild userChoseDEX;
-    IntelligenceBuild useChoseINTL;
+    IntelligenceBuild userChoseINTL;
+
+
 
 }
 
 class diceStatRoller {
 
-   String playerVitality = null; //these are just place holders
-   String playerStrength = null; //need to research how to make it so the player can like roll for these or adjust base stats constrained by class, need to consult story team and then come back
-
+    String playerVitality = null; //these are just place holders obviously tied to health
+    String playerStrength = null; //need to research how to make it so the player can like roll for these or adjust base stats constrained by class, need to consult story team and then come back
+    String playerCharisma = null;
+    String playerIntellegence = null;
+    String playerDexterity = null;
+    String playerEndurance = null; //figured this stat can be tied to stamina 
 }
 
 class StrengthBuild {
