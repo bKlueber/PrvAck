@@ -3,6 +3,7 @@ import java.io.Reader;
 import java.util.HashMap;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Writer;
 
 public class PrvAck{
@@ -79,37 +80,43 @@ class DataIO {//this classs calls the corrosponding txt files, parses, writes an
     public HashMap<String, GenericItem> itemMasterList = new HashMap();
     public HashMap<String, GenericNPC> npcMasterList = new HashMap();
 
-        public void loadItems(String filePath = "resources/items.txt") { //access the file path of items master list
-            try (BufferedReader itemReader = new BufferedReader(new FileReader("resources/items.txt"))) { //just says try to create a new file parser/reader
+        public void loadItems(String filePath) { //access the file path of items master list
+            try (BufferedReader itemReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
             String Line; //starting a new string line
 
-            while ((Line = Reader.readLine()) != null); //says as long as current line is not null then continue
-                String[] data = Line.split("|"); //simply saying at each | the line is broken and continue to next value
+            while ((Line = itemReader.readLine()) != null) //says as long as current line is not null then continue
+                String[] data = Line.split("\\|"); //simply saying at each | the line is broken and continue to next value
 
             }
 
         }
 
-         public void loadNPCs(String filePath = "resources/masterNPC.txt") { //access the file path of items master list
-            try (BufferedReader itemReader = new BufferedReader(new FileReader("resources/masterNPC.txt"))) { //just says try to create a new file parser/reader
+        public void loadNPCs(String filePath) { //access the file path of items master list
+            try (BufferedReader itemReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
             String Line; //starting a new string line
 
-            while ((Line = itemReader.readLine()) != null); //says as long as current line is not null then continue
-                String[] data = Line.split("|/"); //simply saying at each | the line is broken and continue to next value
-
+            while ((Line = itemReader.readLine()) != null) //says as long as current line is not null then continue
+                String[] data = Line.split("\\|"); //simply saying at each | the line is broken and continue to next value
             }
+
+        }
+
+    }   catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
         public void writeItems() {
             
-        try{
-            BufferdWriter  itemWriter = new BufferedWriter(new FileWriter("resources/items.txt"));
+        try (BufferedWriter  itemWriter = new BufferedWriter(new FileWriter("resources/items.txt"))) {
             itemWriter.write("This is a test.");
             itemWriter.close();
         } catch (IOException e) {
             e.printStackTrace(); //this is just saying try to write to this file and if you cant print where the error occured in the stack
-        } 
-
         }
+    } 
 
+}
 
 class PlayerValues{ //this classs is going to control player base stats, including health, invnetory sizee, base damage (from strength rolls, for example)
 
