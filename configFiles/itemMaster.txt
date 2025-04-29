@@ -1,0 +1,2 @@
+Iron Sword|sword_001|Basic melee weapon|50.0|2.5|10|0
+Health Potion|potion_002|Restores health|5.0|0.5|0|0

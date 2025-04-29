@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.Reader;
 import java.util.HashMap;
 import java.io.BufferedWriter;
@@ -77,46 +78,101 @@ class ContainerType{ //realized not all containers need the information an npc w
 }
 
 class DataIO {//this classs calls the corrosponding txt files, parses, writes and reads corrosponding values
-    public HashMap<String, GenericItem> itemMasterList = new HashMap();
+    public HashMap<String, HashMap<String, GenericItem>> itemMasterList = new HashMap(); //creating a 2d hashmap to partition inventories seperately so then they can all be managed within one .txt
     public HashMap<String, GenericNPC> npcMasterList = new HashMap();
 
-        public void loadItems(String filePath) { //access the file path of items master list
-            try (BufferedReader itemReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
-            String Line; //starting a new string line
-
-            while ((Line = itemReader.readLine()) != null) //says as long as current line is not null then continue
-                String[] data = Line.split("\\|"); //simply saying at each | the line is broken and continue to next value
-
+        public void transferItem(String fromInventory, String toInventory, String itemID) {
+            if (itemMasterList.containsKey(fromInventory) && itemMasterList.containsKey(toInventory)) {//this checks the hashmap keys to ensure inventories actually exist  
+                HashMap<String, GenericItem> sourceInventory = itemMasterList.get(fromInventory);
+                HashMap<String, GenericItem> targetInventory = itemMasterList.get(toInventory);
+                
+                if(sourceInventory.containsKey(itemID)) { //this is checking to see if item actually exist in the inventory
+                    targetInventory.put(itemID, sourceInventory.remove(itemID)); //this code actually moves the item and removes it from source npc/location
+                }
+                else  {
+                    System.err.println("Error, item cannot be located in inventory you are moving from.");
+                }
+            } else {
+                System.err.println("Inventory ID does not exist.");
             }
+        }
 
+        public void loadItems(String filePath, String inventoryID) { //access the file path of items master list
+            
+            if (inventoryID == null || inventoryID.isEmpty()) {
+                System.err.println("Inventory id does not exist, therefore cannot load item.");
+                return;
+                }
+
+            try (BufferedReader itemReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
+            String line; //starting a new string line
+
+            while ((line = itemReader.readLine()) != null) {//says as long as current line is not null then continue
+                String[] itemData = line.split("\\|"); //simply saying at each | the line is broken and continue to next value
+            
+                if (itemData.length == 7) { //this is just making suere there are 7 fields avalaible, the amouint outlined in item info}
+                   GenericItem item = new GenericItem( 
+                    itemData[0], itemData[1], itemData[2], Double.parseDouble(itemData[3]), Double.parseDouble(itemData[4]), 
+                    Integer.parseInt(itemData[5]), Integer.parseInt(itemData[6])
+                   );
+
+                   itemMasterList.computeIfAbsent(inventoryID, k -> new HashMap<>()).put(item.itemID, item); //this actually stores the item
+                }
+                
+            }    
+        } catch (IOException | NumberFormatException e) {
+            System.err.println("Error loading item.\nDetails: " + e.getMessage() + "\nPlease ensure data hasnt corrupted");
+        }
+        }
+
+        public void writeItems(String filePath) {
+            
+        try (BufferedWriter  itemWriter = new BufferedWriter(new FileWriter(filePath))) {
+            for (HashMap<String, GenericItem> inventory : itemMasterList.values()) { //this loops through the inventories
+                for (GenericItem item : inventory.values()) { //this loops through items in the inventories 
+                    itemWriter.write(String.format("%s|%s|%s|%.2f|%.2f|%d|%d%n",
+                    item.itemName, item.itemID, item.itemDescription, item.itemValue, item.itemWeight, item.baseDamage, item.baseArmor));
+                }
+            }
+        } catch (IOException e) {
+           System.err.println("Error creating item: "  + e.getMessage());
+        } 
+        }
+
+        public void saveInventories(String filePath) {
+            try (BufferedWriter inventoryWriter = new BufferedWriter(new FileWriter(filePath))) {
+                for (String inventoryID : itemMasterList.keySet()) {
+                    inventoryWriter.write(inventoryID + ": "); //need to label each inventory
+                    for (GenericItem item : itemMasterList.get(inventoryID).values()) {
+                        inventoryWriter.write(item.itemID + "|");
+                    }
+                    inventoryWriter.newLine();
+                }
+            } catch (IOException e) {
+                System.err.println("There was an issue while trying to save inventories. " + e.getMessage());
+            }
         }
 
         public void loadNPCs(String filePath) { //access the file path of items master list
-            try (BufferedReader itemReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
-            String Line; //starting a new string line
+            try (BufferedReader npcReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
+            String line; //starting a new string line
 
-            while ((Line = itemReader.readLine()) != null) //says as long as current line is not null then continue
-                String[] data = Line.split("\\|"); //simply saying at each | the line is broken and continue to next value
+            while ((line = npcReader.readLine()) != null) { //says as long as current line is not null then continue
+                String[] npcData = line.split("\\|"); //simply saying at each | the line is broken and continue to next value
+
+                if (npcData.length == 6) { //ensures that all npcs have information for each category, 6, some can be null but must be present
+                    GenericNPC npc = new GenericNPC(
+                        npcData[0], npcData[1], npcData[2], Integer.parseInt(npcData[3]), Boolean.parseBoolean(npcData[4]), npcData[5]);
+                    npcMasterList.put(npc.npcID, npc);
+                }
+                else {
+                    System.err.println("Incorrect NPC data format: " + line);
+                }
             }
-
+        }   catch (IOException | NumberFormatException e) {
+            System.err.println("Problem while loading npcs. \nMore information: " + e.getMessage());
+            }
         }
-
-    }   catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-        public void writeItems() {
-            
-        try (BufferedWriter  itemWriter = new BufferedWriter(new FileWriter("resources/items.txt"))) {
-            itemWriter.write("This is a test.");
-            itemWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace(); //this is just saying try to write to this file and if you cant print where the error occured in the stack
-        }
-    } 
-
-}
 
 class PlayerValues{ //this classs is going to control player base stats, including health, invnetory sizee, base damage (from strength rolls, for example)
 
