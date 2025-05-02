@@ -1,17 +1,29 @@
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.Reader;
-import java.util.HashMap;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
+import java.util.HashMap;
 
 public class PrvAck{
 //right now nothing to add here
-    
-} 
+    public static void main(String[] args) {
+        DataIO dataIO = new DataIO();
 
+        // Test loading items
+        dataIO.loadItems("configFiles/playerInventory.txt", "playerInventory");
+        System.out.println("Loaded player inventory: " + dataIO.itemMasterList.get("playerInventory"));
+
+        // Test transferring an item
+        dataIO.transferItem("playerInventory", "npcInventory_001", "sword_001");
+        System.out.println("After transfer: " + dataIO.itemMasterList.get("npcInventory_001"));
+
+        // Test saving inventories
+        dataIO.saveInventories("configFiles/playerInventory.txt");
+        System.out.println("Inventory saved successfully.");
+    }
+}
+    
 class GenericItem{ //this is the class that is used for every single item in the game. See items.txt for more information
 
     String itemName;
@@ -78,11 +90,17 @@ class ContainerType{ //realized not all containers need the information an npc w
 }
 
 class DataIO {//this classs calls the corrosponding txt files, parses, writes and reads corrosponding values
-    public HashMap<String, HashMap<String, GenericItem>> itemMasterList = new HashMap(); //creating a 2d hashmap to partition inventories seperately so then they can all be managed within one .txt
-    public HashMap<String, GenericNPC> npcMasterList = new HashMap();
+    public HashMap<String, HashMap<String, GenericItem>> itemMasterList = new HashMap<>(); //creating a 2d hashmap to partition inventories seperately so then they can all be managed within one .txt
+    public HashMap<String, GenericNPC> npcMasterList = new HashMap<>();
 
         public void transferItem(String fromInventory, String toInventory, String itemID) {
-            if (itemMasterList.containsKey(fromInventory) && itemMasterList.containsKey(toInventory)) {//this checks the hashmap keys to ensure inventories actually exist  
+            if (!itemMasterList.containsKey(fromInventory)) {
+                System.err.println("Parent inventory does not exist." + fromInventory); //this checks if the inventory exists and if not prints err
+                return;
+            }
+
+            itemMasterList.computeIfAbsent(toInventory, k -> new HashMap<>()); //so if for some reason the inventory doesnt exist it will create a new one in its place
+            
                 HashMap<String, GenericItem> sourceInventory = itemMasterList.get(fromInventory);
                 HashMap<String, GenericItem> targetInventory = itemMasterList.get(toInventory);
                 
@@ -92,10 +110,8 @@ class DataIO {//this classs calls the corrosponding txt files, parses, writes an
                 else  {
                     System.err.println("Error, item cannot be located in inventory you are moving from.");
                 }
-            } else {
-                System.err.println("Inventory ID does not exist.");
-            }
         }
+        
 
         public void loadItems(String filePath, String inventoryID) { //access the file path of items master list
             
@@ -103,6 +119,7 @@ class DataIO {//this classs calls the corrosponding txt files, parses, writes an
                 System.err.println("Inventory id does not exist, therefore cannot load item.");
                 return;
                 }
+            itemMasterList.put(inventoryID, new HashMap<>()); //if the inventory txt is completely empty (like start of a new game) it cresates an empty inventory. w/o this it will break   
 
             try (BufferedReader itemReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
             String line; //starting a new string line
@@ -116,13 +133,13 @@ class DataIO {//this classs calls the corrosponding txt files, parses, writes an
                     Integer.parseInt(itemData[5]), Integer.parseInt(itemData[6])
                    );
 
-                   itemMasterList.computeIfAbsent(inventoryID, k -> new HashMap<>()).put(item.itemID, item); //this actually stores the item
-                }
+                   itemMasterList.computeIfAbsent(inventoryID, k -> new HashMap<String, GenericItem>()).put(item.itemID, item); //this actually stores the item
+                    }
                 
-            }    
-        } catch (IOException | NumberFormatException e) {
-            System.err.println("Error loading item.\nDetails: " + e.getMessage() + "\nPlease ensure data hasnt corrupted");
-        }
+                }    
+            } catch (IOException | NumberFormatException e) {
+                System.err.println("Error loading item.\nDetails: " + e.getMessage() + "\nPlease ensure data hasnt corrupted");
+            }
         }
 
         public void writeItems(String filePath) {
@@ -173,7 +190,7 @@ class DataIO {//this classs calls the corrosponding txt files, parses, writes an
             System.err.println("Problem while loading npcs. \nMore information: " + e.getMessage());
             }
         }
-
+ /*
 class PlayerValues{ //this classs is going to control player base stats, including health, invnetory sizee, base damage (from strength rolls, for example)
 
     String playerName;
@@ -192,7 +209,7 @@ class BuildPlayerRolls { //this will be the class that takes all player info and
 
 class PlayerClasses { /*i was thinking keeep it  simple with just three classes, hacking/tech, strength/tank/meleee, and stealth/rranged, was cosidering having unique ability for each
                         but don't know if i should make class effect base stats? Maybe thats a stretch goal. Was planning on using bolean check and then looping to give access to unique
-                        skills per class*/
+                        skills per class
     StrengthBuild userChoseSTR;
     DexterityBuild userChoseDEX;
     IntelligenceBuild userChoseINTL;
@@ -236,5 +253,6 @@ class IntelligenceBuild{
     boolean specialAbilityINTL; 
 
 }
+*/
 
-
+}
