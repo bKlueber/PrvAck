@@ -1,6 +1,73 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class CharacterCreator { //this will be the class that takes all player info and compiles it for the game. stats, class, gender, etc
+    
+    public PlayerValues createCharacter () {
+        PlayerValues player = new PlayerValues(); //creating a new player populated with attributes from PlayerValues
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("Please choose a name for your character: ");
+        String playerName = userInput.nextLine();
+
+        PlayerClasses classes = new PlayerClasses();
+        boolean classConfirmed = false; //setting these to control the loop that will prompt if the user is sure of their choice
+        int classChoice = 0;
+
+        while(!classConfirmed) { //simply says as long as classConfirmed is false to keep looping
+            System.out.println("Please choose a class");
+            System.out.println("1. Guard (Strengthfocused)");
+            System.out.println("2. Ranger (Dexterity focused)");
+            System.out.println("3. Technician (Intelligence focused)");
+
+            classChoice = userInput.nextInt();
+            userInput.nextLine();
+
+            switch (classChoice) { //so this will display the class info and ask user to confrim before it will continue
+
+                case 1:
+                    classes.userChoseSTR = new StrengthBuild(); 
+                    System.out.println("");
+                    System.out.println("Guard Selected - Strength Build -");
+                    System.out.println("Stats are:");
+                    System.out.println("Vitality: " + classes.userChoseSTR.baseVitalitySTR);
+                    System.out.println("Charisma: " + classes.userChoseSTR.baseCharismaSTR);
+                    System.out.println("Endurance: " + classes.userChoseSTR.baseEnduranceSTR);
+                    System.out.println("Strength: " + classes.userChoseSTR.baseStrengthSTR);
+                    System.out.println("Dexterity: " + classes.userChoseSTR.baseDexteritySTR);
+                    System.out.println("Intelligence: " + classes.userChoseSTR.baseIntelligenceSTR);
+                    break;
+
+                case 2: 
+                    classes.userChoseDEX = new DexterityBuild(); 
+                    System.out.println("");
+                    System.out.println("Ranger Selected - Dexterity Build -");
+                    System.out.println("Stats are:");
+                    System.out.println("Vitality: " + classes.userChoseDEX.baseVitalityDEX);
+                    System.out.println("Charisma: " + classes.userChoseDEX.baseCharismaDEX);
+                    System.out.println("Endurance: " + classes.userChoseDEX.baseEnduranceDEX);
+                    System.out.println("Strength: " + classes.userChoseDEX.baseStrengthDEX);
+                    System.out.println("Dexterity: " + classes.userChoseDEX.baseDexterityDEX);
+                    System.out.println("Intelligence: " + classes.userChoseDEX.baseIntelligenceDEX);
+                    break;
+
+
+                case 3: 
+                    classes.userChoseINTL = new IntelligenceBuild();
+                    System.out.println("");
+                    System.out.println("Technician Selected - Intelligence Build -");
+                    System.out.println("Stats are:");
+                    System.out.println("Vitality: " + classes.userChoseINT.baseVitalityINT);
+                    System.out.println("Charisma: " + classes.userChoseINT.baseCharismaINT);
+                    System.out.println("Endurance: " + classes.userChoseINT.baseEnduranceINT);
+                    System.out.println("Strength: " + classes.userChoseINT.baseStrengthINT);
+                    System.out.println("Dexterity: " + classes.userChoseINT.baseDexterityINT);
+                    System.out.println("Intelligence: " + classes.userChoseINT.baseIntelligenceINT);
+                    break;
+            }
+
+        }
+    }
 
 }
 
@@ -10,6 +77,7 @@ class PlayerValues{ //this classs is going to control player base stats, includi
     int playerHealth;
     PlayerClasses selectedClass;
     DiceStatRoller playerBaseStats;
+    playerHealth = playerVitality + baseVitality;
 
 }
 
@@ -19,7 +87,7 @@ class PlayerClasses { /*i was thinking keeep it  simple with just three classes,
                         skills per class */
     StrengthBuild userChoseSTR;
     DexterityBuild userChoseDEX;
-    IntelligenceBuild userChoseINTL;
+    IntelligenceBuild userChoseINT;
 
 
 
