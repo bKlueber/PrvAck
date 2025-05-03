@@ -19,6 +19,8 @@ public class CharacterCreator { //this will be the class that takes all player i
             System.out.println("1. Guard (Strengthfocused)");
             System.out.println("2. Ranger (Dexterity focused)");
             System.out.println("3. Technician (Intelligence focused)");
+            System.out.println("");
+            System.out.println("**Please note final stats will incoporate both base class stats and rolled stats**");
 
             classChoice = userInput.nextInt();
             userInput.nextLine();
@@ -53,7 +55,7 @@ public class CharacterCreator { //this will be the class that takes all player i
 
 
                 case 3: 
-                    classes.userChoseINTL = new IntelligenceBuild();
+                    classes.userChoseINT = new IntelligenceBuild();
                     System.out.println("");
                     System.out.println("Technician Selected - Intelligence Build -");
                     System.out.println("Stats are:");
@@ -64,8 +66,44 @@ public class CharacterCreator { //this will be the class that takes all player i
                     System.out.println("Dexterity: " + classes.userChoseINT.baseDexterityINT);
                     System.out.println("Intelligence: " + classes.userChoseINT.baseIntelligenceINT);
                     break;
+                
+                default:
+                    System.out.println("Invalid selection please try again");
+                    continue; //this makes the loop continue/ restart/reprompt however you want to put it if the input was invalid (in the final product this shouldnt matter on user side but just in case)
             }
 
+            System.out.println("Would you like to confirm this class?");
+            String confirm = userInput.nextLine().toUpperCase().trim(); //looks complex but just says take the next line, force it upper case and trim and trailing characters
+
+            if(confirm.equals("Y")) {
+                classConfirmed = true;
+            }
+            else {
+                System.out.print("Please choose your class again.");
+            }
+        }
+
+        player.selectedClass = classes; //this actually maps the class the player selected to the player                                                                                                                            
+        
+        boolean statsConfirmed = false; //Give the player the option to reroll stats as many times as they want, if we ressstrict it players will just restart the game
+        DiceStatRoller bonusRoller = null; //this will store the bonus roll values
+
+        while (!statsConfirmed) { //this just says as long as the stats arent confirmed keep this loop going
+            System.out.println("Please enter 1 to roll your stats"); //eventaully this will be tied to a button once the gui is ready
+            int rollStats = userInput.nextInt();
+
+            bonusRoller = new DiceStatRoller();
+            bonusRoller.rollStats(); //this actually "rolls the die" aka chooses random int from 1-20
+
+            System.out.println("\nStats for " + playerName + ":\n"); //adding extra padding but when the gui comes into play shouldnt really matter i think?
+
+            System.pit.println(bonusRoller.toString()); //using toString to display the combined stats for the chosen player class + stats rolled. Showing both not just rolled because combined is whats relevant
+
+            if (classes.userChoseSTR != null) { //this is the check for what class was actually selected by player will repeat for other two classes as well
+                System.out.println("Vitality: " + (classes.userChoseSTR.baseVitalitySTR + bonusRoller.playerVitality));//now take this and repeat it for all the other stats and all the other classes, ill come back to this
+
+            }
+        }
         }
     }
 
@@ -138,7 +176,6 @@ class StrengthBuild {
     int baseStrengthSTR;
     int baseDexteritySTR;
     int baseIntelligenceSTR;
-    boolean specialAbilitySTR; 
 
     public StrengthBuild() {
         baseVitalitySTR = 150;
@@ -147,7 +184,6 @@ class StrengthBuild {
         baseStrengthSTR = 150;
         baseDexteritySTR = 60;
         baseIntelligenceSTR = 70; 
-        specialAbilitySTR = true;
 
     }
 
@@ -161,7 +197,6 @@ class DexterityBuild{
     int baseStrengthDEX;
     int baseDexterityDEX;
     int baseIntelligenceDEX;
-    boolean specialAbilityDEX; 
 
     public DexterityBuild() {
         baseVitalityDEX = 120;
@@ -170,8 +205,6 @@ class DexterityBuild{
         baseStrengthDEX = 90;
         baseDexterityDEX = 150;
         baseIntelligenceDEX = 60; 
-        specialAbilityDEX = true;
-
     }
 }
 
@@ -183,7 +216,6 @@ class IntelligenceBuild{
     int baseStrengthINT;
     int baseDexterityINT;
     int baseIntelligenceINT;
-    boolean specialAbilityINT; 
 
     public IntelligenceBuild() {
         baseVitalityINT = 100;
@@ -192,7 +224,7 @@ class IntelligenceBuild{
         baseStrengthINT = 70;
         baseDexterityINT = 80;
         baseIntelligenceINT = 150; 
-        specialAbilityINT = true;
+
 
     }
 
