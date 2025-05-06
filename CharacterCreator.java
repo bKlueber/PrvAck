@@ -97,14 +97,60 @@ public class CharacterCreator { //this will be the class that takes all player i
 
             System.out.println("\nStats for " + playerName + ":\n"); //adding extra padding but when the gui comes into play shouldnt really matter i think?
 
-            System.pit.println(bonusRoller.toString()); //using toString to display the combined stats for the chosen player class + stats rolled. Showing both not just rolled because combined is whats relevant
+            System.out.println(bonusRoller.toString()); //using toString to display the combined stats for the chosen player class + stats rolled. Showing both not just rolled because combined is whats relevant
 
             if (classes.userChoseSTR != null) { //this is the check for what class was actually selected by player will repeat for other two classes as well
-                System.out.println("Vitality: " + (classes.userChoseSTR.baseVitalitySTR + bonusRoller.playerVitality));//now take this and repeat it for all the other stats and all the other classes, ill come back to this
+                System.out.println("\nVitality: " + (classes.userChoseSTR.baseVitalitySTR + bonusRoller.playerVitality));//now take this and repeat it for all the other stats and all the other classes, ill come back to this
+                System.out.println("\nCharisma: " + (classes.userChoseSTR.baseCharismaSTR + bonusRoller.playerCharisma));
+                System.out.println("\nEndurance: " + (classes.userChoseSTR.baseEnduranceSTR + bonusRoller.playerEndurance));
+                System.out.println("\nStrength: " + (classes.userChoseSTR.baseStrengthSTR + bonusRoller.playerStrength));
+                System.out.println("\nDexterity: " + (classes.userChoseSTR.baseDexteritySTR + bonusRoller.playerDexterity));
+                System.out.println("\nIntelligence: " + (classes.userChoseSTR.baseIntelligenceSTR + bonusRoller.playerIntelligence));
+            }
 
+            if (classes.userChoseINT != null) { //this is the check for what class was actually selected by player will repeat for other two classes as well
+                System.out.println("\nVitality: " + (classes.userChoseINT.baseVitalityINT + bonusRoller.playerVitality));//now take this and repeat it for all the other stats and all the other classes, ill come back to this
+                System.out.println("\nCharisma: " + (classes.userChoseINT.baseCharismaINT + bonusRoller.playerCharisma));
+                System.out.println("\nEndurance: " + (classes.userChoseINT.baseEnduranceINT + bonusRoller.playerEndurance));
+                System.out.println("\nStrength: " + (classes.userChoseINT.baseStrengthINT + bonusRoller.playerStrength));
+                System.out.println("\nDexterity: " + (classes.userChoseINT.baseDexterityINT + bonusRoller.playerDexterity));
+                System.out.println("\nIntelligence: " + (classes.userChoseINT.baseIntelligenceINT + bonusRoller.playerIntelligence));
+            }
+
+            if (classes.userChoseDEX != null) { //this is the check for what class was actually selected by player will repeat for other two classes as well
+                System.out.println("\nVitality: " + (classes.userChoseDEX.baseVitalityDEX + bonusRoller.playerVitality));//now take this and repeat it for all the other stats and all the other classes, ill come back to this
+                System.out.println("\nCharisma: " + (classes.userChoseDEX.baseCharismaDEX + bonusRoller.playerCharisma));
+                System.out.println("\nEndurance: " + (classes.userChoseDEX.baseEnduranceDEX + bonusRoller.playerEndurance));
+                System.out.println("\nStrength: " + (classes.userChoseDEX.baseStrengthDEX + bonusRoller.playerStrength));
+                System.out.println("\nDexterity: " + (classes.userChoseDEX.baseDexterityDEX + bonusRoller.playerDexterity));
+                System.out.println("\nIntelligence: " + (classes.userChoseDEX.baseIntelligenceDEX + bonusRoller.playerIntelligence));
+            }
+
+            System.out.print("Please confirm these stats: (Y/N)"); 
+            System.out.print("Be aware class and stats cannot be changed.");
+            String statsConfirm = userInput.nextLine().toUpperCase().trim();
+
+            if(statsConfirm.equals("Y")) {
+                statsConfirmed = true; 
+            }
+            else{
+                System.out.print("Re-rolling stats...");
             }
         }
+        player.playerBaseStats = bonusRoller; //assigning base stats to player object
+
+        if (classes.userChoseSTR != null) {
+            player.playerHealth = classes.userChoseSTR.baseVitalitySTR + bonusRoller.playerVitality;
+        } 
+        else if (classes.userChoseDEX != null) {
+            player.playerHealth = classes.userChoseDEX.baseVitalityDEX + bonusRoller.playerVitality;
         }
+
+        else if (classes.userChoseINT != null) {
+            player.playerHealth = classes.userChoseINT.baseVitalityINT + bonusRoller.playerVitality;
+        }
+
+        return player; //this is returning all these values the player rolled as an obect "player" this will make working with these stats (in theory, i hope) easier
     }
 
 }
@@ -115,7 +161,6 @@ class PlayerValues{ //this classs is going to control player base stats, includi
     int playerHealth;
     PlayerClasses selectedClass;
     DiceStatRoller playerBaseStats;
-    playerHealth = playerVitality + baseVitality;
 
 }
 
