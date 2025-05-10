@@ -1,0 +1,3 @@
+SCENE_ID|Scene Description|Action1,Action2,Action3
+001|"You step into the ruined streets of Erebus-9, the air thick with decay."|"Search for loot","Approach a locked door","Continue walking"
+002|"A dimly lit marketplace, abandoned long ago but still holding eerie signs of life."|"Check a stall","Look for NPCs","Return to main road"

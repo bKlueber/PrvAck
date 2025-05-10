@@ -132,7 +132,7 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
             }
         }
 
-        public void loadNPCs(String filePath) { //access the file path of items master list
+        public void loadNPCs(String filePath) { //access the file path of npc master list
             try (BufferedReader npcReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
             String line; //starting a new string line
 
