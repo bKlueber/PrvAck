@@ -1,0 +1,3 @@
+Bandit|npc_001|A rogue thief|80|true|Neutral|5|8|15
+Warlord|npc_002|A brutal warrior|200|true|EnemyFaction|10|15|25
+Tutorial Dummy|npc_003|Non-hostile dummy|50|false|null|0|0|0

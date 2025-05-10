@@ -5,7 +5,7 @@ public class CombatSystem { //the beggining of something great
     Random diceRoll = new Random();
 
     public void combatEngaged(PlayerValues player, GenericNPC defaultNPC, GenericItem weapon) { 
-        if(!enemy.npcCanCombat) {
+        if(!defaultNPC.npcCanCombat) {
             System.out.println("You can't start a fight with " + defaultNPC.npcName + "."); //this check should keep the player from starting fights with NPCs we dont want them too
             return; //this should end the combat world state, once we get that coded in that is
         }
@@ -71,40 +71,104 @@ public class CombatSystem { //the beggining of something great
             case 1:
 
                 attack(player, defaultNPC, weapon);
+                break;
 
             case 2:
                 
-                defend(player, defaultNPC);
+                defend(player, defaultNPC, weapon);
+                break;
 
             case 3:
 
                 useItem(player, defaultNPC);
+                break;
             
             default: 
-                System.out.println("Somehow you managed to enter an inccorect input, please try again"); //right now all these are just meaningless plaecholders but soon they will actually do things
+                System.out.println("Somehow you managed to enter an inccorect input, please try again"); 
+                break;
         }
     }
 
     private void enemyTurn(PlayerValues player, GenericNPC enemy) {
         System.out.println("\n" + enemy.npcName + " prepares to attack...");
 
-        int missChance = diceRoll.nextInt(100);
-        if (missChance < 5) { // 5% chance for NPC to miss, i feel like this could be done more...elegantly but for now this will do
-            System.out.println(enemy.npcName + " lunges forward but misses!");
+        int missChance = diceRoll.nextInt(101); //keep as 101 do not change to 100
+        if (missChance <= 5) { //5 out of 100 chance for NPC to miss, i feel like this could be done more...elegantly but for now this will do
+            System.out.println(enemy.npcName + " puts their all into the attack but misses!");
         return;
     }
 
 
-        // Randomize damage within min/max range
+        //Randomize damage within min/max range
         int enemyDamage = diceRoll.nextInt(enemy.maxDamage - enemy.minDamage + 1) + enemy.minDamage;
 
-        // Apply armor reduction
+        //reduces damage based on equiped armor
         enemyDamage = Math.max(enemyDamage - player.playerBaseStats.playerEndurance / 2, 1); //this should keep the attack from ever being just 0 damage
 
         player.playerHealth -= enemyDamage;
         System.out.println(enemy.npcName + " deals " + enemyDamage + " damage!");
     }
 
+    private void attack(PlayerValues player, GenericNPC defaultNPC, GenericItem weapon) {
 
+        int missChance = diceRoll.nextInt(101); //same as above, set to 101 because it actually rolls between 1-100 this way
+        if (missChance <= 5) {
+            System.out.println(player.playerName + "'s attack missed!");
+            return; //this should skip the damage calculations 
+        
+        }
+
+        int baseDamage = weapon.baseDamage;
+        int statMultiplier = getAffinityMultiplier(player, weapon);
+        int enemyArmor = defaultNPC.baseArmor;
+
+        int totalDamage = (int) ((baseDamage + statMultiplier) * 1.2) - (enemyArmor/10); //this is just a placeholder formula , the structure is what i want but the values NEED TO BE BALANCED
+        totalDamage = Math.max(totalDamage, 0); //this just makes sure the damage doesnt go into negative values
+
+        System.out.println(player.playerName + " attacked with " + weapon.itemName + " dealing " + totalDamage + " damage!");
+        defaultNPC.npcHealth -= totalDamage; //this actually makes the damage take effect on the npcs
+
+    }
+
+    private int getAffinityMultiplier(PlayerValues player, GenericItem weapon) {
+        int bonusDamage = 0;
+
+        switch(weapon.itemAffinity) {
+
+            case "STR":
+
+            bonusDamage = player.playerBaseStats.playerStrength / 2;
+            break;
+
+            case "DEX":
+
+            bonusDamage = player.playerBaseStats.playerDexterity / 2;
+            break;
+
+            case "INT":
+
+            bonusDamage = player.playerBaseStats.playerIntelligence / 2;
+            break;
+        }
+
+        return bonusDamage;
+    }
+
+    private void defend(PlayerValues player, GenericNPC defaultNPC, GenericItem weapon) {
+        int reduceDamage = diceRoll.nextInt(11) + 5; //this set the default defend value to 5 plus rolled int 1-10
+        System.out.println(player.playerName + " steels their nerves and braces to be hit!");
+
+        int enemyDamage = diceRoll.nextInt(defaultNPC.maxDamage - defaultNPC.minDamage + 1) + defaultNPC.minDamage;
+        enemyDamage = Math.max(enemyDamage - reduceDamage, 1); // Ensure minimum damage is at least 1
+
+        player.playerHealth -= enemyDamage;
+        System.out.println(defaultNPC.npcName + " strikes, but only deals " + enemyDamage + " damage due to your defense!");
+}
+
+    }
+
+    private void useItem(PlayerValues player, GenericNPC enemy) {
+        //this needs to be made funcitonal but first i want to finish the rest of the combat system and make sure that all I have a good list of items made in the master
+    }
 }
 

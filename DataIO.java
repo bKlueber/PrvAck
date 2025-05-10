@@ -29,33 +29,6 @@ class GenericItem{ //this is the class that is used for every single item in the
 
 }
 
-class GenericNPC{
-
-    String npcName;
-    String npcID;
-    String npcDescription; //not neccessary but including it for now, I (Brady) was thinkng haveng like a codex on npcs that populates af you interact with them for the first time
-    int npcHealth;
-    boolean npcCanCombat; //this will be a check to see if npc can be attacked by player or not, well one check of many, probably
-    String npcFaction; //can be null but if, and big if we want to have reputation based on faction this will help
-    int baseArmor;
-    int minDamage;
-    int maxDamage; //these will create ranges for npc damage output to hopefully make it so not all npcs feel the same
-
-        public GenericNPC( String npcName, String npcID, String npcDescription, int npcHealth, boolean npcCanCombat, String npcFaction,
-         int baseArmor, int minDamage, int maxDamage) {
-            this.npcName = npcName;
-            this.npcID = npcID;
-            this.npcDescription = npcDescription;
-            this.npcHealth = npcHealth;
-            this.npcCanCombat = npcCanCombat;
-            this.npcFaction = npcFaction;
-            this.baseArmor = baseArmor;
-            this.minDamage = minDamage;
-            this.maxDamage = maxDamage;
-        }
-
-}
-
 class WorldContainers{ //this is a class built off of hashmaps, these hashmaps will track inventories of both NPC's, the player and world containers all through npcID's
 
      HashMap<String, HashMap <String, Integer>> inventoryContents; //this is a 2d data structure starts with who owns the inventory and then iterates through contents
@@ -166,9 +139,11 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
             while ((line = npcReader.readLine()) != null) { //says as long as current line is not null then continue
                 String[] npcData = line.split("\\|"); //simply saying at each | the line is broken and continue to next value
 
-                if (npcData.length == 6) { //ensures that all npcs have information for each category, 6, some can be null but must be present
+                if (npcData.length == 9) { //ensures that all npcs have information for each category, 6, some can be null but must be present
                     GenericNPC npc = new GenericNPC(
-                        npcData[0], npcData[1], npcData[2], Integer.parseInt(npcData[3]), Boolean.parseBoolean(npcData[4]), npcData[5]);
+                        npcData[0], npcData[1], npcData[2], Integer.parseInt(npcData[3]), 
+                        Boolean.parseBoolean(npcData[4]), npcData[5], Integer.parseInt(npcData[6])
+                        , Integer.parseInt(npcData[7]), Integer.parseInt(npcData[8]));
                     npcMasterList.put(npc.npcID, npc);
                 }
                 else {
