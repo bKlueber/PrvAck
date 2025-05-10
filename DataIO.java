@@ -14,8 +14,9 @@ class GenericItem{ //this is the class that is used for every single item in the
     double itemWeight; //not neccessary but in my (Brady) opinion i think it adds depth to our systems
     int baseDamage; //will not be applicable to every item but by defining it here, and then assigning it in the txt we will save a lot of time and effort
     int baseArmor; //same as baseDamage, as in may be null for some items but will make adjusting and balancing worlds easier
+    String itemAffinity; //this is going to help so i can make damage scale per class for certain types of items, right now just going to apply to weapons not armor
     
-        public GenericItem(String  itemName, String itemID, String itemDescription, double itemValue, double itemWeight, int itemDamage, int itemArmor) {  //this is matching the paremeter to instances of each variable
+        public GenericItem(String  itemName, String itemID, String itemDescription, double itemValue, double itemWeight, int itemDamage, int itemArmor, String itemAffinity) {  //this is matching the paremeter to instances of each variable
             this.itemName = itemName;
             this.itemID = itemID;
             this.itemDescription = itemDescription;
@@ -23,6 +24,7 @@ class GenericItem{ //this is the class that is used for every single item in the
             this.itemWeight = itemWeight;
             this.baseDamage = itemDamage;
             this.baseArmor = itemArmor;
+            this.itemAffinity  = itemAffinity;
         }
 
 }
@@ -35,14 +37,21 @@ class GenericNPC{
     int npcHealth;
     boolean npcCanCombat; //this will be a check to see if npc can be attacked by player or not, well one check of many, probably
     String npcFaction; //can be null but if, and big if we want to have reputation based on faction this will help
+    int baseArmor;
+    int minDamage;
+    int maxDamage; //these will create ranges for npc damage output to hopefully make it so not all npcs feel the same
 
-        public GenericNPC( String npcName, String npcID, String npcDescription, int npcHealth, boolean npcCanCombat, String npcFaction) {
+        public GenericNPC( String npcName, String npcID, String npcDescription, int npcHealth, boolean npcCanCombat, String npcFaction,
+         int baseArmor, int minDamage, int maxDamage) {
             this.npcName = npcName;
             this.npcID = npcID;
             this.npcDescription = npcDescription;
             this.npcHealth = npcHealth;
             this.npcCanCombat = npcCanCombat;
             this.npcFaction = npcFaction;
+            this.baseArmor = baseArmor;
+            this.minDamage = minDamage;
+            this.maxDamage = maxDamage;
         }
 
 }
@@ -108,11 +117,10 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
             while ((line = itemReader.readLine()) != null) {//says as long as current line is not null then continue
                 String[] itemData = line.split("\\|"); //simply saying at each | the line is broken and continue to next value
             
-                if (itemData.length == 7) { //this is just making suere there are 7 fields avalaible, the amouint outlined in item info}
+                if (itemData.length == 8) { //this is just making suere there are 7 fields avalaible, the amouint outlined in item info}
                    GenericItem item = new GenericItem( 
                     itemData[0], itemData[1], itemData[2], Double.parseDouble(itemData[3]), Double.parseDouble(itemData[4]), 
-                    Integer.parseInt(itemData[5]), Integer.parseInt(itemData[6])
-                   );
+                    Integer.parseInt(itemData[5]), Integer.parseInt(itemData[6]), itemData[7]);
 
                    itemMasterList.computeIfAbsent(inventoryID, k -> new HashMap<String, GenericItem>()).put(item.itemID, item); //this actually stores the item
                     }

@@ -1,3 +1,6 @@
-Iron Sword|sword_001|Basic melee weapon|50.0|2.5|10|0
-Health Potion|potion_002|Restores health|5.0|0.5|0|0
-Wooden Stick|stick_001|A simple wooden stick|2.0|1.0|1|0
+Iron Sword|sword_001|Basic melee weapon|50.0|2.5|10|0|Strength
+Health Potion|potion_002|Restores health|5.0|0.5|0|0|none
+Wooden Stick|stick_001|A simple wooden stick|2.0|1.0|1|0|Dexterity
+Wooden Sword|sword_002|Basic melee weapon|100.0|3.5|15|5|Strength
+Bow|bow_002|Ranged weapon|120.0|2.5|12|3|Dexterity
+Neural Disruptor|neural_003|Hacker's weapon|250.0|1.0|10|0|Intelligence

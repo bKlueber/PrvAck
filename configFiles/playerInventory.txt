@@ -1,2 +1,2 @@
-playerInventory: stick_001|potion_002|
-npcInventory_001: sword_001|
+playerInventory: 
+npcInventory_001: 
