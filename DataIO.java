@@ -39,19 +39,6 @@ class WorldContainers{ //this is a class built off of hashmaps, these hashmaps w
 
 }
 
-class ContainerType{ //realized not all containers need the information an npc would have assigned to them, so this class checks if chest or npc and then if npc assigns proper attributes
-
-    String containerID;
-    String containerCategory;
-
-    public ContainerType(String containerID, String containerCategory) {
-
-        this.containerID = containerID;
-        this.containerCategory= containerCategory;
-    }
-
-}
-
 public class DataIO {//this classs calls the corrosponding txt files, parses, writes and reads corrosponding values
     public HashMap<String, HashMap<String, GenericItem>> itemMasterList = new HashMap<>(); //creating a 2d hashmap to partition inventories seperately so then they can all be managed within one .txt
     public HashMap<String, GenericNPC> npcMasterList = new HashMap<>();
