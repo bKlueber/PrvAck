@@ -119,6 +119,37 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
             }
         }
 
+        public void loadContainerItems(String filePath, HashMap<String, Container> containerMap) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split("\\|");
+            
+                if (parts.length == 2) {
+                    String containerID = parts[0];
+                    String[] itemIDs = parts[1].split(",");
+                
+                    containerMap.putIfAbsent(containerID, new Container(containerID)); // Ensure container exists
+                
+                    Container container = containerMap.get(containerID);
+                    for (String itemID : itemIDs) {
+                    
+                        if (itemMasterList.containsKey("global") && itemMasterList.get("global").containsKey(itemID)) { // Ensure item exists
+                        container.addItem(itemMasterList.get("global").get(itemID)); // Add real item to container
+                        } else
+                        {
+                        System.err.println("Warning: Item " + itemID + " not found in ItemMasterList!");
+                    }
+                }
+            }
+        }
+        System.out.println("Containers prepopulated with real items!");
+    } catch (IOException e) {
+        System.err.println("Error loading container items: " + e.getMessage());
+    }
+}
+
         public void loadNPCs(String filePath) { //access the file path of npc master list
             try (BufferedReader npcReader = new BufferedReader(new FileReader(filePath))) { //just says try to create a new file parser/reader
             String line; //starting a new string line
