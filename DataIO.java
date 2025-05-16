@@ -29,15 +29,6 @@ class GenericItem{ //this is the class that is used for every single item in the
 
 }
 
-class WorldContainers{ //this is a class built off of hashmaps, these hashmaps will track inventories of both NPC's, the player and world containers all through npcID's
-
-     HashMap<String, HashMap <String, Integer>> inventoryContents; //this is a 2d data structure starts with who owns the inventory and then iterates through contents
-
-    public WorldContainers() { 
-        inventoryContents = new HashMap<>();
-    }
-
-}
 
 public class DataIO {//this classs calls the corrosponding txt files, parses, writes and reads corrosponding values
     public HashMap<String, HashMap<String, GenericItem>> itemMasterList = new HashMap<>(); //creating a 2d hashmap to partition inventories seperately so then they can all be managed within one .txt
@@ -130,13 +121,13 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
                     String containerID = parts[0];
                     String[] itemIDs = parts[1].split(",");
                 
-                    containerMap.putIfAbsent(containerID, new Container(containerID)); // Ensure container exists
+                    containerMap.putIfAbsent(containerID, new Container(containerID)); // makes sure that the container exists
                 
                     Container container = containerMap.get(containerID);
                     for (String itemID : itemIDs) {
                     
-                        if (itemMasterList.containsKey("global") && itemMasterList.get("global").containsKey(itemID)) { // Ensure item exists
-                        container.addItem(itemMasterList.get("global").get(itemID)); // Add real item to container
+                        if (itemMasterList.containsKey("global") && itemMasterList.get("global").containsKey(itemID)) { // makes sure that the item exists
+                        container.addItem(itemMasterList.get("global").get(itemID)); // Add actual item to container
                         } else
                         {
                         System.err.println("Warning: Item " + itemID + " not found in ItemMasterList!");
@@ -170,6 +161,39 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
             }
         }   catch (IOException | NumberFormatException e) {
             System.err.println("Problem while loading npcs. \nMore information: " + e.getMessage());
+            }
+        }
+
+    
+        public void loadNPCInventories(String filePath) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+        
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split("\\|");
+           
+                if (parts.length == 2) {
+                    String npcID = parts[0];
+                    String[] itemIDs = parts[1].split(",");
+
+                    if (npcMasterList.containsKey(npcID)) {
+                        GenericNPC npc = npcMasterList.get(npcID);
+                        for (String itemID : itemIDs) {
+                        // Assuming that "global" contains all items (loaded via loadItems)
+                        
+                            if (itemMasterList.containsKey("global") && itemMasterList.get("global").containsKey(itemID)) {
+                                npc.addItem(itemMasterList.get("global").get(itemID));
+                            } 
+                            else {
+                                System.err.println("Warning: Item " + itemID + " not found in ItemMasterList!");
+                            }
+                        }
+                    }
+                }
+                System.out.println("NPC inventories successfully loaded!");
+            } catch (IOException e) {
+        
+            System.err.println("Error loading NPC inventories: " + e.getMessage()); //if for some reason it has an issue reading or writing then this will print the error for us
             }
         }
     }

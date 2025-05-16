@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class CombatSystem { //the beggining of something great
+class CombatSystem { //the beggining of something great
     Random diceRoll = new Random();
 
     public void combatEngaged(PlayerValues player, GenericNPC defaultNPC, GenericItem weapon) { 
@@ -19,7 +19,7 @@ public class CombatSystem { //the beggining of something great
         "The duel begins: %s versus %s!",
         "A fierce battle is about to unfold: %s challenges %s!" };
 
-    String combatIntro = String.format(combatStartMessages[diceRoll.nextInt(combatStartMessages.length)], player.playerName, defaultNPC.npcName); //this should print out a random into when combat is intiated
+    String combatIntro = String.format(combatStartMessages[diceRoll.nextInt(combatStartMessages.length)], player.playerName, defaultNPC.npcName); //this should print out a random intro when combat is intiated
     System.out.println(combatIntro);
 
     while(player.playerHealth > 0 && defaultNPC.npcHealth > 0) {
@@ -149,10 +149,10 @@ public class CombatSystem { //the beggining of something great
 
             bonusDamage = player.playerBaseStats.playerIntelligence / 2;
             break;
-        }
+            }
 
         return bonusDamage;
-    }
+        }
 
     private void defend(PlayerValues player, GenericNPC defaultNPC, GenericItem weapon) {
         int reduceDamage = diceRoll.nextInt(11) + 5; //this set the default defend value to 5 plus rolled int 1-10
@@ -163,12 +163,12 @@ public class CombatSystem { //the beggining of something great
 
         player.playerHealth -= enemyDamage;
         System.out.println(defaultNPC.npcName + " strikes, but only deals " + enemyDamage + " damage due to your defense!");
-}
-
     }
+
+}
 
     private void useItem(PlayerValues player, GenericNPC enemy) {
         //this needs to be made funcitonal but first i want to finish the rest of the combat system and make sure that all I have a good list of items made in the master
     }
-}
+
 
