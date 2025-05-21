@@ -25,16 +25,55 @@
 "Retry->009"
 
     // The Gap
-015|"‘You made it out,’ She Says Softly. ‘I thought no one else would.’ She Hands You a Crust of Bread.","What Happened to The Colony?->017","What's Going on?->017"
+015|"‘You made it out,’ She Says Softly. ‘I thought no one else would,’ She Hands You a Crust of Bread.","What Happened to The Colony?->017","What's Going on?->017"
 016|"The Catwalk Ends in Rubble. You Can See The Market Beyond, But No Clear Path.","Try to Jump->018","Return to The Old Lady->015"
 017|"‘It wasn't always like this,’ She Murmurs. ‘You want answers? Go find Ligart. He knows more than he lets on.’","Who's Ligart?->019","Where Can I Find him?->18"
-018|"‘Come with me, he's in the market.’ She Began. ‘However, it's quite tricky to get to from here, so pay attention and follow closely.’ The Old Lady Explained, Waddling Off With Cane in Hand.",
+018|"‘Come with me, he's in the market,’ She Began. ‘However, it's quite tricky to get to from here, so pay attention and follow closely,’ The Old Lady Explained, Waddling Off With Cane in Hand.",
 "Follow Her->020"
-019|"‘He's a dealer of information, a tricky man, indeed.’ She Babbled. ‘Shady deals and dirty money, but the only broker of information around as good as him.’ She Admitted.",
+019|"‘He's a dealer of information, a tricky man, indeed,’ She Babbled. ‘Shady deals and dirty money, but the only broker of information around as good as him,’ She Admitted.",
 "Where Can I Find him?->018"
 020|"The Old Lady Leads You Through The Scaffolding Mess Beyond The Pod Bay. Reaching a Different Elevation But Same Ending Rubble of The Cat Walk.","Continue->021"
 021|"Small Gaps in The Messy Ruin Can be Seen From This Possition, But Nothing Else Was Below The Catwalk From Here. Leading to a Pit With no Visible Bottom.","Are You sure About This?->022"
-022|"‘I've Been Doing This For Years.’ She Scoffed. ‘Just do as I do, And You'll be Fine.’ She Explained. ‘Oh, and maybe don't look down.’ The Old Lady Teased.","Whatever You Say->023","Follow Her->-23"
+022|"‘I've Been Doing This For Years,’ She Scoffed. ‘Just do as I do, And You'll be Fine,’ She Explained. ‘Oh, and maybe don't look down,’ The Old Lady Teased.","Whatever You Say->023","Follow Her->-23"
 
     // The Market
-023|"
+023|"Following The Old Lady Across The Surprisingly Flimsy Cat Walks And Tight Spaces to Reach The Other Side of The Gap, You Reach The Otherside Successfully by Following Her Lead.","Continue->"
+024|"‘Good job, we made it over,’ She Affirmed Your Achievement. ‘This way, we're just about there,’ She Responded.","Glad That's Over->025","Follow Her->025"
+025|"You Step Into The Ruined Streets of Erebus-9, The Air Thick With Decay. The Old Lady Went Off Through The Crowds.",
+"Search For Loot->LOOTING","Explore Market->027"
+026|"A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.","Check Abandoned Stall->LOOTING","Approach Locked Door->032","Explore Market->027"
+027|"You Wander Through The Stalls, Dusty and Cracked, But Some Look Recently Disturbed. A Faint Voice Calls From Behind a Curtain.","Investigate The Voice->028","Keep Walking->029"
+028|"The Old Lady Waved You Over Again. ‘Before You Go Asking Questions, How About a Favor? My Water Filter’s Busted,’ She Said, Holding Up a Rusty Device."
+,"Take The Filter->030","Refuse->031"
+029|"Wandering Deeper into The Market Without Guidance, You Begin to Draw Unwanted Attention. Eyes Follow Your Movements. Whispers Stir.",
+"Go Back to The Old Lady->028","Push Onward Anyway->032"
+030|"‘Good. You'll Find a Spare in the Lower Stall Beneath the Windtrap,’ She Instructs. ‘Watch Your Step Down There. Not All Are Friendly.’","Begin The Task->033"
+031|"‘Suit Yourself,’ She Huffs. ‘Don’t Expect Me to Point You Anywhere Then.’","Wander Stalls->029","Take Filter->030"
+
+    // Danger Path
+032|"You Push Deeper Into a Darker Corner of the Market. A Man Blocks Your Way, Covered in Grafted Tech and Scraps. ‘You Lost?’ He Growls.","Confront Him->034","Turn Back->028"
+033|"You Descend a Rusty Ladder Into a Hidden Nook Beneath the Market. Water Drips From Overhead. The Windtrap Moans.","Search The Debris->035","Look Around First->036"
+034|"The Man Shoves You. ‘Best Head Back to the Old Hag, Newblood,’ He Warns, Then Laughs. You Get The Feeling He Let You Off Easy.","Retreat to The Market->026"
+
+    // First Quest
+035|"You Find a Spare Filter Among Wires and Rot. It's Damaged, But Might Be Repairable.","Take It Back->037"
+036|"You Spot an Old Toolbench and a Crate of Parts Nearby. It Could Be Used to Repair the Filter.","Try to Repair Filter->038","Take It As-Is->035"
+037|"The Old Lady Smiles. ‘Well Done. You’re Not Useless After All,’ She Says. ‘Here, Take This,’ She Hands You a Strange Token.","Ask What It Is->039","Thank Her and Leave->040"
+038|"With Patience and a Bit of Luck, You Patch The Filter. The Old Lady is Pleased. ‘Smart and Handy. Rare Combo Here,’ She Grins.","Give Filter->037"
+
+    // First Reward
+039|"‘That Token? It’s How You’ll Pay Ligart,’ She Explains. ‘He Doesn't Take Coin—Only Questions Worth Asking.’","Where Is He Again?->041"
+040|"‘Off You Go,’ She Says, Already Tinkering With The Filter. ‘And Watch Yourself With Ligart. He's...different.’","Search For Ligart->041"
+041|"You Make Your Way Past The Market’s Edge, Past Vendors and Roving Thugs. You Find a Quiet Corner Where A Young Man Watches from a Shaded Alcove.","Approach The Man->042"
+
+    // Info Dump
+042|"He’s Lean, Pale, And Dressed Like a Vendor, But There's No Goods—Only a Stack of Books and a Dim Lamp. ‘You’ve Got Questions?’ He Asks Without Looking Up.",
+"Offer Token->043","Who Are You?->044"
+043|"He Takes The Token and Pockets It Silently. ‘What You Want to Know, Stranger?’ He Leans Forward, His Eyes Dark as the Void.","Ask About The Colony->045"
+044|"‘Name’s Vicar Ligart. I Listen, I Speak, I Trade. That’s What You Need to Know,’ He Says Flatly While Laying The Book he Was Looking Over Off to The Side.","Offer Token->043"
+045|"‘Ah, Erebus-9? Talk around the colony says we're not anywhere at all,’ Ligart Began.",
+"Continue->046"
+046|"‘Pretty crazy, right? I know... The engineers say the AI looked into the Abyss first and it looked back,’ he Continued.","What Happened?->047"
+047|"‘No one's sure why or how we got here,’ Ligart Shrugged. ‘What we do know is that they saw it first, and some went crazy.’ he Added.","Continue->048"
+048|"‘Bing, Bang, Boom. We're here now,’ Ligart Explained","Thanks->050"
+050|"‘No sweat kid, if you got more tokens and have more questions, I'll be here.’","Return to Market->026"
