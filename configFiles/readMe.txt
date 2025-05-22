@@ -1,7 +1,7 @@
 \\\\\\\\\\\\\\\\\\\///////GUIDE FOR EDITING THE GAMES .txt FILES ///////\\\\\\\\\\\\\\\\\\\
 
 The game is currently coded in a way that the bulk of the content can be added by editing the .txt 
-files found within. Right now there are six .txt files that should be edited and one that should not be touched
+files found within. Right now there are five .txt files that should be edited and one that should not be touched
 
 The five that are okay to edit are:
 
@@ -10,7 +10,6 @@ The five that are okay to edit are:
 3. npcInventories.txt
 4. masterNPC.txt
 5. sceneBank.txt
-6. Dialogue.txt
 
 >>> DO NOT EDIT playerInventory.txt EXCEPT in the case you are loading a STARTING INVENTORY <<<
 
@@ -70,15 +69,8 @@ WHAT DOES EACH TXT DO?
 	or triggered event the enumeration for the combat world state comes into play and the world state will shift out
 	of the scene until combat has eneded.
 	
-6. Dialogue.txt
 
-	- This .txt is where all the diaglogue choices will live for the entire game including each and every single branching
-	option possible for the players to choose from. 
-	
-	Notice: Make sure that you include some prompt to end the conversation or the player will be stuck and the codes
-	world state wont change back to exploring. 
-
-7. playerInventory.txt
+6. playerInventory.txt
 
 	- This .txt is where the playersInventory will be stored, this should not be edited. To reiterate, do not edit
 	unless you are changing the players default loadout.
@@ -125,6 +117,8 @@ HOW DO I EDIT EACH TXT?
 	
 	2.1 Container ID - STRING
 		- These container IDs need to be unique and please make sure that each follows the same structure/pattern.
+		FOR THIS PATTERN MAKE FIRST 3 chars be the game chars found in the scene you want the item to show up in
+		EX: scene 045 connects to 045_barrel, these numbers in the id is what will connect  both together
 		
 	2.2 A hashmap of items - HASHMAP
 		- These items should be listed out only by their item ID and separated from the Container ID with the char "|" and each item 
@@ -217,47 +211,6 @@ There are Only two attributes tied to NPC inventories, in order they are:
 	
 			
 	Notice: The Actions field must use the exact "Label->Trigger" format without any extra spaces that could confuse the parser.
-
-6. Dialogue.txt
-
-	Every line within this .txt is for one dialogue interaction, and must have at minimum 7 fields but in theory could be infinitely large. They must
-	also follow this order exactly
-	
-		6.1 NPC ID - STRING
-			- Here just put the npcs ID that this interaction is with for now, it doenst do anything but I have a suspicion later it may be useful
-			unforutnately interactoions with Dialogue has to be one on one for now... sorry about that
-		
-		6.2 – NPC Name - STRING
-			- The name of the NPC speaking in this dialogue.
-			In game, the dialogue is displayed as:
-			<NPC Name>: <Dialogue Text>
-			
-		6.3 – Extra Data - STRING
-			- (Optional) This field can hold additional info (or be left blank) that isn’t directly used by the dialogue system.
-			I intended this to be used for us to keep track of what interaction this is with that npc so like firstInteraction, angryResponse,
-			friendlyRepsonse, firstGreeting, etc.
-			
-		6.4 – Dialogue ID - STRING
-			- A unique identifier for this dialogue entry.
-			  This ID is used as a key for the branching dialogue system.
-			  
-		6.5 – Dialogue Text - STRING
-			- The actual dialogue line spoken by the NPC.
-
-		6.6 – Player Response Option 1 - STRING
-			-The first response option that the player can select.
-			
-		6.7 – Next Dialogue ID for Option 1 - STRING
-			- The dialogue entry to transition to when the player selects the first response.
-			If the conversation should end after this option, put 0 (zero).
-			
->>>>>>>>>> NEED OR WANT MORE OPTIONS FOR THE DIALOGUE? <<<<<<<<<<
-	To add more dialogue choices, continue adding fields in pairs:
-		
-		Field 8 – Player Response Option 2
-		Field 9 – Next Dialogue ID for Option 2
-		Field 10 – Player Response Option 3
-		Field 11 – Next Dialogue ID for Option 3, etc.
 
 
 

@@ -190,6 +190,7 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
                         }
                     }
                 }
+            }
                 System.out.println("NPC inventories successfully loaded!");
             } catch (IOException e) {
         
