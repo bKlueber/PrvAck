@@ -1,136 +1,83 @@
-// Tutorial
-001|"You Dream of The Once Earth-Orbiting Colony, Erebus-9. It Was Going to Take Off Into The Endless Stars Beyond The Origin System.","Next->002"
-002|"You Remember Going Into Cryo-Sleep With The Whole Colony, But as The Dream Continues, it Darkens as The Feeling of Disaster Permeates The Dream.","Next->003"
-003|"A crack Run Across Reality in Front of The Colony. Sirens Wail, But No One is There to Hear it. The AI Are Alone to Make Glimpses And Stare Into The Abyss Beyond. It Looks Back.",
-"Wake up->004","Keep Dreaming->005"
-004|"The Cold, Chilling Bite of Reality Wakes You. Your Eyes Jerk Open in Panic. The Ice Thawing as Cryo-Fluid Drips From You. You're Now Awake.","Next->006"
-005|"The Dream Continues to Twist And Warp Into a Nightmare. A Shadow Watches From THe Void, Its Twisted, Warped Smile Sends Chills Throughout Your Being. You Recognize it, Somehow. U̸̧̲̼̞̲̙̭͈̼̓̅̓̐̓͘͜l̵̺̫̫̖̫͎̠̽̊̂̐̂͊͂t̴͙͖̞̠͍̏̓͐i̵̩͌̽͛͊̐̎̋m̴̦͕͔͈̦̖͙͗̌̌̊͆͂͗͜á̷̭͂͑̆̿̐͛̕͠?",
-"Wake up, Terrified->004"
+001|You Dream of The Once Earth-Orbiting Colony, Erebus-9. It Was Going to Take Off Into The Endless Stars Beyond The Origin System.|Next->002
+002|You Remember Going Into Cryo-Sleep With The Whole Colony, But as The Dream Continues, it Darkens as The Feeling of Disaster Permeates The Dream.|Next->003
+003|A crack Runs Across Reality in Front of The Colony. Sirens Wail, But No One is There to Hear it. The AI Are Alone to Make Glimpses And Stare Into The Abyss Beyond. It Looks Back.|Wake up->004,Keep Dreaming->005
+004|The Cold, Chilling Bite of Reality Wakes You. Your Eyes Jerk Open in Panic. The Ice Thawing as Cryo-Fluid Drips From You. You're Now Awake.|Next->006
+005|The Dream Continues to Twist And Warp Into a Nightmare. A Shadow Watches From The Void, Its Twisted, Warped Smile Sends Chills Throughout Your Being. You Recognize it, Somehow. U̸̧̲̼̞̲̙̭͈̼̓̅̓̐̓͘͜l̵̺̫̫̖̫͎̠̽̊̂̐̂͊͂t̴͙͖̞̠͍̏̓͐i̵̩͌̽͛͊̐̎̋m̴̦͕͔͈̦̖͙͗̌̌̊͆͂͗͜á̷̭͂͑̆̿̐͛̕͠?|Wake up, Terrified->004
 
-    // Initial Choices
-006|"Dim Red Lights Blink in The Cryo Bay. You're Still Trapped in Your Pod. Movement Echoes Nearby.","Break Free->007","Stay And Watch->008"
-007|"You Tear Yourself Free Just in Time to See a Cryo Pod Open, And Its Occupant Slaughtered. Another Victim Being Pulled up to Free Pods, You Could Join Them if You're Not Careful.",
-"Run->009","Hide->010"
-008|"You Watch in Horror as Someone is Butchered Before Stuffed Into a Pod. The Killers Laugh. You're Next, Unless You Move Now.",
-"Escape Quietly->009","Hide->010"
+006|Dim Red Lights Blink in The Cryo Bay. You're Still Trapped in Your Pod. Movement Echoes Nearby.|Break Free->007,Stay And Watch->008
+007|You Tear Yourself Free Just in Time to See a Cryo Pod Open, And Its Occupant Slaughtered. Another Victim Being Pulled up to Free Pods, You Could Join Them if You're Not Careful.|Run->009,Hide->010
+008|You Watch in Horror as Someone is Butchered Before Stuffed Into a Pod. The Killers Laugh. You're Next, Unless You Move Now.|Escape Quietly->009,Hide->010
 
-    // Escaping Murder
-009|"You Slip Past the Chaos, Following Emergency Lights. Large, Bay Doors Open Into a Cramp Network of Scaffolding And Catwalks.",
-"Climb up->011","Climb Down->012","Call For Help!->013"
-010|"You Find a Tight Space Beneath a Storage Unit. The Killers Pass You by, For Now.","Wait Longer->013","Escape Now->009"
-011|"At The Top of The Scaffolding, You Find an Elderly Woman. Siting Calmly Among Supplies.","Speak to Her->014","Keep Moving->016"
-012|"You Find a Tight Space Beneath The Scaffolding And Catwalks. The Killers Pass You by, For Now.","Wait Longer->013","Escape Now->015"
-013|"Waiting For What Felt Like Hours, The Killers Return to The Cryo Pods, Leaving You Alive.","Escape Now->015"
-014|"Calling For Help Alerted The Killers, They Catch You Before You Can Hide Effectively And Take You Back to Your Pod, Only to Butcher And Lay You Down in Death in The Pod You Were Escaping From",
-"Try Again From Last Escape Point->009"
+009|You Slip Past the Chaos, Following Emergency Lights. Large, Bay Doors Open Into a Cramped Network of Scaffolding And Catwalks.|Climb up->011,Climb Down->012,Call For Help->013
+010|You Find a Tight Space Beneath a Storage Unit. The Killers Pass You by, For Now.|Wait Longer->013,Escape Now->009
+011|At The Top of the Scaffolding, You Find an Elderly Woman. Sitting Calmly Among Supplies.|Speak to Her->014,Keep Moving->016
+012|You Find a Tight Space Beneath the Scaffolding And Catwalks. The Killers Pass You by, For Now.|Wait Longer->013,Escape Now->015
+013|Waiting For What Felt Like Hours, The Killers Return to the Cryo Pods, Leaving You Alive.|Escape Now->015
+014|Calling For Help Alerted the Killers, They Catch You Before You Can Hide Effectively And Take You Back to Your Pod, Only to Butcher And Lay You Down in Death in the Pod You Were Escaping From.|Try Again From Last Escape Point->009
 
-    // The Gap
-015|"‘You made it out,’ She Says Softly. ‘I thought no one else would,’ She Hands You a Crust of Bread.","What Happened to The Colony?->017","What's Going on?->017"
-016|"The Catwalk Ends in Rubble. You Can See The Market Beyond, But No Clear Path.","Try to Jump->018","Return to The Old Lady->015"
-017|"‘It wasn't always like this,’ She Murmurs. ‘You want answers? Go find Ligart. He knows more than he lets on.’","Who's Ligart?->019","Where Can I Find him?->18"
-018|"‘Come with me, he's in the market,’ She Began. ‘However, it's quite tricky to get to from here, so pay attention and follow closely,’ The Old Lady Explained, Waddling Off With Cane in Hand.",
-"Follow Her->020"
-019|"‘He's a dealer of information, a tricky man, indeed,’ She Babbled. ‘Shady deals and dirty money, but the only broker of information around as good as him,’ She Admitted.",
-"Where Can I Find him?->018"
-020|"The Old Lady Leads You Through The Scaffolding Mess Beyond The Pod Bay. Reaching a Different Elevation But Same Ending Rubble of The Cat Walk.","Continue->021"
-021|"Small Gaps in The Messy Ruin Can be Seen From This Position, But Nothing Else Was Below The Catwalk From Here. Leading to a Pit With no Visible Bottom.","Are You sure About This?->022"
-022|"‘I've Been Doing This For Years,’ She Scoffed. ‘Just do as I do, And You'll be Fine,’ She Explained. ‘Oh, and maybe don't look down,’ The Old Lady Teased.","Whatever You Say->023","Follow Her->-23"
+015|‘You made it out,’ She Says Softly. ‘I thought no one else would,’ She Hands You a Crust of Bread.|What Happened to The Colony?->017,What's Going on?->017
+016|The Catwalk Ends in Rubble. You Can See The Market Beyond, But No Clear Path.|Try to Jump->018,Return to The Old Lady->015
+017|‘It wasn't always like this,’ She Murmurs. ‘You want answers? Go find Ligart. He knows more than he lets on.’|Who's Ligart?->019,Where Can I Find him?->018
+018|‘Come with me, he's in the market,’ She Began. ‘However, it's quite tricky to get to from here, so pay attention and follow closely,’ the Old Lady Explained, Waddling Off With Cane in Hand.|Follow Her->020
+019|‘He's a dealer of information, a tricky man, indeed,’ She Babbled. ‘Shady deals and dirty money, but the only broker of information around as good as him,’ She Admitted.|Where Can I Find him?->018
+020|The Old Lady Leads You Through the Scaffolding Mess Beyond the Pod Bay. Reaching a Different Elevation But Same Ending Rubble of the Catwalk.|Continue->021
+021|Small Gaps in the Messy Ruin Can Be Seen From This Position, But Nothing Else Was Below the Catwalk From Here. Leading to a Pit With No Visible Bottom.|Are You sure About This?->022
+022|‘I've Been Doing This For Years,’ She Scoffed. ‘Just do as I do, and You'll be Fine,’ She Explained. ‘Oh, and maybe don't look down,’ the Old Lady Teased.|Whatever You Say->023,Follow Her->-23
 
-    // The Market
-023|"Following The Old Lady Across The Surprisingly Flimsy Cat Walks And Tight Spaces to Reach The Other Side of The Gap, You Reach The Otherside Successfully by Following Her Lead.","Continue->"
-024|"‘Good job, we made it over,’ She Affirmed Your Achievement. ‘This way, we're just about there,’ She Responded.","Glad That's Over->025","Follow Her->025"
-025|"You Step Into The Ruined Streets of Erebus-9, The Air Thick With Decay. The Old Lady Went Off Through The Crowds.",
-"Search For Loot->LOOTING","Explore Market->027"
-026|"A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.","Check Abandoned Stall->LOOTING","Approach Locked Door->032","Explore Market->027"
-027|"You Wander Through The Stalls, Dusty and Cracked, But Some Look Recently Disturbed. A Faint Voice Calls From Behind a Curtain.","Investigate The Voice->028","Keep Walking->029"
-028|"The Old Lady Waved You Over Again. ‘Before You Go Asking Questions, How About a Favor? My Water Filter’s Busted,’ She Said, Holding Up a Rusty Device."
-,"Take The Filter->030","Refuse->031"
-029|"Wandering Deeper into The Market Without Guidance, You Begin to Draw Unwanted Attention. Eyes Follow Your Movements. Whispers Stir.",
-"Go Back to The Old Lady->028","Push Onward Anyway->032"
-030|"‘Good. You'll Find a Spare in the Lower Stall Beneath the Windtrap,’ She Instructs. ‘Watch Your Step Down There. Not All Are Friendly.’","Begin The Task->033"
-031|"‘Suit Yourself,’ She Huffs. ‘Don’t Expect Me to Point You Anywhere Then.’","Wander Stalls->029","Take Filter->030"
+023|Following the Old Lady Across the Surprisingly Flimsy Catwalks and Tight Spaces to Reach the Other Side of the Gap, You Reach the Other Side Successfully by Following Her Lead.|Continue->
+024|‘Good job, we made it over,’ She Affirmed Your Achievement. ‘This way, we're just about there,’ She Responded.|Glad That's Over->025,Follow Her->025
+025|You Step Into the Ruined Streets of Erebus-9, the Air Thick With Decay. The Old Lady Went Off Through the Crowds.|Search For Loot->LOOTING,Explore Market->027
+026|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->027
+027|You Wander Through the Stalls, Dusty and Cracked, But Some Look Recently Disturbed. A Faint Voice Calls From Behind a Curtain.|Investigate The Voice->028,Keep Walking->029
+028|The Old Lady Waved You Over Again. ‘Before You Go Asking Questions, How About a Favor? My Water Filter’s Busted,’ She Said, Holding Up a Rusty Device.|Take The Filter->030,Refuse->031
+029|Wandering Deeper into the Market Without Guidance, You Begin to Draw Unwanted Attention. Eyes Follow Your Movements. Whispers Stir.|Go Back to The Old Lady->028,Push Onward Anyway->032
+030|‘Good. You'll Find a Spare in the Lower Stall Beneath the Windtrap,’ She Instructs. ‘Watch Your Step Down There. Not All Are Friendly.’|Begin The Task->033
+031|‘Suit Yourself,’ She Huffs. ‘Don’t Expect Me to Point You Anywhere Then.’|Wander Stalls->029,Take Filter->030
 
-    // Danger Path
-032|"You Push Deeper Into a Darker Corner of the Market. A Man Blocks Your Way, Covered in Grafted Tech and Scraps. ‘You Lost?’ He Growls.","Confront Him->034","Turn Back->028"
-033|"You Descend a Rusty Ladder Into a Hidden Nook Beneath the Market. Water Drips From Overhead. The Windtrap Moans.","Search The Debris->035","Look Around First->036"
-034|"The Man Shoves You. ‘Best Head Back to the Old Hag, Newblood,’ He Warns, Then Laughs. You Get The Feeling He Let You Off Easy.","Retreat to The Market->026"
+032|You Push Deeper Into a Darker Corner of the Market. A Man Blocks Your Way, Covered in Grafted Tech and Scraps. ‘You Lost?’ He Growls.|Confront Him->034,Turn Back->028
+033|You Descend a Rusty Ladder Into a Hidden Nook Beneath the Market. Water Drips From Overhead. The Windtrap Moans.|Search The Debris->035,Look Around First->036
+034|The Man Shoves You. ‘Best Head Back to the Old Hag, Newblood,’ He Warns, Then Laughs. You Get the Feeling He Let You Off Easy.|Retreat to The Market->026
 
-    // First Quest
-035|"You Find a Spare Filter Among Wires and Rot. It's Damaged, But Might Be Repairable.","Take It Back->037"
-036|"You Spot an Old Toolbench and a Crate of Parts Nearby. It Could Be Used to Repair the Filter.","Try to Repair Filter->038","Take It As-Is->035"
-037|"The Old Lady Smiles. ‘Well Done. You’re Not Useless After All,’ She Says. ‘Here, Take This,’ She Hands You a Strange Token.","Ask What It Is->039","Thank Her and Leave->040"
-038|"With Patience and a Bit of Luck, You Patch The Filter. The Old Lady is Pleased. ‘Smart and Handy. Rare Combo Here,’ She Grins.","Give Filter->037"
+035|You Find a Spare Filter Among Wires and Rot. It's Damaged, But Might Be Repairable.|Take It Back->037
+036|You Spot an Old Toolbench and a Crate of Parts Nearby. It Could Be Used to Repair the Filter.|Try to Repair Filter->038,Take It As-Is->035
+037|The Old Lady Smiles. ‘Well Done. You’re Not Useless After All,’ She Says. ‘Here, Take This,’ She Hands You a Strange Token.|Ask What It Is->039,Thank Her and Leave->040
+038|With Patience and a Bit of Luck, You Patch the Filter. The Old Lady Is Pleased. ‘Smart and Handy. Rare Combo Here,’ She Grins.|Give Filter->037
 
-    // First Reward
-039|"‘That Token? It’s How You’ll Pay Ligart,’ She Explains. ‘He Doesn't Take Coin—Only Questions Worth Asking.’","Where Is He Again?->041"
-040|"‘Off You Go,’ She Says, Already Tinkering With The Filter. ‘And Watch Yourself With Ligart. He's...different.’","Search For Ligart->041"
-041|"You Make Your Way Past The Market’s Edge, Past Vendors and Roving Thugs. You Find a Quiet Corner Where A Young Man Watches from a Shaded Alcove.","Approach The Man->042"
+039|‘That Token? It’s How You’ll Pay Ligart,’ She Explains. ‘He Doesn't Take Coin—Only Questions Worth Asking.’|Where Is He Again?->041
+040|‘Off You Go,’ She Says, Already Tinkering With the Filter. ‘And Watch Yourself With Ligart. He's...different.’|Search For Ligart->041
+041|You Make Your Way Past the Market’s Edge, Past Vendors and Roving Thugs. You Find a Quiet Corner Where a Young Man Watches From a Shaded Alcove.|Approach The Man->042
 
-    // Info Dump
-042|"He’s Lean, Pale, And Dressed Like a Vendor, But There's No Goods—Only a Stack of Books and a Dim Lamp. ‘You’ve Got Questions?’ He Asks Without Looking Up.",
-"Offer Token->043","Who Are You?->044"
-043|"He Takes The Token and Pockets It Silently. ‘What You Want to Know, Stranger?’ He Leans Forward, His Eyes Dark as the Void.","Ask About The Colony->045"
-044|"‘Name’s Vicar Ligart. I Listen, I Speak, I Trade. That’s What You Need to Know,’ He Says Flatly While Laying The Book he Was Looking Over Off to The Side.","Offer Token->043"
-045|"‘Ah, Erebus-9? Talk around the colony says we're not anywhere at all,’ Ligart Began.",
-"Continue->046"
-046|"‘Pretty crazy, right? I know... The engineers say the AI looked into the Abyss first and it looked back,’ he Continued.","What Happened?->047"
-047|"‘No one's sure why or how we got here,’ Ligart Shrugged. ‘What we do know is that they saw it first, and some went crazy.’ he Added.","Continue->048"
-048|"‘Bing, Bang, Boom. We're here now,’ Ligart Explained","Thanks->050"
-050|"‘No sweat kid, if you got more tokens and have more questions, I'll be here.’","Return to Market->026"
+042|He’s Lean, Pale, and Dressed Like a Vendor, But There's No Goods—Only a Stack of Books and a Dim Lamp. ‘You’ve Got Questions?’ He Asks Without Looking Up.|Offer Token->043,Who Are You?->044
+043|He Takes the Token and Pockets It Silently. ‘What You Want to Know, Stranger?’ He Leans Forward, His Eyes Dark as the Void.|Ask About The Colony->045
+044|‘Name’s Vicar Ligart. I Listen, I Speak, I Trade. That’s What You Need to Know,’ He Says Flatly While Laying the Book He Was Looking Over Off to the Side.|Offer Token->043
+045|‘Ah, Erebus-9? Talk around the colony says we're not anywhere at all,’ Ligart Began.|Continue->046
+046|‘Pretty crazy, right? I know... The engineers say the AI looked into the Abyss first and it looked back,’ he Continued.|What Happened?->047
+047|‘No one's sure why or how we got here,’ Ligart Shrugged. ‘What we do know is that they saw it first, and some went crazy,’ He Added.|Continue->048
+048|‘Bing, Bang, Boom. We're here now,’ Ligart Explained.|Thanks->050
+049|*[No scene provided for ID 049]*|
+050|‘No sweat kid, if you got more tokens and have more questions, I'll be here.’|Return to Market->026
 
-// Act One - Post Tutorial
+051|You've Earned Vicar's Trust. The Market Opens to You, But Only Partially. He Has a Task.|Continue->052
+052|‘Interested in work?’ He Questions, Tossing a Crumpled Map Toward {playerName}. ‘Something was taken. I want it back,’ Vicar Explained.|Accept Job->053,Decline->BACKTOMARKET
 
-    // Vicar's Quest
-051|"You've Earned Vicar's Trust. THe Market Opens to You, But Only Partially. He Has a Task.", "Continue->052"
-052|"‘Interested in work?’ He Questions, Tossing a Crumpled Map Toward {playerName}. ‘Something was taken. I want it back,’ Vicar Explained.",
-"Accept Job->053","Decline->BACKTOMARKET"
-BACKTOMARKET|"A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.","Check Abandoned Stall->LOOTING","Approach Locked Door->032","Explore Market->EXPLORE"
-EXPLORE|
-053|"The Map Leads to The Lower Slums. Buzzing With MakeShift Power Lines, Smoke, And Gagns.","Stealth Through->054","Bribe Locals->056","Fight Your Way In->FirstFight"
-054|"You Sneak Between Rusted Buildings And Power Conduits. Gangs Pass Nearby, Unaware.","Continue->055"
-055|"You Find The Artifact Hidden Beneath a Loose Metal Plate.","Take Artifact->057"
-056|"You Find a Sday Local Willing to Help. Offering a Small Trade to Get You Safe Passage Through Gang-Controlled Streets.","Trade->057","Haggle->HAGGLE","Intimdate->INTIMIDATE"
+BACKTOMARKET|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->EXPLORE
+EXPLORE|*No description provided for EXPLORE.*|
 
-HAGGLE|"{playerName} Has [insert dice roll output here as Failure or Successs here] The Haggle Attempt.","If Success->HaggleSuccess","If Failure->HaggleFail"
-INTIMIDATE|"{playerName} Has [insert dice roll output here as Failure or Successs here] The Haggle Attempt.","If Success->IntimidateSuccess","If Failure->IntimidateFail"
+053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT
+054|You Sneak Between Rusted Buildings and Power Conduits. Gangs Pass Nearby, Unaware.|Continue->055
+055|You Find the Artifact Hidden Beneath a Loose Metal Plate.|Take Artifact->057
+056|You Find a Shady Local Willing to Help. Offering a Small Trade to Get You Safe Passage Through Gang-Controlled Streets.|Trade->057,Haggle->HAGGLE,Intimidate->INTIMIDATE
 
-HaggleSuccess|"The Small Trade Becomes Smaller, And They Fair You Through The Slums.","Continue->057"
-HaggleFail|"The Small Trade Doesn't Change, And They Fair You Through The Slums.","Continue->055"
+HAGGLE|{playerName} Has [insert dice roll output here as Failure or Success] The Haggle Attempt.|If Success->HaggleSuccess,If Failure->HaggleFail
+INTIMIDATE|{playerName} Has [insert dice roll output here as Failure or Success] The Intimidation Attempt.|If Success->IntimidateSuccess,If Failure->IntimidateFail
+HaggleSuccess|The Small Trade Becomes Smaller, and They Escort You Through the Slums.|Continue->057
+HaggleFail|The Small Trade Doesn't Change, and They Escort You Through the Slums.|Continue->055
+IntimidateSuccess|The Small Trade is Forgotten, and They Escort You Through the Slums For Free.|Continue->057
+IntimidateFail|They Forget They Made the Offer to You, and Refuse to Talk to You.|Continue->FirstFailedIntimidation
+FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT
 
-IntimidateSuccess|"The Small Trade is Forgotten, And They Fair You Through The Slums For Free.","Continue->057"
-IntimidateFail|"They Forget They Made The Offer to You, And Refuse to Talk to You.","Continue->FirstFailedIntimidation"
-FirstFailedIntimidation|"The Map Leads to The Lower Slums. Buzzing With MakeShift Power Lines, Smoke, And Gagns.",
-"Stealth Through->054","Fight Your Way In->FirstFight"
-
-    // First Fight
-FirstFight|"{playerName} Has [Insert Dice Roll Result in Fail or Success] The First Round.","If Success->RoundOneSuccess","If Failure->RoundOneFail"
-RoundOneSuccess|"You Attacked First, [Insert How They Attacked With Item].","Continue->RoundTwo"
-RoundOneFail|"You Were Attacked First, A Gang Member Slashes You With Their Knife.","Continue->RoundTwo"
-
-FirstRoundTwo|"{playerName} Has [Insert Dice Roll Result in Fail or Success] The Second Round.","If Success->RoundTwoSuccess","If Failure->RoundTwoFail"
-RoundTwoSuccess|"You Attacked Again, [Insert How They Attack With Item].","Continue->RoundThree"
-RoundTwoFail|"You Were Attacked Again, A Gang Member Stabs at You With Their Knife.","Continue->RoundThree"
-
-FirstRoundThree|"{playerName} Has [Insert Dice Roll Result in Fail or Success] The Third Round.","If Successes => 2->FirstVictory","If Failures => 2->FirstDefeat"
-FirstVictory|"{playerName} Has Escaped The Encounter. It Was Messy, But You Survived.","Continue->055"
-FirstDefeat|"{playerName} Has Not Escaped The Encounter. It Was Close, But You Did Not Survive.","Retry Encounter->FirstFight"
-
-    // Quest Continues
-057|"With The Artifact, You Return to Vicar With it. Leaving The Way You Came to Find it.","Continue->058"
-058|"Vicar Ligart Looked Silently at The Artifact, Then at You. ‘Good Job, But I Bet You Have Questions,’ He Commented in a Lower Tone of Voice.","Ask About it->059","Stay Silent->060"
-059|"He Scoffed. ‘Some Say it's From Shadow Garden-’ He Began- ‘They Take The Unwanted, And They Don't Come Back,’ He Explained, Taking The Artifact.","Continue->061"
-060|"A Sly Smirk Grew Across His Face. ‘Smart to Keep Quiet. Curiousity Can Get You Killed 'round here,’ He Explained, Taking The Artifact.","Continue->061"
-061|"You Gain STanding With Ligart. He Trusts You, Now. Perhaps Too Much Than he Should.","Continue->BACKTOMARKET"
-
-    // Power Failure Arc
-
-
-'''
-    Format:
-
-###|"Description. ‘Quote,’ More Description.","Option(s)->###"
-
-‘’
-
-
-'''
+057|With the Artifact, You Return to Vicar With It. Leaving the Way You Came to Find It.|Continue->058
+058|Vicar Ligart Looked Silently at the Artifact, Then at You. ‘Good Job, But I Bet You Have Questions,’ He Commented in a Lower Tone of Voice.|Ask About It->059,Stay Silent->060
+059|He Scoffed. ‘Some Say it's From Shadow Garden—’ He Began—‘They Take the Unwanted, and They Don't Come Back,’ He Explained, Taking the Artifact.|Continue->061
+060|A Sly Smirk Grew Across His Face. ‘Smart to Keep Quiet. Curiosity Can Get You Killed 'round here,’ He Explained, Taking the Artifact.|Continue->061
+061|You Gain Standing With Ligart. He Trusts You Now—Perhaps More Than He Should.|Continue->BACKTOMARKET
