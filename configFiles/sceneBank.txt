@@ -81,3 +81,12 @@ FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift
 059|He Scoffed. ‘Some Say it's From Shadow Garden—’ He Began—‘They Take the Unwanted, and They Don't Come Back,’ He Explained, Taking the Artifact.|Continue->061
 060|A Sly Smirk Grew Across His Face. ‘Smart to Keep Quiet. Curiosity Can Get You Killed 'round here,’ He Explained, Taking the Artifact.|Continue->061
 061|You Gain Standing With Ligart. He Trusts You Now—Perhaps More Than He Should.|Continue->BACKTOMARKET
+
+062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->BACKTOMARKET
+063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT
+
+REPAIR|*Repair Minigame*|If Success->REPAIRSUCCESS,If Failure->REPAIRFAIL
+REPAIRSUCCESS|While Repairing the Junction, You Notice a Jammed Panel Humming Strangely. You Discover Scratched Symbols Inside—Ancient, Uneven, Like Carvings from a Dream.|Report to Engineers->000,Ignore->BACKTOMARKET
+REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
+
+064|You Fend Off an Opprotunist in Rags. He Escapes Into a Vent Shaft, You Spot Markings Burned Into the Metal Near the Scaffold Where You Awoke.|Investigate Markings->65
