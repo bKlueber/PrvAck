@@ -83,10 +83,21 @@ FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift
 061|You Gain Standing With Ligart. He Trusts You Now—Perhaps More Than He Should.|Continue->BACKTOMARKET
 
 062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->BACKTOMARKET
-063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT
+063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT(064)
 
 REPAIR|*Repair Minigame*|If Success->REPAIRSUCCESS,If Failure->REPAIRFAIL
-REPAIRSUCCESS|While Repairing the Junction, You Notice a Jammed Panel Humming Strangely. You Discover Scratched Symbols Inside—Ancient, Uneven, Like Carvings from a Dream.|Report to Engineers->000,Ignore->BACKTOMARKET
+REPAIRSUCCESS|While Repairing the Junction, You Notice a Jammed Panel Humming Strangely. You Discover Scratched Symbols Inside—Ancient, Uneven, Like Carvings from a Dream.|Report to Engineers->065,Ignore->BACKTOMARKET
 REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
 
-064|You Fend Off an Opprotunist in Rags. He Escapes Into a Vent Shaft, You Spot Markings Burned Into the Metal Near the Scaffold Where You Awoke.|Investigate Markings->65
+064|You Fend Off an Opprotunist in Rags. He Escapes Into a Vent Shaft, You Spot Markings Burned Into the Metal Near the Scaffold Where You Awoke.|Investigate Markings->067
+
+065|Engineers are Alarmed by The Symbols You Found. One Mutters, ‘We haven't seen that script since the old cycles.’ They Admitted.|Continue->066
+066|They Were Hesitant to Talk More. ‘They're signs of some kind, but we have no explination for them.’ Another explained.|Investigate For More Markings->067
+
+067|Near The Scaffold, You Discover a Sealed Door. No Hinges, no Handle, Just Vines And White Flowers Growing From The Steel. It Opens Briefly, Reavealing a Garden Bathed in Still Light, Then Vanishes.|Report to Old Lady->068,Report to Ligart->069,Report to Engineers->070
+068|‘You Saw One?’ The Old Lady's Eyes Narrow. ‘They're Not Neant to be Found. They're said to be echos of the sealed.’|Ask More->071,Stay Silent->BACKTOMARKET
+069|‘If it vanished, it'll return again,’ Ligart Explained, a Smile Fading. ‘You're touched, now. Just hope it doesn't stickl.’ He Warned.|Ask More->071,Stay Silent->BACKTOMARKET
+070|‘They appear here and there, but those doors are never on any map,’ The Engineer Responded.|Ask More->071,Stay Silent->BACKTOMARKET
+
+071|They Tell You Their Reasoning For These Doors. However, They Didn't Seem Very Likely to be The Full Truth With Their Limited Knowledge. The Flowers Only Bloom For Moments, But You Saw Them.|Continue->072
+072|You Realize That Something Ancient Lurks Within Erebus-9.|Continue->BACKTOMARKET
