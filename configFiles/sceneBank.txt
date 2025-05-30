@@ -15,50 +15,50 @@
 013|Waiting For What Felt Like Hours, The Killers Return to the Cryo Pods, Leaving You Alive.|Escape Now->015
 014|Calling For Help Alerted the Killers, They Catch You Before You Can Hide Effectively And Take You Back to Your Pod, Only to Butcher And Lay You Down in Death in the Pod You Were Escaping From.|Try Again From Last Escape Point->009
 
-015|‘You made it out,’ She Says Softly. ‘I thought no one else would,’ She Hands You a Crust of Bread.|What Happened to The Colony?->017,What's Going on?->017
+015|'You made it out,' She Says Softly. 'I thought no one else would,' She Hands You a Crust of Bread.|What Happened to The Colony?->017,What's Going on?->017
 016|The Catwalk Ends in Rubble. You Can See The Market Beyond, But No Clear Path.|Try to Jump->018,Return to The Old Lady->015
-017|‘It wasn't always like this,’ She Murmurs. ‘You want answers? Go find Ligart. He knows more than he lets on.’|Who's Ligart?->019,Where Can I Find him?->018
-018|‘Come with me, he's in the market,’ She Began. ‘However, it's quite tricky to get to from here, so pay attention and follow closely,’ the Old Lady Explained, Waddling Off With Cane in Hand.|Follow Her->020
-019|‘He's a dealer of information, a tricky man, indeed,’ She Babbled. ‘Shady deals and dirty money, but the only broker of information around as good as him,’ She Admitted.|Where Can I Find him?->018
+017|'It wasn't always like this,' She Murmurs. 'You want answers? Go find Ligart. He knows more than he lets on.'|Who's Ligart?->019,Where Can I Find him?->018
+018|'Come with me, he's in the market,' She Began. 'However, it's quite tricky to get to from here, so pay attention and follow closely,' the Old Lady Explained, Waddling Off With Cane in Hand.|Follow Her->020
+019|'He's a dealer of information, a tricky man, indeed,' She Babbled. 'Shady deals and dirty money, but the only broker of information around as good as him,' She Admitted.|Where Can I Find him?->018
 020|The Old Lady Leads You Through the Scaffolding Mess Beyond the Pod Bay. Reaching a Different Elevation But Same Ending Rubble of the Catwalk.|Continue->021
 021|Small Gaps in the Messy Ruin Can Be Seen From This Position, But Nothing Else Was Below the Catwalk From Here. Leading to a Pit With No Visible Bottom.|Are You sure About This?->022
-022|‘I've Been Doing This For Years,’ She Scoffed. ‘Just do as I do, and You'll be Fine,’ She Explained. ‘Oh, and maybe don't look down,’ the Old Lady Teased.|Whatever You Say->023,Follow Her->-23
+022|'I've Been Doing This For Years,' She Scoffed. 'Just do as I do, and You'll be Fine,' She Explained. 'Oh, and maybe don't look down,' the Old Lady Teased.|Whatever You Say->023,Follow Her->-23
 
 023|Following the Old Lady Across the Surprisingly Flimsy Catwalks and Tight Spaces to Reach the Other Side of the Gap, You Reach the Other Side Successfully by Following Her Lead.|Continue->
-024|‘Good job, we made it over,’ She Affirmed Your Achievement. ‘This way, we're just about there,’ She Responded.|Glad That's Over->025,Follow Her->025
+024|'Good job, we made it over,' She Affirmed Your Achievement. 'This way, we're just about there,' She Responded.|Glad That's Over->025,Follow Her->025
 025|You Step Into the Ruined Streets of Erebus-9, the Air Thick With Decay. The Old Lady Went Off Through the Crowds.|Search For Loot->LOOTING,Explore Market->027
 026|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->027
 027|You Wander Through the Stalls, Dusty and Cracked, But Some Look Recently Disturbed. A Faint Voice Calls From Behind a Curtain.|Investigate The Voice->028,Keep Walking->029
-028|The Old Lady Waved You Over Again. ‘Before You Go Asking Questions, How About a Favor? My Water Filter’s Busted,’ She Said, Holding Up a Rusty Device.|Take The Filter->030,Refuse->031
+028|The Old Lady Waved You Over Again. 'Before You Go Asking Questions, How About a Favor? My Water Filter's Busted,' She Said, Holding Up a Rusty Device.|Take The Filter->030,Refuse->031
 029|Wandering Deeper into the Market Without Guidance, You Begin to Draw Unwanted Attention. Eyes Follow Your Movements. Whispers Stir.|Go Back to The Old Lady->028,Push Onward Anyway->032
-030|‘Good. You'll Find a Spare in the Lower Stall Beneath the Windtrap,’ She Instructs. ‘Watch Your Step Down There. Not All Are Friendly.’|Begin The Task->033
-031|‘Suit Yourself,’ She Huffs. ‘Don’t Expect Me to Point You Anywhere Then.’|Wander Stalls->029,Take Filter->030
+030|'Good. You'll Find a Spare in the Lower Stall Beneath the Windtrap,' She Instructs. 'Watch Your Step Down There. Not All Are Friendly.'|Begin The Task->033
+031|'Suit Yourself,' She Huffs. 'Don't Expect Me to Point You Anywhere Then.'|Wander Stalls->029,Take Filter->030
 
-032|You Push Deeper Into a Darker Corner of the Market. A Man Blocks Your Way, Covered in Grafted Tech and Scraps. ‘You Lost?’ He Growls.|Confront Him->034,Turn Back->028
+032|You Push Deeper Into a Darker Corner of the Market. A Man Blocks Your Way, Covered in Grafted Tech and Scraps. 'You Lost?' He Growls.|Confront Him->034,Turn Back->028
 033|You Descend a Rusty Ladder Into a Hidden Nook Beneath the Market. Water Drips From Overhead. The Windtrap Moans.|Search The Debris->035,Look Around First->036
-034|The Man Shoves You. ‘Best Head Back to the Old Hag, Newblood,’ He Warns, Then Laughs. You Get the Feeling He Let You Off Easy.|Retreat to The Market->026
+034|The Man Shoves You. 'Best Head Back to the Old Hag, Newblood,' He Warns, Then Laughs. You Get the Feeling He Let You Off Easy.|Retreat to The Market->026
 
 035|You Find a Spare Filter Among Wires and Rot. It's Damaged, But Might Be Repairable.|Take It Back->037
 036|You Spot an Old Toolbench and a Crate of Parts Nearby. It Could Be Used to Repair the Filter.|Try to Repair Filter->038,Take It As-Is->035
-037|The Old Lady Smiles. ‘Well Done. You’re Not Useless After All,’ She Says. ‘Here, Take This,’ She Hands You a Strange Token.|Ask What It Is->039,Thank Her and Leave->040
-038|With Patience and a Bit of Luck, You Patch the Filter. The Old Lady Is Pleased. ‘Smart and Handy. Rare Combo Here,’ She Grins.|Give Filter->037
+037|The Old Lady Smiles. 'Well Done. You're Not Useless After All,' She Says. 'Here, Take This,' She Hands You a Strange Token.|Ask What It Is->039,Thank Her and Leave->040
+038|With Patience and a Bit of Luck, You Patch the Filter. The Old Lady Is Pleased. 'Smart and Handy. Rare Combo Here,' She Grins.|Give Filter->037
 
-039|‘That Token? It’s How You’ll Pay Ligart,’ She Explains. ‘He Doesn't Take Coin—Only Questions Worth Asking.’|Where Is He Again?->041
-040|‘Off You Go,’ She Says, Already Tinkering With the Filter. ‘And Watch Yourself With Ligart. He's...different.’|Search For Ligart->041
-041|You Make Your Way Past the Market’s Edge, Past Vendors and Roving Thugs. You Find a Quiet Corner Where a Young Man Watches From a Shaded Alcove.|Approach The Man->042
+039|'That Token? It's How You'll Pay Ligart,' She Explains. 'He Doesn't Take Coin—Only Questions Worth Asking.'|Where Is He Again?->041
+040|'Off You Go,' She Says, Already Tinkering With the Filter. 'And Watch Yourself With Ligart. He's...different.'|Search For Ligart->041
+041|You Make Your Way Past the Market's Edge, Past Vendors and Roving Thugs. You Find a Quiet Corner Where a Young Man Watches From a Shaded Alcove.|Approach The Man->042
 
-042|He’s Lean, Pale, and Dressed Like a Vendor, But There's No Goods—Only a Stack of Books and a Dim Lamp. ‘You’ve Got Questions?’ He Asks Without Looking Up.|Offer Token->043,Who Are You?->044
-043|He Takes the Token and Pockets It Silently. ‘What You Want to Know, Stranger?’ He Leans Forward, His Eyes Dark as the Void.|Ask About The Colony->045
-044|‘Name’s Vicar Ligart. I Listen, I Speak, I Trade. That’s What You Need to Know,’ He Says Flatly While Laying the Book He Was Looking Over Off to the Side.|Offer Token->043
-045|‘Ah, Erebus-9? Talk around the colony says we're not anywhere at all,’ Ligart Began.|Continue->046
-046|‘Pretty crazy, right? I know... The engineers say the AI looked into the Abyss first and it looked back,’ he Continued.|What Happened?->047
-047|‘No one's sure why or how we got here,’ Ligart Shrugged. ‘What we do know is that they saw it first, and some went crazy,’ He Added.|Continue->048
-048|‘Bing, Bang, Boom. We're here now,’ Ligart Explained.|Thanks->050
+042|He's Lean, Pale, and Dressed Like a Vendor, But There's No Goods—Only a Stack of Books and a Dim Lamp. 'You've Got Questions?' He Asks Without Looking Up.|Offer Token->043,Who Are You?->044
+043|He Takes the Token and Pockets It Silently. 'What You Want to Know, Stranger?' He Leans Forward, His Eyes Dark as the Void.|Ask About The Colony->045
+044|'Name's Vicar Ligart. I Listen, I Speak, I Trade. That's What You Need to Know,' He Says Flatly While Laying the Book He Was Looking Over Off to the Side.|Offer Token->043
+045|'Ah, Erebus-9? Talk around the colony says we're not anywhere at all,' Ligart Began.|Continue->046
+046|'Pretty crazy, right? I know... The engineers say the AI looked into the Abyss first and it looked back,' he Continued.|What Happened?->047
+047|'No one's sure why or how we got here,' Ligart Shrugged. 'What we do know is that they saw it first, and some went crazy,' He Added.|Continue->048
+048|'Bing, Bang, Boom. We're here now,' Ligart Explained.|Thanks->050
 049|*[No scene provided for ID 049]*|
-050|‘No sweat kid, if you got more tokens and have more questions, I'll be here.’|Return to Market->026
+050|'No sweat kid, if you got more tokens and have more questions, I'll be here.'|Return to Market->026
 
 051|You've Earned Vicar's Trust. The Market Opens to You, But Only Partially. He Has a Task.|Continue->052
-052|‘Interested in work?’ He Questions, Tossing a Crumpled Map Toward {playerName}. ‘Something was taken. I want it back,’ Vicar Explained.|Accept Job->053,Decline->BACKTOMARKET
+052|'Interested in work?' He Questions, Tossing a Crumpled Map Toward {playerName}. 'Something was taken. I want it back,' Vicar Explained.|Accept Job->053,Decline->BACKTOMARKET
 
 BACKTOMARKET|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->EXPLORE
 EXPLORE|*No description provided for EXPLORE.*|
@@ -77,9 +77,9 @@ IntimidateFail|They Forget They Made the Offer to You, and Refuse to Talk to You
 FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT
 
 057|With the Artifact, You Return to Vicar With It. Leaving the Way You Came to Find It.|Continue->058
-058|Vicar Ligart Looked Silently at the Artifact, Then at You. ‘Good Job, But I Bet You Have Questions,’ He Commented in a Lower Tone of Voice.|Ask About It->059,Stay Silent->060
-059|He Scoffed. ‘Some Say it's From Shadow Garden—’ He Began—‘They Take the Unwanted, and They Don't Come Back,’ He Explained, Taking the Artifact.|Continue->061
-060|A Sly Smirk Grew Across His Face. ‘Smart to Keep Quiet. Curiosity Can Get You Killed 'round here,’ He Explained, Taking the Artifact.|Continue->061
+058|Vicar Ligart Looked Silently at the Artifact, Then at You. 'Good Job, But I Bet You Have Questions,' He Commented in a Lower Tone of Voice.|Ask About It->059,Stay Silent->060
+059|He Scoffed. 'Some Say it's From Shadow Garden—' He Began— 'They Take the Unwanted, and They Don't Come Back,' He Explained, Taking the Artifact.|Continue->061
+060|A Sly Smirk Grew Across His Face. 'Smart to Keep Quiet. Curiosity Can Get You Killed 'round here,' He Explained, Taking the Artifact.|Continue->061
 061|You Gain Standing With Ligart. He Trusts You Now—Perhaps More Than He Should.|Continue->BACKTOMARKET
 
 062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->BACKTOMARKET
@@ -91,13 +91,13 @@ REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
 
 064|You Fend Off an Opprotunist in Rags. He Escapes Into a Vent Shaft, You Spot Markings Burned Into the Metal Near the Scaffold Where You Awoke.|Investigate Markings->067
 
-065|Engineers are Alarmed by The Symbols You Found. One Mutters, ‘We haven't seen that script since the old cycles.’ They Admitted.|Continue->066
-066|They Were Hesitant to Talk More. ‘They're signs of some kind, but we have no explination for them.’ Another explained.|Investigate For More Markings->067
+065|Engineers are Alarmed by The Symbols You Found. One Mutters, 'We haven't seen that script since the old cycles.' They Admitted.|Continue->066
+066|They Were Hesitant to Talk More. 'They're signs of some kind, but we have no explination for them.' Another explained.|Investigate For More Markings->067
 
 067|Near The Scaffold, You Discover a Sealed Door. No Hinges, no Handle, Just Vines And White Flowers Growing From The Steel. It Opens Briefly, Reavealing a Garden Bathed in Still Light, Then Vanishes.|Report to Old Lady->068,Report to Ligart->069,Report to Engineers->070
-068|‘You Saw One?’ The Old Lady's Eyes Narrow. ‘They're Not Neant to be Found. They're said to be echos of the sealed.’|Ask More->071,Stay Silent->BACKTOMARKET
-069|‘If it vanished, it'll return again,’ Ligart Explained, a Smile Fading. ‘You're touched, now. Just hope it doesn't stickl.’ He Warned.|Ask More->071,Stay Silent->BACKTOMARKET
-070|‘They appear here and there, but those doors are never on any map,’ The Engineer Responded.|Ask More->071,Stay Silent->BACKTOMARKET
+068|'You Saw One?' The Old Lady's Eyes Narrow. 'They're Not Neant to be Found. They're said to be echos of the sealed.'|Ask More->071,Stay Silent->BACKTOMARKET
+069|'If it vanished, it'll return again,' Ligart Explained, a Smile Fading. 'You're touched, now. Just hope it doesn't stickl.' He Warned.|Ask More->071,Stay Silent->BACKTOMARKET
+070|'They appear here and there, but those doors are never on any map,' The Engineer Responded.|Ask More->071,Stay Silent->BACKTOMARKET
 
 071|They Tell You Their Reasoning For These Doors. However, They Didn't Seem Very Likely to be The Full Truth With Their Limited Knowledge. The Flowers Only Bloom For Moments, But You Saw Them.|Continue->072
 072|You Realize That Something Ancient Lurks Within Erebus-9.|Continue->BACKTOMARKET
