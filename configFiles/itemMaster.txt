@@ -1,6 +1,17 @@
 Iron Sword|sword_001|Basic melee weapon|50.0|2.5|10|0|Strength
 Health Potion|potion_002|Restores health|5.0|0.5|0|0|none
-Wooden Stick|stick_001|A simple wooden stick|2.0|1.0|1|0|Dexterity
+Wooden Stick|stick_002|A simple wooden stick|2.0|1.0|1|0|Dexterity
 Wooden Sword|sword_002|Basic melee weapon|100.0|3.5|15|5|Strength
 Bow|bow_002|Ranged weapon|120.0|2.5|12|3|Dexterity
 Neural Disruptor|neural_003|Hacker's weapon|250.0|1.0|10|0|Intelligence
+Sword|sword_003|Basic sword|50.0|2.0|8|0|Strength
+Potion|potion_002|Healing potion|10.0|0.5|0|0|None
+Broken Stick|stick_001|A simple stick|1.0|0.2|2|0|None
+Water Filter|filter_001|A rusty but functional water filter.|20.0|1.0|0|0|None
+Steel Dagger|dagger_001|A sharp steel dagger.|30.0|1.0|7|0|Dexterity
+Leather Armor|armor_001|Basic leather armor set.|40.0|3.0|0|10|None
+Greater Potion|potion_003|Heals a lot of health|25.0|0.7|0|0|None
+Iron Helmet|helmet_001|Protects your head.|15.0|1.2|0|5|None
+Energy Rifle|rifle_001|A high-tech ranged weapon.|200.0|4.0|20|2|Intelligence
+Sturdy Boots|boots_001|Boots that add a bit of protection.|10.0|0.8|0|2|None
+Strange Token|token_001|A mysterious token given by the Old Lady.|0.0|0.1|0|0|None

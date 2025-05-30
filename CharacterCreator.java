@@ -1,14 +1,15 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class CharacterCreator { //this will be the class that takes all player info and compiles it for the game. stats, class, gender, etc
     
     public PlayerValues createCharacter () {
         PlayerValues player = new PlayerValues(); //creating a new player populated with attributes from PlayerValues
+        player.currency = 200; //ensure player starts with 200 credits, for some reason kept spawning with 0 credits, this fixes it
         Scanner userInput = new Scanner(System.in);
 
         System.out.println("Please choose a name for your character: ");
         String playerName = userInput.nextLine();
+        player.playerName = playerName; 
 
         PlayerClasses classes = new PlayerClasses();
         boolean classConfirmed = false; //setting these to control the loop that will prompt if the user is sure of their choice
@@ -72,7 +73,7 @@ public class CharacterCreator { //this will be the class that takes all player i
                     continue; //this makes the loop continue/ restart/reprompt however you want to put it if the input was invalid (in the final product this shouldnt matter on user side but just in case)
             }
 
-            System.out.println("Would you like to confirm this class?");
+            System.out.println("Would you like to confirm this class? (Y/N)");
             String confirm = userInput.nextLine().toUpperCase().trim(); //looks complex but just says take the next line, force it upper case and trim and trailing characters
 
             if(confirm.equals("Y")) {
@@ -85,12 +86,13 @@ public class CharacterCreator { //this will be the class that takes all player i
 
         player.selectedClass = classes; //this actually maps the class the player selected to the player                                                                                                                            
         
-        boolean statsConfirmed = false; //Give the player the option to reroll stats as many times as they want, if we ressstrict it players will just restart the game
+        boolean statsConfirmed = false; //give the player the option to reroll stats as many times as they want, if we ressstrict it players will just restart the game
         DiceStatRoller bonusRoller = null; //this will store the bonus roll values
 
         while (!statsConfirmed) { //this just says as long as the stats arent confirmed keep this loop going
             System.out.println("Please enter 1 to roll your stats"); //eventaully this will be tied to a button once the gui is ready
             int rollStats = userInput.nextInt();
+            userInput.nextLine(); 
 
             bonusRoller = new DiceStatRoller();
             bonusRoller.rollStats(); //this actually "rolls the die" aka chooses random int from 1-20
@@ -126,8 +128,8 @@ public class CharacterCreator { //this will be the class that takes all player i
                 System.out.println("\nIntelligence: " + (classes.userChoseDEX.baseIntelligenceDEX + bonusRoller.playerIntelligence));
             }
 
-            System.out.print("Please confirm these stats: (Y/N)"); 
-            System.out.print("Be aware class and stats cannot be changed.");
+            System.out.println("Please confirm these stats: (Y/N)"); 
+            System.out.println("Be aware class and stats cannot be changed.");
             String statsConfirm = userInput.nextLine().toUpperCase().trim();
 
             if(statsConfirm.equals("Y")) {
@@ -150,127 +152,77 @@ public class CharacterCreator { //this will be the class that takes all player i
             player.playerHealth = classes.userChoseINT.baseVitalityINT + bonusRoller.playerVitality;
         }
 
+        player.currency = 200; //player start with 200 credits(currency)
+
         return player; //this is returning all these values the player rolled as an obect "player" this will make working with these stats (in theory, i hope) easier
     }
 
-}
-
-class PlayerValues{ //this classs is going to control player base stats, including health, invnetory sizee, base damage (from strength rolls, for example)
-
-    String playerName;
-    int playerHealth;
-    PlayerClasses selectedClass;
-    DiceStatRoller playerBaseStats;
-
-}
-
-
-class PlayerClasses { /*i was thinking keeep it  simple with just three classes, hacking/tech, strength/tank/meleee, and stealth/rranged, was cosidering having unique ability for each
-                        but don't know if i should make class effect base stats? Maybe thats a stretch goal. Was planning on using bolean check and then looping to give access to unique
-                        skills per class */
-    StrengthBuild userChoseSTR;
-    DexterityBuild userChoseDEX;
-    IntelligenceBuild userChoseINT;
-
-
-
-}
-
-class DiceStatRoller {
-
-    int playerVitality; //intialize variables for each stat applicable to players
-    int playerStrength;
-    int playerCharisma;
-    int playerIntelligence;
-    int playerDexterity;
-    int playerEndurance; //figured this stat can be tied to HP in some capacity
-
-    int baseVitality = 5; //these are not permenant, eventuallly will inherit these values from the charcter creator
-    int baseStrength = 5;
-    int baseCharisma = 5;
-    int baseIntelligence = 5;
-    int baseDexterity = 5;
-    int baseEndurance = 5;
-
-    Random randDice = new Random(); //creates new dice 
-
-    private int rollDie() {
-        return randDice.nextInt(20) + 1; //this rolls a dice between 1 and 20, says 20+1 because of how Random works in java, if just did 20 would only range 1-19
+    public static class PlayerClasses {
+        public StrengthBuild userChoseSTR;
+        public DexterityBuild userChoseDEX;
+        public IntelligenceBuild userChoseINT;
     }
 
-    public void rollStats() {
-        playerVitality = rollDie();
-        playerStrength = rollDie();
-        playerCharisma = rollDie();
-        playerIntelligence = rollDie();
-        playerDexterity = rollDie();
-        playerEndurance = rollDie();
-    }
-    public String toString() {
-        return "Vitality: " + (playerVitality + baseVitality) + "\nStrength: " + (playerStrength + baseStrength) + "\nCharisma: " + ((playerCharisma + baseCharisma) + "\nIntelligence: "
-        + (playerIntelligence + baseIntelligence) + "\nDexterity: " + (playerDexterity + baseDexterity) + "\nEndurance: " + (playerEndurance + baseEndurance));
-    }
+    public static class DiceStatRoller {
+        public int playerVitality;
+        public int playerStrength;
+        public int playerCharisma;
+        public int playerIntelligence;
+        public int playerDexterity;
+        public int playerEndurance;
 
-}
+        public int baseVitality = 0;
+        public int baseStrength = 0;
+        public int baseCharisma = 0;
+        public int baseIntelligence = 0;
+        public int baseDexterity = 0;
+        public int baseEndurance = 0;
 
-class StrengthBuild {
-    
-    int baseVitalitySTR;
-    int baseCharismaSTR;
-    int baseEnduranceSTR;
-    int baseStrengthSTR;
-    int baseDexteritySTR;
-    int baseIntelligenceSTR;
+        java.util.Random randDice = new java.util.Random();
 
-    public StrengthBuild() {
-        baseVitalitySTR = 150;
-        baseCharismaSTR = 70;
-        baseEnduranceSTR = 100;
-        baseStrengthSTR = 150;
-        baseDexteritySTR = 60;
-        baseIntelligenceSTR = 70; 
+        private int rollDie() {
+            return randDice.nextInt(20) + 1;
+        }
 
-    }
+        public void rollStats() {
+            playerVitality = rollDie();
+            playerStrength = rollDie();
+            playerCharisma = rollDie();
+            playerIntelligence = rollDie();
+            playerDexterity = rollDie();
+            playerEndurance = rollDie();
+        }
 
-}
-
-class DexterityBuild{ 
-    
-    int baseVitalityDEX;
-    int baseCharismaDEX;
-    int baseEnduranceDEX;
-    int baseStrengthDEX;
-    int baseDexterityDEX;
-    int baseIntelligenceDEX;
-
-    public DexterityBuild() {
-        baseVitalityDEX = 120;
-        baseCharismaDEX = 60;
-        baseEnduranceDEX = 120;
-        baseStrengthDEX = 90;
-        baseDexterityDEX = 150;
-        baseIntelligenceDEX = 60; 
-    }
-}
-
-class IntelligenceBuild{
-
-    int baseVitalityINT;
-    int baseCharismaINT;
-    int baseEnduranceINT;
-    int baseStrengthINT;
-    int baseDexterityINT;
-    int baseIntelligenceINT;
-
-    public IntelligenceBuild() {
-        baseVitalityINT = 100;
-        baseCharismaINT = 120;
-        baseEnduranceINT = 80;
-        baseStrengthINT = 70;
-        baseDexterityINT = 80;
-        baseIntelligenceINT = 150; 
-
-
+        public String toString() {
+            return "Vitality: " + (playerVitality + baseVitality) + "\nStrength: " + (playerStrength + baseStrength) + "\nCharisma: " + (playerCharisma + baseCharisma) +
+                   "\nIntelligence: " + (playerIntelligence + baseIntelligence) + "\nDexterity: " + (playerDexterity + baseDexterity) + "\nEndurance: " + (playerEndurance + baseEndurance);
+        }
     }
 
+    public static class StrengthBuild {
+        public int baseVitalitySTR = 150;
+        public int baseCharismaSTR = 70;
+        public int baseEnduranceSTR = 100;
+        public int baseStrengthSTR = 150;
+        public int baseDexteritySTR = 60;
+        public int baseIntelligenceSTR = 70;
+    }
+
+    public static class DexterityBuild {
+        public int baseVitalityDEX = 120;
+        public int baseCharismaDEX = 60;
+        public int baseEnduranceDEX = 120;
+        public int baseStrengthDEX = 90;
+        public int baseDexterityDEX = 150;
+        public int baseIntelligenceDEX = 60;
+    }
+
+    public static class IntelligenceBuild {
+        public int baseVitalityINT = 100;
+        public int baseCharismaINT = 120;
+        public int baseEnduranceINT = 80;
+        public int baseStrengthINT = 70;
+        public int baseDexterityINT = 80;
+        public int baseIntelligenceINT = 150;
+    }
 }

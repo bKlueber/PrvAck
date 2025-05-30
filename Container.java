@@ -18,7 +18,7 @@ class Container { //this is actually the containers, chests, barrels, etc that s
 
     public void lootItem(String itemID, String playerInventoryID, DataIO dataIO) {
         if (lootContents.containsKey(itemID)) {
-            dataIO.transferItem(containerID, playerInventoryID, itemID); // Move item to player
+            dataIO.transferItem(containerID, playerInventoryID, itemID); //move item to player
             lootContents.remove(itemID);
             System.out.println("You looted " + itemID);
         } else {

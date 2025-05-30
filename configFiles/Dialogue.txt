@@ -1,3 +1,0 @@
-npc_001|The Archivist|FirstEncounter|1|"Erebus-9 was once a paradise. Now, it’s a graveyard."|"What happened?"|2|"Tell me more."|3|"This place is hopeless."|4
-npc_001|The Archivist|FollowUp|2|"Few remember the real truth. Those who do tend to disappear."|"Disappear how?"|5|"Who are you?"|6|"I don’t believe you."|7
-npc_001|The Archivist|FinalQuestion|3|"A war raged beyond these walls. But wars don’t end, they evolve..."|"Say goodbye"|0

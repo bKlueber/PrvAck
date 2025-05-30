@@ -1,0 +1,20 @@
+//Bugs encountered in first playable version 0.1.0
+Can we make it so in between each scene that prints we get two empty lines to help break it up, right now the lines touching make it hard to digest
+
+When in combat and you stun it only makes the npc skip the current round, i want htem to skip the next round too
+
+When you choose defend the damage values are not calculated correctly
+
+The stuns are not decrementing correctly, i was at 1 stun left and could use it multiple times
+
+The npc never attempted to stun me, maybe we should slightly increase the odds the npc tries to stun
+
+THe post combat lootings is all messedf up when it prompts to ask if you want to loot it sdhows wooden sword and potient and  then immediatly prints even more random items, i want the user to be promtpted to loot
+with a y/n and then if y have the random items show up and if no make it so they are returned straight to scene
+
+Also when looting i want the player to be prompted to input the item number and then after that be reprompted for the next item and so on and so forth until the inventory is empty at that point
+auto kick the player back into the next scene
+
+I want want the player to start the game with lets say 200 credits as a default inventory, this can be fixed in the .txts 
+
+//Im sure theres more but lets start here

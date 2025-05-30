@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-class GenericNPC{
+public class GenericNPC{
 
     String npcName;
     String npcID;

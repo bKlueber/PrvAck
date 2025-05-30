@@ -1,3 +1,2 @@
-Chest_001|sword_001,potion_002,stick_001
-Barrel_004|bow_002,neural_003
-Crate_002|sword_002,potion_002
+025_Crate|sword_001,potion_002
+026_Barrel|stick_001

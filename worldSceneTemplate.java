@@ -19,8 +19,9 @@ public class WorldSceneTemplate {
         return availableActions;
     }
 
-    public void printScene() {
-        System.out.println(description);
+    //print the scene with two empty lines and replace {playerName}
+    public void printScene(PlayerValues player) {
+        System.out.println("\n\n" + description.replace("{playerName}", player.playerName));
         for (int i = 0; i < availableActions.size(); i++) {
             System.out.println((i + 1) + ". " + availableActions.get(i).getLabel());
         }

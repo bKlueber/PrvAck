@@ -1,6 +1,6 @@
 public class ActionOption {
     private String label;
-    private String trigger; // This could be a sceneID or a world state command like LOOTING
+    private String trigger; //this could be a sceneID or a world state command like LOOTING
 
     public ActionOption(String label, String trigger) {
         this.label = label;

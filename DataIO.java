@@ -5,30 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 
-class GenericItem{ //this is the class that is used for every single item in the game. See items.txt for more information
-
-    String itemName;
-    String itemID;
-    String itemDescription;
-    double itemValue;
-    double itemWeight; //not neccessary but in my (Brady) opinion i think it adds depth to our systems
-    int baseDamage; //will not be applicable to every item but by defining it here, and then assigning it in the txt we will save a lot of time and effort
-    int baseArmor; //same as baseDamage, as in may be null for some items but will make adjusting and balancing worlds easier
-    String itemAffinity; //this is going to help so i can make damage scale per class for certain types of items, right now just going to apply to weapons not armor
-    
-        public GenericItem(String  itemName, String itemID, String itemDescription, double itemValue, double itemWeight, int itemDamage, int itemArmor, String itemAffinity) {  //this is matching the paremeter to instances of each variable
-            this.itemName = itemName;
-            this.itemID = itemID;
-            this.itemDescription = itemDescription;
-            this.itemValue = itemValue;
-            this.itemWeight = itemWeight;
-            this.baseDamage = itemDamage;
-            this.baseArmor = itemArmor;
-            this.itemAffinity  = itemAffinity;
-        }
-
-}
-
 
 public class DataIO {//this classs calls the corrosponding txt files, parses, writes and reads corrosponding values
     public HashMap<String, HashMap<String, GenericItem>> itemMasterList = new HashMap<>(); //creating a 2d hashmap to partition inventories seperately so then they can all be managed within one .txt
@@ -111,25 +87,26 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
         }
 
         public void loadContainerItems(String filePath, HashMap<String, Container> containerMap) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
+    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split("\\|");
+            if (parts.length == 2) {
+                String containerID = parts[0];
+                String[] itemIDs = parts[1].split(",");
+                containerMap.putIfAbsent(containerID, new Container(containerID));
+                Container container = containerMap.get(containerID);
 
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split("\\|");
-            
-                if (parts.length == 2) {
-                    String containerID = parts[0];
-                    String[] itemIDs = parts[1].split(",");
-                
-                    containerMap.putIfAbsent(containerID, new Container(containerID)); // makes sure that the container exists
-                
-                    Container container = containerMap.get(containerID);
-                    for (String itemID : itemIDs) {
-                    
-                        if (itemMasterList.containsKey("global") && itemMasterList.get("global").containsKey(itemID)) { // makes sure that the item exists
-                        container.addItem(itemMasterList.get("global").get(itemID)); // Add actual item to container
-                        } else
-                        {
+                //add to itemMasterList for transferItem to work
+                itemMasterList.putIfAbsent(containerID, new HashMap<>());
+
+                for (String itemID : itemIDs) {
+                    itemID = itemID.trim();
+                    if (itemMasterList.containsKey("global") && itemMasterList.get("global").containsKey(itemID)) {
+                        GenericItem item = itemMasterList.get("global").get(itemID);
+                        container.addItem(item);
+                        itemMasterList.get(containerID).put(itemID, item); // Add item to the specific container's inventory in itemMasterList
+                    } else {
                         System.err.println("Warning: Item " + itemID + " not found in ItemMasterList!");
                     }
                 }
@@ -197,4 +174,15 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
             System.err.println("Error loading NPC inventories: " + e.getMessage()); //if for some reason it has an issue reading or writing then this will print the error for us
             }
         }
+
+    //add this method for GameState.java
+    public GenericItem getOrCreateStrangeToken() {
+        String tokenID = "token_001";
+        if (itemMasterList.containsKey("global") && itemMasterList.get("global").containsKey(tokenID)) {
+            return itemMasterList.get("global").get(tokenID);
+        }
+        GenericItem token = new GenericItem("Strange Token", tokenID, "A mysterious token given by the Old Lady.", 0.0, 0.1, 0, 0, "None");
+        itemMasterList.computeIfAbsent("global", k -> new HashMap<>()).put(tokenID, token);
+        return token;
     }
+}
