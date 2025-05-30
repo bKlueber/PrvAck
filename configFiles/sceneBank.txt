@@ -22,9 +22,9 @@
 019|‘He's a dealer of information, a tricky man, indeed,’ She Babbled. ‘Shady deals and dirty money, but the only broker of information around as good as him,’ She Admitted.|Where Can I Find him?->018
 020|The Old Lady Leads You Through the Scaffolding Mess Beyond the Pod Bay. Reaching a Different Elevation But Same Ending Rubble of the Catwalk.|Continue->021
 021|Small Gaps in the Messy Ruin Can Be Seen From This Position, But Nothing Else Was Below the Catwalk From Here. Leading to a Pit With No Visible Bottom.|Are You sure About This?->022
-022|‘I've Been Doing This For Years,’ She Scoffed. ‘Just do as I do, and You'll be Fine,’ She Explained. ‘Oh, and maybe don't look down,’ the Old Lady Teased.|Whatever You Say->023,Follow Her->023
+022|‘I've Been Doing This For Years,’ She Scoffed. ‘Just do as I do, and You'll be Fine,’ She Explained. ‘Oh, and maybe don't look down,’ the Old Lady Teased.|Whatever You Say->023,Follow Her->-23
 
-023|Following the Old Lady Across the Surprisingly Flimsy Catwalks and Tight Spaces to Reach the Other Side of the Gap, You Reach the Other Side Successfully by Following Her Lead.|Continue->024
+023|Following the Old Lady Across the Surprisingly Flimsy Catwalks and Tight Spaces to Reach the Other Side of the Gap, You Reach the Other Side Successfully by Following Her Lead.|Continue->
 024|‘Good job, we made it over,’ She Affirmed Your Achievement. ‘This way, we're just about there,’ She Responded.|Glad That's Over->025,Follow Her->025
 025|You Step Into the Ruined Streets of Erebus-9, the Air Thick With Decay. The Old Lady Went Off Through the Crowds.|Search For Loot->LOOTING,Explore Market->027
 026|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->027
@@ -40,7 +40,7 @@
 
 035|You Find a Spare Filter Among Wires and Rot. It's Damaged, But Might Be Repairable.|Take It Back->037
 036|You Spot an Old Toolbench and a Crate of Parts Nearby. It Could Be Used to Repair the Filter.|Try to Repair Filter->038,Take It As-Is->035
-037|The Old Lady Smiles. ‘Well Done. You’re Not Useless After All,’ She Says. ‘Here, Take This,’ She Hands You a strange token.|Ask What It Is->039,Thank Her and Leave->040
+037|The Old Lady Smiles. ‘Well Done. You’re Not Useless After All,’ She Says. ‘Here, Take This,’ She Hands You a Strange Token.|Ask What It Is->039,Thank Her and Leave->040
 038|With Patience and a Bit of Luck, You Patch the Filter. The Old Lady Is Pleased. ‘Smart and Handy. Rare Combo Here,’ She Grins.|Give Filter->037
 
 039|‘That Token? It’s How You’ll Pay Ligart,’ She Explains. ‘He Doesn't Take Coin—Only Questions Worth Asking.’|Where Is He Again?->041
@@ -53,8 +53,8 @@
 045|‘Ah, Erebus-9? Talk around the colony says we're not anywhere at all,’ Ligart Began.|Continue->046
 046|‘Pretty crazy, right? I know... The engineers say the AI looked into the Abyss first and it looked back,’ he Continued.|What Happened?->047
 047|‘No one's sure why or how we got here,’ Ligart Shrugged. ‘What we do know is that they saw it first, and some went crazy,’ He Added.|Continue->048
-048|‘Bing, Bang, Boom. We're here now,’ Ligart Explained.|Thanks->049
-049|This is just a test SCENE THIS IS A TEST TO GET TO SCENE 51! I COULDNT FIND THE BRANCH? I REDIRECTED SCENE 048 from 050 to go here, REVERT BACK OR FIX THIS BRANCH WEIRDNESS? THANK YOU|TESTY TEST TESTTTY TEST TEST->051
+048|‘Bing, Bang, Boom. We're here now,’ Ligart Explained.|Thanks->050
+049|*[No scene provided for ID 049]*|
 050|‘No sweat kid, if you got more tokens and have more questions, I'll be here.’|Return to Market->026
 
 051|You've Earned Vicar's Trust. The Market Opens to You, But Only Partially. He Has a Task.|Continue->052
@@ -63,7 +63,7 @@
 BACKTOMARKET|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->EXPLORE
 EXPLORE|*No description provided for EXPLORE.*|
 
-053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT(npc_001,054)
+053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT
 054|You Sneak Between Rusted Buildings and Power Conduits. Gangs Pass Nearby, Unaware.|Continue->055
 055|You Find the Artifact Hidden Beneath a Loose Metal Plate.|Take Artifact->057
 056|You Find a Shady Local Willing to Help. Offering a Small Trade to Get You Safe Passage Through Gang-Controlled Streets.|Trade->057,Haggle->HAGGLE,Intimidate->INTIMIDATE
@@ -74,9 +74,9 @@ HaggleSuccess|The Small Trade Becomes Smaller, and They Escort You Through the S
 HaggleFail|The Small Trade Doesn't Change, and They Escort You Through the Slums.|Continue->055
 IntimidateSuccess|The Small Trade is Forgotten, and They Escort You Through the Slums For Free.|Continue->057
 IntimidateFail|They Forget They Made the Offer to You, and Refuse to Talk to You.|Continue->FirstFailedIntimidation
-FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT(npc_001,054)
+FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT
 
-057|With the Artifact, You Return to Vicar With It. Leaving the Way You Came to Find It.|Continue->058F
+057|With the Artifact, You Return to Vicar With It. Leaving the Way You Came to Find It.|Continue->058
 058|Vicar Ligart Looked Silently at the Artifact, Then at You. ‘Good Job, But I Bet You Have Questions,’ He Commented in a Lower Tone of Voice.|Ask About It->059,Stay Silent->060
 059|He Scoffed. ‘Some Say it's From Shadow Garden—’ He Began—‘They Take the Unwanted, and They Don't Come Back,’ He Explained, Taking the Artifact.|Continue->061
 060|A Sly Smirk Grew Across His Face. ‘Smart to Keep Quiet. Curiosity Can Get You Killed 'round here,’ He Explained, Taking the Artifact.|Continue->061
