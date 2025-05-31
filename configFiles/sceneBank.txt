@@ -36,7 +36,7 @@
 
 032|You Push Deeper Into a Darker Corner of the Market. A Man Blocks Your Way, Covered in Grafted Tech and Scraps. 'You Lost?' He Growls.|Confront Him->034,Turn Back->028
 033|You Descend a Rusty Ladder Into a Hidden Nook Beneath the Market. Water Drips From Overhead. The Windtrap Moans.|Search The Debris->035,Look Around First->036
-034|The Man Shoves You. 'Best Head Back to the Old Hag, Newblood,' He Warns, Then Laughs. You Get the Feeling He Let You Off Easy.|Retreat to The Market->026
+034|The Man Shoves You. 'Best Head Back to the Old Hag, Newblood,' He Warns, Then Laughs. You Get the Feeling He Let You Off Easy.|Retreat to The Market->MARKET1
 
 035|You Find a Spare Filter Among Wires and Rot. It's Damaged, But Might Be Repairable.|Take It Back->037
 036|You Spot an Old Toolbench and a Crate of Parts Nearby. It Could Be Used to Repair the Filter.|Try to Repair Filter->038,Take It As-Is->035
@@ -55,7 +55,7 @@
 047|'No one's sure why or how we got here,' Ligart Shrugged. 'What we do know is that they saw it first, and some went crazy,' He Added.|Continue->048
 048|'Bing, Bang, Boom. We're here now,' Ligart Explained.|Thanks->050
 049|*[No scene provided for ID 049]*|
-050|'No sweat kid, if you got more tokens and have more questions, I'll be here.'|Return to Market->026
+050|'No sweat kid, if you got more tokens and have more questions, I'll be here.'|Return to Market->BACKTOMARKET
 
 051|You've Earned Vicar's Trust. The Market Opens to You, But Only Partially. He Has a Task.|Continue->052
 052|'Interested in work?' He Questions, Tossing a Crumpled Map Toward {playerName}. 'Something was taken. I want it back,' Vicar Explained.|Accept Job->053,Decline->BACKTOMARKET
