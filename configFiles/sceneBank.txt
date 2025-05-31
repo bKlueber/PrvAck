@@ -53,8 +53,9 @@
 045|'Ah, Erebus-9? Talk around the colony says we're not anywhere at all,' Ligart Began.|Continue->046
 046|'Pretty crazy, right? I know... The engineers say the AI looked into the Abyss first and it looked back,' he Continued.|What Happened?->047
 047|'No one's sure why or how we got here,' Ligart Shrugged. 'What we do know is that they saw it first, and some went crazy,' He Added.|Continue->048
-048|'Bing, Bang, Boom. We're here now,' Ligart Explained.|Thanks->050
-049|*[No scene provided for ID 049]*|
+048|‘Bing, Bang, Boom. We're here now,’ Ligart Explained.|Thanks->049
+
+049|This is just a test SCENE THIS IS A TEST TO GET TO SCENE 51! I COULDNT FIND THE BRANCH? I REDIRECTED SCENE 048 from 050 to go here, REVERT BACK OR FIX THIS BRANCH WEIRDNESS? THANK YOU|TESTY TEST TESTTTY TEST TEST->051
 050|'No sweat kid, if you got more tokens and have more questions, I'll be here.'|Return to Market->026
 
 051|You've Earned Vicar's Trust. The Market Opens to You, But Only Partially. He Has a Task.|Continue->052
