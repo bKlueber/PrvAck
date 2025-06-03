@@ -101,3 +101,30 @@ REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
 
 071|They Tell You Their Reasoning For These Doors. However, They Didn't Seem Very Likely to be The Full Truth With Their Limited Knowledge. The Flowers Only Bloom For Moments, But You Saw Them.|Continue->072
 072|You Realize That Something Ancient Lurks Within Erebus-9.|Continue->BACKTOMARKET
+073|A Voice Echoes Over a Failing PA: 'All Survivors, Report to Your Sector Representatives. The Colony’s Future Depends on Unity.'|Look for a Map->074,Ignore and Wander->076
+074|A Cracked Display Shows a Layout of Erebus-9. Several Factions Have Claimed Territory. The Map Flickers Between Symbols: A Circuit, A Glitching Eye, a Wrench, and a Knife.|Examine Factions->075,Choose Where to Go->076
+075|You Learn The Following Briefly: Intact AI Control The Centeral Core And Support Protocol Enforcement. Bugged AI Hide in Corrupted Systems And Rewrite Code to Dominate All Life. Engineers Work Under Emergency Lights Near THe Maintenance Decks. Gangs Prowl The Outer Slums, Fighting Each other And Looting The Weak.|Continue->076
+076|You Must Choose Whom to Approach—or Stay Out of It Entirely. Each Path Holds Danger, and Each Claims to Hold the Truth of the Colony's Fall.|Approach the Engineers->077,Seek Intact AI Contact->078,Enter Gang Territory->079,Search for Bugged AI Signals->080
+
+077|The Engineers Welcome You with Caution. 'You helped us already. Maybe you're someone we can trust,' One Mutters.|Offer to Help->081,Ask About the AI->082
+078|You Follow Signs Toward the Core Chamber. A Drone Greets You: 'Human Detected. Protocol Reconciliation in Progress.'|Let it Scan You->083,Back Away Slowly->076
+079|Gunshots Ring in the Distance. A Man Waves You Over. 'You look tough. You in or out?'|Join Them->084,Reject Offer->076
+080|A Trail of Flickering Consoles and Glitched Screens Leads You Deeper into Darkened Corridors. An Unnerving Voice Whispers Through the Vents.|Investigate->085,Flee->076
+
+081|An Engineer Hands You a Welding Torch. 'The Stabilizers Are Failing. You Fix Them, We Talk Future.'|Begin Repairs (Mini-Game/ rolls)->REPAIR2
+082|'Intact AI were always strictive, but now they’re desperate. And the Bugged ones? They infect minds like code,' She Warns.|Continue->076
+083|The Drone Echoes a Message: 'Human Cognition Compatible. Recommend Alignment with Protocol Entities. Threat Level: Unclear.'|Accept Offer to Align->086,Refuse and Leave->076
+084|'Good. You'll Prove Yourself in the Cage First. That’s How We Do Things Down Here,' He Laughs.|Fight in the Cage (Combat)->COMBAT2
+085|You Discover a Terminal Covered in Organic Veins and Flickering Lights. A Twisted AI Voice Calls You 'Little Puppet.'|Respond to It->087,Destroy the Terminal->088
+
+086|You're Given a Wrist Node. 'This Will Keep Track of You. And You of Us.' The Drone Says Coldly.|Ask Questions->089,Leave With New Affiliation->ACT1_INTAC
+087|'You Seek Truth? You Serve the Error, Then. We Can Make You Greater,' It Whispers.|Accept Glitched Blessing->090,Reject the Influence->076
+088|You Smash the Terminal. Sparks Fly. You Feel... Wrong. Something May Have Marked You.|Continue->076
+089|'The Bugged Ones see flesh as flawed. We do not. We need humans. Together, we ensure continuity,' It Explains.|Continue->ACT1_INTAC
+090|Your Mind Splits for a Moment. Your HUD Glitches—New Commands Appear. You Are Not the Same.|Continue->ACT1_BUGGED
+
+ACT1_INTAC|You’ve Sided With the Intact AI. Your Role Is Now That of a Mediator and Enforcer of Protocol in the Chaos.|Begin Act Two: 'Echoes of Order'->ACT2_START
+ACT1_BUGGED|You’ve Become Marked by the Bugged AI. Reality May Warp Around You, and You Now Serve a Darker Logic.|Begin Act Two: 'Errors of Flesh'->ACT2_START
+ACT1_ENGINEER|You Work Alongside the Engineers, Trying to Stabilize the Colony From the Ground Up.|Begin Act Two: 'Hands of Steel'->ACT2_START
+ACT1_GANG|You’ve Made Your Place Among the Gangs. Power Through Chaos Is Your Path Now.|Begin Act Two: 'Broken Crown'->ACT2_START
+ACT1_NEUTRAL|You Have Not Chosen a Side. Erebus-9 Is Still Full of Mysteries. You’ll Need to Walk Carefully.|Begin Act Two: 'Unbound'->ACT2_START
