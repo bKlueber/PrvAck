@@ -15,3 +15,5 @@ Iron Helmet|helmet_001|Protects your head.|15.0|1.2|0|5|None
 Energy Rifle|rifle_001|A high-tech ranged weapon.|200.0|4.0|20|2|Intelligence
 Sturdy Boots|boots_001|Boots that add a bit of protection.|10.0|0.8|0|2|None
 Strange Token|token_001|A mysterious token given by the Old Lady.|0.0|0.1|0|0|None
+Dormant Ultimate Side Sword|ultimatesidesword_001|Dormant, advanced melle weapon|50.0|1.0|10|5|Strength
+Ultimate Side Sword|ultimatesidesword_002|Advanced melee weapon|100.0|1.0|100|10|Strength
