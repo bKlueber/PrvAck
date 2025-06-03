@@ -107,20 +107,20 @@ REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
 076|You Must Choose Whom to Approach—or Stay Out of It Entirely. Each Path Holds Danger, and Each Claims to Hold the Truth of the Colony's Fall.|Approach the Engineers->077,Seek Intact AI Contact->078,Enter Gang Territory->079,Search for Bugged AI Signals->080
 
 077|The Engineers Welcome You with Caution. 'You helped us already. Maybe you're someone we can trust,' One Mutters.|Offer to Help->081,Ask About the AI->082
-078|You Follow Signs Toward the Core Chamber. A Drone Greets You: 'Human Detected. Protocol Reconciliation in Progress.'|Let it Scan You->083,Back Away Slowly->076
+078|You Follow Signs Toward the Core Chamber. A Drone Greets You: 'Human detected. Protocol reconciliation in progress.'|Let it Scan You->083,Back Away Slowly->076
 079|Gunshots Ring in the Distance. A Man Waves You Over. 'You look tough. You in or out?'|Join Them->084,Reject Offer->076
 080|A Trail of Flickering Consoles and Glitched Screens Leads You Deeper into Darkened Corridors. An Unnerving Voice Whispers Through the Vents.|Investigate->085,Flee->076
 
-081|An Engineer Hands You a Welding Torch. 'The Stabilizers Are Failing. You Fix Them, We Talk Future.'|Begin Repairs (Mini-Game/ rolls)->REPAIR2
+081|An Engineer Hands You a Welding Torch. 'The stabilizers are failing. You fix them, we talk future.'|Begin Repairs (Mini-Game/ rolls)->REPAIR2
 082|'Intact AI were always strictive, but now they’re desperate. And the Bugged ones? They infect minds like code,' She Warns.|Continue->076
-083|The Drone Echoes a Message: 'Human Cognition Compatible. Recommend Alignment with Protocol Entities. Threat Level: Unclear.'|Accept Offer to Align->086,Refuse and Leave->076
-084|'Good. You'll Prove Yourself in the Cage First. That’s How We Do Things Down Here,' He Laughs.|Fight in the Cage (Combat)->COMBAT2
-085|You Discover a Terminal Covered in Organic Veins and Flickering Lights. A Twisted AI Voice Calls You 'Little Puppet.'|Respond to It->087,Destroy the Terminal->088
+083|The Drone Echoes a Message: 'Human cognition compatible. Recommend alignment with protocol entities. Threat level: unclear.'|Accept Offer to Align->086,Refuse and Leave->076
+084|'Good. You'll prove yourself in the cage first. That’s how we do things down here,' He Laughs.|Fight in the Cage (Combat)->COMBAT2
+085|You Discover a Terminal Covered in Organic Veins and Flickering Lights. A Twisted AI Voice Calls You 'Little puppet.'|Respond to It->087,Destroy the Terminal->088
 
-086|You're Given a Wrist Node. 'This Will Keep Track of You. And You of Us.' The Drone Says Coldly.|Ask Questions->089,Leave With New Affiliation->ACT1_INTAC
-087|'You Seek Truth? You Serve the Error, Then. We Can Make You Greater,' It Whispers.|Accept Glitched Blessing->090,Reject the Influence->076
+086|You're Given a Wrist Node. 'This will keep track of you. And you of us.' The Drone Says Coldly.|Ask Questions->089,Leave With New Affiliation->ACT1_INTAC
+087|'You seek truth? You serve the error, then. We can make you greater,' It Whispers.|Accept Glitched Blessing->090,Reject the Influence->076
 088|You Smash the Terminal. Sparks Fly. You Feel... Wrong. Something May Have Marked You.|Continue->076
-089|'The Bugged Ones see flesh as flawed. We do not. We need humans. Together, we ensure continuity,' It Explains.|Continue->ACT1_INTAC
+089|'The bugged ones see flesh as flawed. We do not. We need humans. Together, we ensure continuity,' It Explains.|Continue->ACT1_INTAC
 090|Your Mind Splits for a Moment. Your HUD Glitches—New Commands Appear. You Are Not the Same.|Continue->ACT1_BUGGED
 
 ACT1_INTAC|You’ve Sided With the Intact AI. Your Role Is Now That of a Mediator and Enforcer of Protocol in the Chaos.|Begin Act Two: 'Echoes of Order'->ACT2_START
@@ -128,3 +128,49 @@ ACT1_BUGGED|You’ve Become Marked by the Bugged AI. Reality May Warp Around You
 ACT1_ENGINEER|You Work Alongside the Engineers, Trying to Stabilize the Colony From the Ground Up.|Begin Act Two: 'Hands of Steel'->ACT2_START
 ACT1_GANG|You’ve Made Your Place Among the Gangs. Power Through Chaos Is Your Path Now.|Begin Act Two: 'Broken Crown'->ACT2_START
 ACT1_NEUTRAL|You Have Not Chosen a Side. Erebus-9 Is Still Full of Mysteries. You’ll Need to Walk Carefully.|Begin Act Two: 'Unbound'->ACT2_START
+
+ACT2_START|You’ve Chosen Your Side. The Colony Shifts, Breathes, And Trembles. All Paths Now Pull Toward a Storm no One Can Outrun.|Continue->ACT2_ENTRY
+
+ACT2_ENTRY|The Time Of Choices In Shadows Is Over. Now Comes The Parting Of Roads. Each Faction Calls To You—Each Path Opens A Fate.|Join The Shadow Garden->ACT2_SHADOW_ENTRY,
+Stand With The Mortals->ACT2_MORTAL_ENTRY,Seek The Immortals' Power->ACT2_IMMORTAL_ENTRY
+
+ACT2_SHADOW_ENTRY|You Follow The Scent Of Something Sacred And Forsaken. A Path Of Blood-Black Vines And Silver-Eyed Flowers Leads Beyond The Colony Walls.|Enter The Garden->091
+091|The Garden Is Not Natural. Glyphs On Obsidian Bark Depict Gods Being Devoured, Light Torn Apart By Claws. Before You Lies An Altar And Five Empty Flower Sockets.|Begin Flower Trial->092
+092|You Must Gather Flowers From Open Gardens Scattered Across Hostile Sectors. Each Flower Is Fragile. Taking Damage Causes Them To Wither.|Start Collection Run (Stealth/Combat)->093
+093|You Gather The Last Flower. Only A Few Bruises On Your Skin—But The Petals Remain Whole.|Place Flowers At Altar->094
+094|The Altar Glows. From Darkness Come Watchers. You Must Now Survive A Ritual Of Violence.|Defeat 10 Thugs Without Dying (Combat/Strategy)->095
+095|You Kneel, Bloodied But Victorious. The Altar Opens, Revealing A Stairwell Down. The Garden Accepts You.|Begin Act Two: Shadow Garden->ACT2_START_SHADOW
+
+ACT2_MORTAL_ENTRY|You Remain Within The Chaos Of Flesh And Steel. The Mortals Want Peace, But Their Leaders—Gangs And Engineers—Clash Endlessly.|Attend A Mediation Summit->096
+096|The Engineer Hisses: 'They take everything.' The Gang Leader Growls: 'They hoard everything.' Both Refuse To Yield.|Volunteer To Help->097
+097|Each Leader Requests Vital Items Found Deep Within The Other's Domain. Getting Them Means Navigating Danger And Distrust.|Accept Both Quests->098
+098|In The Gangs’ Turf, The Item Lies At The Heart Of A Collapsing Mall Overtaken By Void Rats And A Memory-Eating Fog.|Solve The Maze, Retrieve The Item->099
+099|You Retrieve The Encrypted Module. But Your Reflection In A Broken Mirror Doesn’t Match Your Actions. Something Is Watching.|Return To Engineers->100
+100|In The Engineer Sector, You Must Reach A Buried Schematic Lost In A Pit Crawling With Corrupted Servitors.|Defeat Servitors, Claim The Schematic->101
+101|Both Leaders Now Look At Each Other Differently. The First Words Of Trust Begin.|Optional: Share Schematic (Unlock Sustainable Power)->102,Don’t Share->103
+102|The Schematic Is Uploaded. Lights Flicker On Across A Thousand Dark Halls. 'You may have saved us all,' The Engineer Whispers.|Begin Act Two: Mortals->ACT2_START_MORTAL
+103|Without The Schematic, The Truce Is Thin. But It Holds—For Now.|Begin Act Two: Mortals->ACT2_START_MORTAL
+
+ACT2_IMMORTAL_ENTRY|A Drone Finds You And Says, 'You’ve been marked. A trial awaits beneath the drowned wards of erebus-9. Follow.'|Follow Drone To Slums->104
+104|The Slums Have Flooded—Abandoned, Twisted By The Void. Old Security Lights Flicker. A Sealed Chamber Lies Beneath.|Find Access Point->105
+105|A Puzzle Blocks The Power Controls. Symbols Rotate In A Pattern—Solve To Shut Off Electricity And Drain Water.|Solve Puzzle (Logic)->106
+106|Water Lowers, Revealing A Rusted Door. You Need An Offering—Something That Once Bloomed Despite Decay.|Search For Withered Flower->107
+107|You Find It Wrapped In A Child’s Data Diary—Kept Alive By Lightless Warmth. You Place It At The Door.|Enter The Trial Room->108
+108|Abstract Lights Twist Around You. A Being Beyond Language Speaks: 'Take my gift. Walk among time. But know the price.'|Accept Power->109,Reject->110
+109|You Awaken Later—Time Missing. You’ve Already Done Something...You Don’t Remember. Some Choices Are Now Locked.|Begin Act Two: Immortals->ACT2_START_IMMORTAL
+110|You Step Back. The Voice Vanishes. The Trial Remains Forever Closed To You.|Begin Act Two: Immortals (Powerless)->ACT2_START_IMMORTAL
+
+111|No Matter Your Path, Something Outside Comes. Walls Crack. Sirens Scream. Void Pours In Like Breathing Ash.|View From The Colony Windows->112
+112|Depends On Faction|if Mortals->WINDOWEVENTMORTAL,if Immortals->WINDOWEVENTIMMORTAL,if Shadow Garden->WINDOWEVENTSHADGARDEN
+
+WINDOWEVENTIMMORTAL|You See Deities Radiant in Light Fighting Against Shadows.|Begin Crisis->113
+WINDOWEVENTMORTAL|You See The Abyss Twisting Like Muscle Across Absent Stars.|Begin Crisis->113
+WINDOWEVENTSHADGARDEN|You See Monsters Shaped like Men Fighting a Radiant Flame.| Begin Crisis->113
+
+113|Emergency protocols fail. Holes rupture into the void. To seal them, you need white flowers growing on bio-vines near emergency lights.|Search for White Flower->114
+114|You spot one above a hanging beam. To reach it, roll Dexterity or use a found item like the Void-Climbing Dagger.|if Success->WHITEFLOWERSUCCESS,if Failure->WHITEFLOWERFAILURE
+
+WHITEFLOWERSUCCESS|You fall—slowly—into the Void. Time slows. Damage accrues. The flower withers. The vines regrow after 30 seconds.|Retry->114
+WHITEFLOWERFAILURE| You retrieve a viable flower.|Seal the Breach->115
+
+115|As you patch the hole, the air returns to stillness. But something... is looking back through it.|if >= 2->114,if =< 3->116
