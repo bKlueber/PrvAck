@@ -80,7 +80,13 @@ FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift
 058|Vicar Ligart Looked Silently at the Artifact, Then at You. 'Good Job, But I Bet You Have Questions,' He Commented in a Lower Tone of Voice.|Ask About It->059,Stay Silent->060
 059|He Scoffed. 'Some Say it's From Shadow Garden—' He Began— 'They Take the Unwanted, and They Don't Come Back,' He Explained, Taking the Artifact.|Continue->061
 060|A Sly Smirk Grew Across His Face. 'Smart to Keep Quiet. Curiosity Can Get You Killed 'round here,' He Explained, Taking the Artifact.|Continue->061
-061|You Gain Standing With Ligart. He Trusts You Now—Perhaps More Than He Should.|Continue->BACKTOMARKET
+061|You Gain Standing With Ligart. He Trusts You Now—Perhaps More Than He Should.|Continue->VICARFAVOUR
+
+VICARFAVOUR|He Shrugged Off Concern. 'Speaking of that kind of stuff, I found this, and thought you might have a use for it,' Vicar Explained And Hands You an unusual blade.|Continue->SWORDDESCRIP1
+
+SWORDDESCRIP1|The Blade is Thick, Almost Cleaver-Like, Suggesting Immense Weight, But it Was Light And Thin. Its Metal is Dark, Shaded in Deep, Grey Tones With Subtle Ruinc Engravings.|Continue->SWORDDESCRIP2
+SWORDDESCRIP2|The Guard is Adorned With Wicked, Wing-Like Protrusions That Resemble Horns or Demonic Claws, Curling Outward. At The Center Lies a Grim, Horned Skill Motif, Likely Symbolic of Its First Master. Forged Not For Eleganc, But For Destructuoin.|Continue->SWORDDESCRIP3
+SWORDDESCRIP3|The Power That The Blade Appears to Hold Seems Dormant. Requiring Some Kind of Power Source or Sacrfice to Weild Mightly|Continue->BACKTOMARKET
 
 062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->BACKTOMARKET
 063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT(064)
@@ -165,12 +171,52 @@ ACT2_IMMORTAL_ENTRY|A Drone Finds You And Says, 'You’ve been marked. A trial a
 
 WINDOWEVENTIMMORTAL|You See Deities Radiant in Light Fighting Against Shadows.|Begin Crisis->113
 WINDOWEVENTMORTAL|You See The Abyss Twisting Like Muscle Across Absent Stars.|Begin Crisis->113
-WINDOWEVENTSHADGARDEN|You See Monsters Shaped like Men Fighting a Radiant Flame.| Begin Crisis->113
+WINDOWEVENTSHADGARDEN|You See Shadow Monsters Shaped like Men Fighting a Radiant Flame.| Begin Crisis->113
 
 113|Emergency protocols fail. Holes rupture into the void. To seal them, you need white flowers growing on bio-vines near emergency lights.|Search for White Flower->114
 114|You spot one above a hanging beam. To reach it, roll Dexterity or use a found item like the Void-Climbing Dagger.|if Success->WHITEFLOWERSUCCESS,if Failure->WHITEFLOWERFAILURE
 
 WHITEFLOWERSUCCESS|You fall—slowly—into the Void. Time slows. Damage accrues. The flower withers. The vines regrow after 30 seconds.|Retry->114
-WHITEFLOWERFAILURE| You retrieve a viable flower.|Seal the Breach->115
+WHITEFLOWERFAILURE|You Retrieve a Viable Flower.|Seal the Breach->115
 
 115|As you patch the hole, the air returns to stillness. But something... is looking back through it.|if >= 2->114,if =< 3->116
+116|A Market Vendor Thanks You. All Shop Prices Are Lowered, and Rare Items Begin to Appear Across Erebus-9.|Visit the Old Lady->117,Talk to Vicar->118
+117|The Old Lady Grins. 'For once, I can cook with real flame again.' She Hands You Babushka-Grade Food That Boosts Health, Stamina, and Magic.|Continue->119
+118|Vicar Crosses His Arms. 'You did good. But those holes? That was a fight. Just don't know between who.' He Glances Away.|Ask About the Light and Shadow Figures->120,Stay Silent->121
+119|You Feel the Colony Shift. Its Breath Calms—but Unease Remains. Something Else Has Noticed.|Continue->122
+120|'You mentioned light and shadows? I can't see what you see. We all got limits, kid. I got mine.' He Smirks Lightly.|Continue->122
+121|'Smart. Words invite things we don’t understand,' He Nods.|Continue->122
+
+122|A Silent Broadcast Pulses Across Every Device. No Words. Just a Deep Harmonic Hum and Flashing Images: Rotting Flowers, Flickering Stars, A Door Opening Outside Reality.|Investigate Broadcast Source->123
+123|A Sub-Basement in the Scaffolding District Has Opened. Once Locked, Now Accessible. You Descend Past Flickering Lights.|Enter The Chamber->124
+124|Inside Is a Terminal Speaking Backwards. A Vision Gate Waits—But Requires Sacrifice. One Early Item Must Be Given: A Weapon, Flower, or Note.|Offer Item->125,Refuse Sacrifice->126
+125|You Are Pulled Into a Vision: Shadow Garden Shows a Vine Cut, Replanted. A Throne of Bones, Light Blooming. A Maw Swallowing Stars.|Continue->127 126|You Walk Away. The Gate Remains—But Feels Further Now. Something Lost.|Continue->127
+127|Three Cracked Doors Appear in the Colony. From the Inside. Engineers Want to Seal. Gangs Want to Plunder. Vicar Urges Caution.|Choose a Door->128
+
+128|First Door: Fused Mortals and AI Whispering Code. Second: Living Garden with a Dying Godling. Third: Bending Light Around an Empty Chair.|Enter Door 1->129,Enter Door 2->130,Enter Door 3->131
+
+129|The Fused Mortals Attack You, Savage And Mindless in Guarding Their Treasures.|Combat->COMBAT
+
+130|The Godling Reaches for You. Its Blessing Lingers as a Warm Flame in Your Palm.|Continue->132
+
+131|You Sit in the Chair. Light Bends. You See Yourself From The Outside. Gaining Insight Into Erebus-9’s Origin.|Continue->132
+
+132|Regardless of Door, Something Higher Notices You. You Are Taken to a Realm Between Time, Dream, and Code.|Face the Presence->133
+
+133|A Voice Asks: 'Why do you continue?' It Does Not Expect an Answer. It Listens Anyway.|Choose A Response: Hope->134,Fear->135,Defiance->136
+
+134|You Are Blessed With Clarity. Future Dialogue Has More Insight. You Gain Passive Resistance to Mind Effects.|Proceed to End Forks->END_FORK 135|You Are Branded. Shadows Ignore You—but Allies Worry. Your Damage Increases Against Void Beings.|Proceed to End Forks->END_FORK
+
+136|You Are Cursed and Blessed. NPCs Treat You Differently. You Cannot Be Mind-Controlled But Are Always Watched.|Proceed to End Forks->END_FORK
+
+END_FORK|You Stand At the End of Erebus-9’s Roads.|Choose Ending Path: Shadow Garden->END_SHADOW,Mortals & Engineers->END_MORTAL,Immortals->END_IMMORTAL,Bugged AI & Gangs->END_CHAOS
+
+END_SHADOW|Vicar Smiles at You Knowingly as he Steps out of The Veil Which he Was Behind. 'Welcome aboard, kid. I knew you were destined for something like this the moment I saw you.' He explained|Continue->SHADOW_CONTINUE
+SHADOW_CONTINUE|He had six eyes, wearing an ebony suit, styled like a popped collar overcoat. Gold And Purple Trim Adorned a Dark Jacket, Shirt, Pants, And High Boots. 'Come on, we have some ass to kick,' he gestured you to follow.|Follow Him->FINAL_SHADOW
+FINAL_SHADOW|You Ascend With Vicar, The Despicable Ultima. The Immortal Slaughterer And Went Out to Hunt And Destroy Immortal Tyranny Throughout The Mortal Realms|The End->END
+
+END_MORTAL|You Remain With The People of Erebus-9, Achieving Harmony Among All The People of The Colony.|The End->END
+
+END_IMMORTAL|You Ascend And Join The Immortals. Working With The 'Immortal Counsel' to Defeat Shadow Garden. Spesky Resistance Against Their Order Throughout The Mortal Realms.|The End->END
+
+END_CHAOS|You Side With The Buggy AI And False Gods of Erebus-9, Plunging The Whole Colony Into a Tyranical, Chaotic New Age of Disorder. Plundering Defiant Sections And Accumulating Wealth.|The End->END
