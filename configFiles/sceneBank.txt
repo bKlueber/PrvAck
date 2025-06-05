@@ -61,7 +61,7 @@
 052|'Interested in work?' He Questions, Tossing a Crumpled Map Toward {playerName}. 'Something was taken. I want it back,' Vicar Explained.|Accept Job->053,Decline->MARKET1
 
 MARKET1|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE1
-EXPLORE1|*Insert NPC List*|Trade->[NPC List],Continue->053
+EXPLORE1|You see a small box tucked behind some trash.|Search the Box->LOOTING,Return to Vicar->052
 
 053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT(057)
 054|You Sneak Between Rusted Buildings and Power Conduits. Gangs Pass Nearby, Unaware.|Continue->055
@@ -89,7 +89,7 @@ SWORDDESCRIP2|The Guard is Adorned With Wicked, Wing-Like Protrusions That Resem
 SWORDDESCRIP3|The Power That The Blade Appears to Hold Seems Dormant. Requiring Some Kind of Power Source or Sacrfice to Weild Mightly|Continue->MARKET2
 
 MARKET2|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE2
-EXPLORE2|*Insert NPC List*|Trade->[NPC List],Continue->062
+EXPLORE2|You stumble upon a sleeping trader, he wouldn't notice if you helped yourself to his stash of loot.... would he?|Slip Behind The Stall and Rummage Through the Stock->LOOTING,Continue->062
 
 062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->MARKET2
 063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT(064)
@@ -109,7 +109,7 @@ REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
 070|'They appear here and there, but those doors are never on any map,' The Engineer Responded.|Ask More->071,Stay Silent->MARKET3
 
 MARKET3|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE3
-EXPLORE3|*Insert NPC List*|Trade->[NPC List],Continue->071
+EXPLORE3|The market has a feeling of unease in the air. You notice a trash bin tipped over and something shiny sticking out|Investigate the bin->LOOTING,Continue->071
 
 071|They Tell You Their Reasoning For These Doors. However, They Didn't Seem Very Likely to be The Full Truth With Their Limited Knowledge. The Flowers Only Bloom For Moments, But You Saw Them.|Continue->072
 072|You Realize That Something Ancient Lurks Within Erebus-9.|Continue->MARKET4
@@ -119,7 +119,7 @@ EXPLORE3|*Insert NPC List*|Trade->[NPC List],Continue->071
 076|You Must Choose Whom to Approach—or Stay Out of It Entirely. Each Path Holds Danger, and Each Claims to Hold the Truth of the Colony's Fall.|Approach the Engineers->077,Seek Intact AI Contact->078,Enter Gang Territory->079,Search for Bugged AI Signals->080
 
 MARKET4|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE4
-EXPLORE4|*Insert NPC List*|Trade->[NPC List],Continue->077
+EXPLORE4|Even in the market, your sense of unease doessn't lessen. You notice a derelict android carrying supplies standing unpowered in the corner.|Check out the androids supplies->LOOTING,Continue->077
 
 077|The Engineers Welcome You with Caution. 'You helped us already. Maybe you're someone we can trust,' One Mutters.|Offer to Help->081,Ask About the AI->082
 078|You Follow Signs Toward the Core Chamber. A Drone Greets You: 'Human detected. Protocol reconciliation in progress.'|Let it Scan You->083,Back Away Slowly->076
