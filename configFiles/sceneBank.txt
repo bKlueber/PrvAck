@@ -5,7 +5,7 @@
 005|The Dream Continues to Twist And Warp Into a Nightmare. A Shadow Watches From The Void, Its Twisted, Warped Smile Sends Chills Throughout Your Being. You Recognize it, Somehow. U̸̧̲̼̞̲̙̭͈̼̓̅̓̐̓͘͜l̵̺̫̫̖̫͎̠̽̊̂̐̂͊͂t̴͙͖̞̠͍̏̓͐i̵̩͌̽͛͊̐̎̋m̴̦͕͔͈̦̖͙͗̌̌̊͆͂͗͜á̷̭͂͑̆̿̐͛̕͠?|Wake up, Terrified->004
 
 006|Dim Red Lights Blink in The Cryo Bay. You're Still Trapped in Your Pod. Movement Echoes Nearby.|Break Free->007,Stay And Watch->008
-007|You Tear Yourself Free Just in Time to See a Cryo Pod Open, And Its Occupant Slaughtered. Another Victim Being Pulled up to Free Pods, You Could Join Them if You're Not Careful.|Run->009,Hide->010
+~007|You Tear Yourself Free Just in Time to See a Cryo Pod Open, And Its Occupant Slaughtered. Another Victim Being Pulled up to Free Pods, You Could Join Them if You're Not Careful.|Run->009,Hide->010
 008|You Watch in Horror as Someone is Butchered Before Stuffed Into a Pod. The Killers Laugh. You're Next, Unless You Move Now.|Escape Quietly->009,Hide->010
 
 009|You Slip Past the Chaos, Following Emergency Lights. Large, Bay Doors Open Into a Cramped Network of Scaffolding And Catwalks.|Climb up->011,Climb Down->012,Call For Help->013
@@ -22,9 +22,9 @@
 019|'He's a dealer of information, a tricky man, indeed,' She Babbled. 'Shady deals and dirty money, but the only broker of information around as good as him,' She Admitted.|Where Can I Find him?->018
 020|The Old Lady Leads You Through the Scaffolding Mess Beyond the Pod Bay. Reaching a Different Elevation But Same Ending Rubble of the Catwalk.|Continue->021
 021|Small Gaps in the Messy Ruin Can Be Seen From This Position, But Nothing Else Was Below the Catwalk From Here. Leading to a Pit With No Visible Bottom.|Are You sure About This?->022
-022|'I've Been Doing This For Years,' She Scoffed. 'Just do as I do, and You'll be Fine,' She Explained. 'Oh, and maybe don't look down,' the Old Lady Teased.|Whatever You Say->023,Follow Her->-23
+022|'I've Been Doing This For Years,' She Scoffed. 'Just do as I do, and You'll be Fine,' She Explained. 'Oh, and maybe don't look down,' the Old Lady Teased.|Whatever You Say->023,Follow Her->023
 
-023|Following the Old Lady Across the Surprisingly Flimsy Catwalks and Tight Spaces to Reach the Other Side of the Gap, You Reach the Other Side Successfully by Following Her Lead.|Continue->
+023|Following the Old Lady Across the Surprisingly Flimsy Catwalks and Tight Spaces to Reach the Other Side of the Gap, You Reach the Other Side Successfully by Following Her Lead.|Continue->024
 024|'Good job, we made it over,' She Affirmed Your Achievement. 'This way, we're just about there,' She Responded.|Glad That's Over->025,Follow Her->025
 025|You Step Into the Ruined Streets of Erebus-9, the Air Thick With Decay. The Old Lady Went Off Through the Crowds.|Search For Loot->LOOTING,Explore Market->027
 026|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->027
@@ -63,18 +63,16 @@
 MARKET1|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE1
 EXPLORE1|You see a small box tucked behind some trash.|Search the Box->LOOTING,Return to Vicar->052
 
-053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT(057)
+053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT(npc_010,057)
 054|You Sneak Between Rusted Buildings and Power Conduits. Gangs Pass Nearby, Unaware.|Continue->055
 055|You Find the Artifact Hidden Beneath a Loose Metal Plate.|Take Artifact->057
-056|You Find a Shady Local Willing to Help. Offering a Small Trade to Get You Safe Passage Through Gang-Controlled Streets.|Trade->057,Haggle->HAGGLE,Intimidate->INTIMIDATE
+056|You Find a Shady Local Willing to Help. Offering a Small Trade to Get You Safe Passage Through Gang-Controlled Streets.|Haggle->HAGGLE,Intimidate->INTIMIDATE
 
-HAGGLE|{playerName} Has [insert dice roll output here as Failure or Success] The Haggle Attempt.|If Success->HaggleSuccess,If Failure->HaggleFail
-INTIMIDATE|{playerName} Has [insert dice roll output here as Failure or Success] The Intimidation Attempt.|If Success->IntimidateSuccess,If Failure->IntimidateFail
-HaggleSuccess|The Small Trade Becomes Smaller, and They Escort You Through the Slums.|Continue->057
-HaggleFail|The Small Trade Doesn't Change, and They Escort You Through the Slums.|Continue->055
+HaggleSuccess|You Succeed in Haggling and The Small Trade Becomes Smaller, and They Escort You Through the Slums.|Continue->057
+HaggleFail|The Small Trade Doesn't Change, They are Now Visibily Annoyed With You. They Escort You Through the Slums.|Continue->055
 IntimidateSuccess|The Small Trade is Forgotten, and They Escort You Through the Slums For Free.|Continue->057
 IntimidateFail|They Forget They Made the Offer to You, and Refuse to Talk to You.|Continue->FirstFailedIntimidation
-FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT(057)
+FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT(npc_010,057)
 
 057|With the Artifact, You Return to Vicar With It. Leaving the Way You Came to Find It.|Continue->058
 058|Vicar Ligart Looked Silently at the Artifact, Then at You. 'Good Job, But I Bet You Have Questions,' He Commented in a Lower Tone of Voice.|Ask About It->059,Stay Silent->060
@@ -92,9 +90,8 @@ MARKET2|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Marke
 EXPLORE2|You stumble upon a sleeping trader, he wouldn't notice if you helped yourself to his stash of loot.... would he?|Slip Behind The Stall and Rummage Through the Stock->LOOTING,Continue->062
 
 062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->MARKET2
-063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT(064)
+063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT(npc_004,064)
 
-REPAIR|*Repair Minigame*|If Success->REPAIRSUCCESS,If Failure->REPAIRFAIL
 REPAIRSUCCESS|While Repairing the Junction, You Notice a Jammed Panel Humming Strangely. You Discover Scratched Symbols Inside—Ancient, Uneven, Like Carvings from a Dream.|Report to Engineers->065,Ignore->MARKET2
 REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
 
@@ -126,10 +123,13 @@ EXPLORE4|Even in the market, your sense of unease doessn't lessen. You notice a 
 079|Gunshots Ring in the Distance. A Man Waves You Over. 'You look tough. You in or out?'|Join Them->084,Reject Offer->076
 080|A Trail of Flickering Consoles and Glitched Screens Leads You Deeper into Darkened Corridors. An Unnerving Voice Whispers Through the Vents.|Investigate->085,Flee->076
 
-081|An Engineer Hands You a Welding Torch. 'The stabilizers are failing. You fix them, we talk future.'|Begin Repairs (Mini-Game/ rolls)->REPAIR2(ACT1_ENGINEER)
+081|An Engineer Hands You a Welding Torch. 'The stabilizers are failing. You fix them, we talk future.'|Begin Repairs ->REPAIR2
+REPAIR2SUCCESS|You aid the engineers and work efficiently alongside them.|Continue->ACT1_ENGINEER
+REPAIR2FAIL|You make a few mistakes in the repairs, but an engineer steps in to show you how it's done.|Continue->ACT1_ENGINEER
+
 082|'Intact AI were always strictive, but now they’re desperate. And the Bugged ones? They infect minds like code,' She Warns.|Continue->076
 083|The Drone Echoes a Message: 'Human cognition compatible. Recommend alignment with protocol entities. Threat level: unclear.'|Accept Offer to Align->086,Refuse and Leave->076
-084|'Good. You'll prove yourself in the cage first. That’s how we do things down here,' He Laughs.|Fight in the Cage (Combat)->COMBAT2(ACT1_GANG)
+084|'Good. You'll prove yourself in the cage first. That’s how we do things down here,' He Laughs.|Fight in the Cage->COMBAT(npc_cagefighter_001,MARKET4)
 085|You Discover a Terminal Covered in Organic Veins and Flickering Lights. A Twisted AI Voice Calls You 'Little puppet.'|Respond to It->087,Destroy the Terminal->088
 
 086|You're Given a Wrist Node. 'This will keep track of you. And you of us.' The Drone Says Coldly.|Ask Questions->089,Leave With New Affiliation->ACT1_INTAC
@@ -153,7 +153,12 @@ ACT2_SHADOW_ENTRY|You Follow The Scent Of Something Sacred And Forsaken. A Path 
 091|The Garden Is Not Natural. Glyphs On Obsidian Bark Depict Gods Being Devoured, Light Torn Apart By Claws. Before You Lies An Altar And Five Empty Flower Sockets.|Begin Flower Trial->092
 092|You Must Gather Flowers From Open Gardens Scattered Across Hostile Sectors. Each Flower Is Fragile. Taking Damage Causes Them To Wither.|Start Collection Run (Stealth/Combat)->093
 093|You Gather The Last Flower. Only A Few Bruises On Your Skin—But The Petals Remain Whole.|Place Flowers At Altar->094
-094|The Altar Glows. From Darkness Come Watchers. You Must Now Survive A Ritual Of Violence.|Defeat 10 Thugs Without Dying (Combat/Strategy)->095
+094|The Altar Glows. From Darkness Come Watchers. You Must Now Survive A Ritual Of Violence.|Fight First Watcher->COMBAT(npc_005,094A)
+094A|You defeat the first Watcher. Another steps forward.|Fight Second Watcher->COMBAT(npc_006,094B)
+094B|You defeat the second Watcher. Another steps forward.|Fight Third Watcher->COMBAT(npc_007,094C)
+094C|You defeat the third Watcher. Another steps forward.|Fight Fourth Watcher->COMBAT(npc_008,094D)
+094D|You defeat the fourth Watcher. Another steps forward.|Fight Fifth Watcher->COMBAT(npc_009,094E)
+094E|You defeat the fifth Watcher. The final one approaches.|Fight Final Watcher->COMBAT(npc_011,095)
 095|You Kneel, Bloodied But Victorious. The Altar Opens, Revealing A Stairwell Down. The Garden Accepts You.|Begin Act Two: Shadow Garden->111
 
 ACT2_MORTAL_ENTRY|You Remain Within The Chaos Of Flesh And Steel. The Mortals Want Peace, But Their Leaders—Gangs And Engineers—Clash Endlessly.|Attend A Mediation Summit->096
@@ -161,14 +166,16 @@ ACT2_MORTAL_ENTRY|You Remain Within The Chaos Of Flesh And Steel. The Mortals Wa
 097|Each Leader Requests Vital Items Found Deep Within The Other's Domain. Getting Them Means Navigating Danger And Distrust.|Accept Both Quests->098
 098|In The Gangs’ Turf, The Item Lies At The Heart Of A Collapsing Mall Overtaken By Void Rats And A Memory-Eating Fog.|Solve The Maze, Retrieve The Item->099
 099|You Retrieve The Encrypted Module. But Your Reflection In A Broken Mirror Doesn’t Match Your Actions. Something Is Watching.|Return To Engineers->100
-100|In The Engineer Sector, You Must Reach A Buried Schematic Lost In A Pit Crawling With Corrupted Servitors.|Defeat Servitors, Claim The Schematic->101
+100|In The Engineer Sector, You Must Reach A Buried Schematic Lost In A Pit Crawling With Corrupted Servitors.|Defeat Servitors, Claim The Schematic->COMBAT(servitor_001,100_POSTCOMBAT)
+100_POSTCOMBAT|You have defeated the servitors and can now claim the schematic.|Continue->101
 101|Both Leaders Now Look At Each Other Differently. The First Words Of Trust Begin.|Optional: Share Schematic (Unlock Sustainable Power)->102,Don’t Share->103
 102|The Schematic Is Uploaded. Lights Flicker On Across A Thousand Dark Halls. 'You may have saved us all,' The Engineer Whispers.|Begin Act Two: Mortals->111
 103|Without The Schematic, The Truce Is Thin. But It Holds—For Now.|Begin Act Two: Mortals->111
 
 ACT2_IMMORTAL_ENTRY|A Drone Finds You And Says, 'You’ve been marked. A trial awaits beneath the drowned wards of erebus-9. Follow.'|Follow Drone To Slums->104
 104|The Slums Have Flooded—Abandoned, Twisted By The Void. Old Security Lights Flicker. A Sealed Chamber Lies Beneath.|Find Access Point->105
-105|A Puzzle Blocks The Power Controls. Symbols Rotate In A Pattern—Solve To Shut Off Electricity And Drain Water.|Solve Puzzle (Logic)->106
+105|A Puzzle Blocks The Power Controls. Symbols Rotate In A Pattern—Solve To Shut Off Electricity And Drain Water.|Solve Puzzle->PUZZLECHECK
+105_FAIL|You fail to solve the puzzle. The symbols reset, and you must try again.|Retry->PUZZLECHECK
 106|Water Lowers, Revealing A Rusted Door. You Need An Offering—Something That Once Bloomed Despite Decay.|Search For Withered Flower->107
 107|You Find It Wrapped In A Child’s Data Diary—Kept Alive By Lightless Warmth. You Place It At The Door.|Enter The Trial Room->108
 108|Abstract Lights Twist Around You. A Being Beyond Language Speaks: 'Take my gift. Walk among time. But know the price.'|Accept Power->109,Reject->110
@@ -186,9 +193,23 @@ WINDOWEVENTSHADGARDEN|You See Shadow Monsters Shaped like Men Fighting a Radiant
 114|You spot one above a hanging beam. To reach it, roll Dexterity or use a found item like the Void-Climbing Dagger.|if Success->WHITEFLOWERSUCCESS,if Failure->WHITEFLOWERFAILURE
 
 WHITEFLOWERSUCCESS|You fall—slowly—into the Void. Time slows. Damage accrues. The flower withers. The vines regrow after 30 seconds.|Retry->114
-WHITEFLOWERFAILURE|You Retrieve a Viable Flower.|Seal the Breach->115
+WHITEFLOWERFAILURE|You Retrieve a Viable Flower.|Seal the Breach->WHITEFLOWER1
 
-115|As you patch the hole, the air returns to stillness. But something... is looking back through it.|if >= 2->114,if =< 3->116
+WHITEFLOWER1|You approach the first breach, white flowers blooming from the cracks.|Seal the Breach->WHITEFLOWER_ROLL1
+WHITEFLOWER_ROLL1|*Dexterity Check*|If Success->WHITEFLOWER_SUCCESS1,If Failure->WHITEFLOWER_FAIL1
+WHITEFLOWER_SUCCESS1|You seal the first breach. The flowers wilt slightly.|Continue->WHITEFLOWER2
+WHITEFLOWER_FAIL1|You fail to seal the breach. The flowers seem to mock you.|Retry->WHITEFLOWER_ROLL1
+
+WHITEFLOWER2|A second breach pulses with strange energy, more flowers blooming.|Seal the Breach->WHITEFLOWER_ROLL2
+WHITEFLOWER_ROLL2|*Dexterity Check*|If Success->WHITEFLOWER_SUCCESS2,If Failure->WHITEFLOWER_FAIL2
+WHITEFLOWER_SUCCESS2|You seal the second breach. The flowers fade a bit more.|Continue->WHITEFLOWER3
+WHITEFLOWER_FAIL2|You fail to seal the breach. The energy intensifies.|Retry->WHITEFLOWER_ROLL2
+
+WHITEFLOWER3|The final breach is the largest, the flowers almost glowing.|Seal the Breach->WHITEFLOWER_ROLL3
+WHITEFLOWER_ROLL3|*Dexterity Check*|If Success->WHITEFLOWER_SUCCESS3,If Failure->WHITEFLOWER_FAIL3
+WHITEFLOWER_SUCCESS3|You seal the last breach. The flowers wither and the energy fades.|Continue->116
+WHITEFLOWER_FAIL3|You fail to seal the breach. The energy pulses dangerously.|Retry->WHITEFLOWER_ROLL3
+
 116|A Market Vendor Thanks You. All Shop Prices Are Lowered, and Rare Items Begin to Appear Across Erebus-9.|Visit the Old Lady->117,Talk to Vicar->118
 117|The Old Lady Grins. 'For once, I can cook with real flame again.' She Hands You Babushka-Grade Food That Boosts Health, Stamina, and Magic.|Continue->119
 118|Vicar Crosses His Arms. 'You did good. But those holes? That was a fight. Just don't know between who.' He Glances Away.|Ask About the Light and Shadow Figures->120,Stay Silent->121
@@ -199,7 +220,8 @@ WHITEFLOWERFAILURE|You Retrieve a Viable Flower.|Seal the Breach->115
 122|A Silent Broadcast Pulses Across Every Device. No Words. Just a Deep Harmonic Hum and Flashing Images: Rotting Flowers, Flickering Stars, A Door Opening Outside Reality.|Investigate Broadcast Source->123
 123|A Sub-Basement in the Scaffolding District Has Opened. Once Locked, Now Accessible. You Descend Past Flickering Lights.|Enter The Chamber->124
 124|Inside Is a Terminal Speaking Backwards. A Vision Gate Waits—But Requires Sacrifice. One Early Item Must Be Given: A Weapon, Flower, or Note.|Offer Item->125,Refuse Sacrifice->126
-125|You Are Pulled Into a Vision: Shadow Garden Shows a Vine Cut, Replanted. A Throne of Bones, Light Blooming. A Maw Swallowing Stars.|Continue->127 126|You Walk Away. The Gate Remains—But Feels Further Now. Something Lost.|Continue->127
+125|You Are Pulled Into a Vision: Shadow Garden Shows a Vine Cut, Replanted. A Throne of Bones, Light Blooming. A Maw Swallowing Stars.|Continue->127 
+126|You Walk Away. The Gate Remains—But Feels Further Now. Something Lost.|Continue->127
 127|Three Cracked Doors Appear in the Colony. From the Inside. Engineers Want to Seal. Gangs Want to Plunder. Vicar Urges Caution.|Choose a Door->128
 
 128|First Door: Fused Mortals and AI Whispering Code. Second: Living Garden with a Dying Godling. Third: Bending Light Around an Empty Chair.|Enter Door 1->129,Enter Door 2->130,Enter Door 3->131
@@ -208,7 +230,8 @@ WHITEFLOWERFAILURE|You Retrieve a Viable Flower.|Seal the Breach->115
 131|You Sit in the Chair. Light Bends. You See Yourself From The Outside. Gaining Insight Into Erebus-9’s Origin.|Continue->132
 132|Regardless of Door, Something Higher Notices You. You Are Taken to a Realm Between Time, Dream, and Code.|Face the Presence->133
 133|A Voice Asks: 'Why do you continue?' It Does Not Expect an Answer. It Listens Anyway.|Choose A Response: Hope->134,Fear->135,Defiance->136
-134|You Are Blessed With Clarity. Future Dialogue Has More Insight. You Gain Passive Resistance to Mind Effects.|Proceed to End Forks->END_FORK 135|You Are Branded. Shadows Ignore You—but Allies Worry. Your Damage Increases Against Void Beings.|Proceed to End Forks->END_FORK
+134|You Are Blessed With Clarity. Future Dialogue Has More Insight. You Gain Passive Resistance to Mind Effects.|Proceed to End Forks->END_FORK 
+135|You Are Branded. Shadows Ignore You—but Allies Worry. Your Damage Increases Against Void Beings.|Proceed to End Forks->END_FORK
 136|You Are Cursed and Blessed. NPCs Treat You Differently. You Cannot Be Mind-Controlled But Are Always Watched.|Proceed to End Forks->END_FORK
 END_FORK|You Stand At the End of Erebus-9’s Roads.|Choose Ending Path: Shadow Garden->END_SHADOW,Mortals & Engineers->END_MORTAL,Immortals->END_IMMORTAL,Bugged AI & Gangs->END_CHAOS
 

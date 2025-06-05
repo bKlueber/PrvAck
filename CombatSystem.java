@@ -103,7 +103,19 @@ class CombatSystem {
                 if (globalItems == null || globalItems.isEmpty()) {
                     System.out.println("No global items available for loot.");
                 } else {
-                    List<GenericItem> allItems = new ArrayList<>(globalItems.values());
+                    // Exclude unique quest/event items from random loot
+                    Set<String> excludedLoot = Set.of(
+                        "token_001", "ultimatesidesword_001", "ultimatesidesword_002",
+                        "plasma_pistol_001", "schematic_001", "bread_001", "artifact_001",
+                        "whiterose_001", "filter_001"
+                        // Add any other unique quest/story item IDs here as needed
+                    );
+                    List<GenericItem> allItems = new ArrayList<>();
+                    for (GenericItem item : globalItems.values()) {
+                        if (!excludedLoot.contains(item.itemID)) {
+                            allItems.add(item);
+                        }
+                    }
                     int lootCount = diceRoll.nextInt(6) + 2; // 2-7 items
                     List<GenericItem> loot = new ArrayList<>();
                     for (int i = 0; i < lootCount && !allItems.isEmpty(); i++) {
@@ -303,7 +315,7 @@ class CombatSystem {
         int idx = 1;
         for (String itemID : playerInventory.keySet()) {
             GenericItem item = playerInventory.get(itemID);
-            if (item.itemName.toLowerCase().contains("potion") || item.itemDescription.toLowerCase().contains("heal")) {
+            if (item.itemID.equals("medpack_001") || item.itemName.toLowerCase().contains("medpack")) {
                 System.out.println(idx + ". " + item.itemName + " (Heals 25 HP)");
                 healingItems.add(itemID);
                 idx++;

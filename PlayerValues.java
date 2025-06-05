@@ -6,4 +6,6 @@ public class PlayerValues {
     public String equippedWeaponID = null;
     public String equippedArmorID = null;
     public int currency = 0;
+    public int breachesSealed = 0; // Track whiteflower breaches
+    public String currentFaction = "Mortals"; 
 }

@@ -44,11 +44,10 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
             while ((line = itemReader.readLine()) != null) {//says as long as current line is not null then continue
                 String[] itemData = line.split("\\|"); //simply saying at each | the line is broken and continue to next value
             
-                if (itemData.length == 8) { //this is just making suere there are 7 fields avalaible, the amouint outlined in item info}
+                if (itemData.length == 8) { 
                    GenericItem item = new GenericItem( 
                     itemData[0], itemData[1], itemData[2], Double.parseDouble(itemData[3]), Double.parseDouble(itemData[4]), 
-                    Integer.parseInt(itemData[5]), Integer.parseInt(itemData[6]), itemData[7]);
-
+                    Integer.parseInt(itemData[5]), Integer.parseInt(itemData[6]), itemData[7]); 
                    itemMasterList.computeIfAbsent(inventoryID, k -> new HashMap<String, GenericItem>()).put(item.itemID, item); //this actually stores the item
                     }
                 
@@ -63,8 +62,8 @@ public class DataIO {//this classs calls the corrosponding txt files, parses, wr
         try (BufferedWriter  itemWriter = new BufferedWriter(new FileWriter(filePath))) {
             for (HashMap<String, GenericItem> inventory : itemMasterList.values()) { //this loops through the inventories
                 for (GenericItem item : inventory.values()) { //this loops through items in the inventories 
-                    itemWriter.write(String.format("%s|%s|%s|%.2f|%.2f|%d|%d%n",
-                    item.itemName, item.itemID, item.itemDescription, item.itemValue, item.itemWeight, item.baseDamage, item.baseArmor));
+                    itemWriter.write(String.format("%s|%s|%s|%.2f|%.2f|%d|%d|%s%n",
+    item.itemName, item.itemID, item.itemDescription, item.itemValue, item.itemWeight, item.baseDamage, item.baseArmor, item.itemAffinity));
                 }
             }
         } catch (IOException e) {

@@ -1,20 +1,28 @@
 Iron Sword|sword_001|Basic melee weapon|50.0|2.5|10|0|Strength
-Health Potion|potion_002|Restores health|5.0|0.5|0|0|None
-Wooden Stick|stick_002|A simple wooden stick|2.0|1.0|1|0|Dexterity
 Wooden Sword|sword_002|Basic melee weapon|100.0|3.5|15|5|Strength
 Bow|bow_002|Ranged weapon|120.0|2.5|12|3|Dexterity
 Neural Disruptor|neural_003|Hacker's weapon|250.0|1.0|10|0|Intelligence
 Sword|sword_003|Basic sword|50.0|2.0|8|0|Strength
-Potion|potion_002|Healing potion|10.0|0.5|0|0|None
 Broken Stick|stick_001|A simple stick|1.0|0.2|2|0|None
+Wooden Stick|stick_002|A simple wooden stick|2.0|1.0|1|0|Dexterity
 Water Filter|filter_001|A rusty but functional water filter.|20.0|1.0|0|0|None
 Steel Dagger|dagger_001|A sharp steel dagger.|30.0|1.0|7|0|Dexterity
 Leather Armor|armor_001|Basic leather armor set.|40.0|3.0|0|10|None
-Greater Potion|potion_003|Heals a lot of health|25.0|0.7|0|0|None
 Iron Helmet|helmet_001|Protects your head.|15.0|1.2|0|5|None
-Energy Rifle|rifle_001|A high-tech ranged weapon.|200.0|4.0|20|2|Intelligence
 Sturdy Boots|boots_001|Boots that add a bit of protection.|10.0|0.8|0|2|None
 Strange Token|token_001|A mysterious token given by the Old Lady.|0.0|0.1|0|0|None
-Dormant Ultimate Side Sword|ultimatesidesword_001|Dormant, advanced melle weapon|50.0|1.0|10|5|Strength
+Dormant Ultimate Side Sword|ultimatesidesword_001|Dormant, advanced melee weapon|50.0|1.0|10|5|Strength
 Ultimate Side Sword|ultimatesidesword_002|Advanced melee weapon|100.0|1.0|100|10|Strength
-Enchanted White Rose|whiterose_001|A strange, echnating white rose|5.0|0.1|0.0|0.0|None
+Enchanted White Rose|whiterose_001|A strange, enchanting white rose|5.0|0.1|0|0|None
+Servitor Schematic|schematic_001|A blueprint guarded by advanced servitors.|0.0|0.1|0|0|None
+Plasma Pistol|plasma_pistol_001|A high-powered energy sidearm.|300.0|2.0|25|0|Intelligence
+Medpack|medpack_001|Restores health|10.0|0.5|0|0|None
+Shock Baton|baton_001|A non-lethal weapon that delivers a jolt.|35.0|1.2|8|0|Dexterity
+Pipe Wrench|wrench_001|Heavy tool, good for bashing or repairs.|20.0|2.5|7|2|Strength
+Reinforced Vest|vest_001|Improvised armor, offers decent protection.|60.0|3.0|0|15|None
+Laser Cutter|cutter_001|Industrial tool, can slice through most materials.|120.0|2.0|15|0|Intelligence
+Data Chip|chip_001|Encrypted data, valuable to the right buyer.|200.0|0.1|0|0|None
+Void Crystal|crystal_001|A mysterious crystal pulsing with energy.|500.0|0.3|0|0|None
+Mysterious Artifact|artifact_001|A strange artifact from the slums.|0.0|0.5|0|0|None
+Crust of Bread|bread_001|A small, stale piece of bread.|1.0|0.1|0|0|None
+Energy Rifle|rifle_001|A high-tech ranged weapon.|200.0|4.0|20|2|Intelligence

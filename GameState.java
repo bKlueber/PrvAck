@@ -126,6 +126,65 @@ public class GameState {
                     }
                 }
 
+                if (currentScene.getSceneID().equals("VICARFAVOUR")) {
+                    GenericItem sword = dataIO.itemMasterList.get("global").get("ultimatesidesword_001");
+                    if (sword != null && !dataIO.itemMasterList.get("playerInventory").containsKey(sword.itemID)) {
+                        dataIO.itemMasterList.get("playerInventory").put(sword.itemID, sword);
+                        System.out.println("You received: " + sword.itemName + "!");
+                    }
+                    if (trigger != null && !trigger.trim().isEmpty()) {
+                        loadScene(trigger);
+                        lastSceneID = currentScene.getSceneID();
+                        currentScene.printScene(player);
+                        continue;
+                    }
+                }
+
+                if (currentScene.getSceneID().equals("116")) {
+                    GenericItem plasma = dataIO.itemMasterList.get("global").get("plasma_pistol_001");
+                    if (plasma != null && !dataIO.itemMasterList.get("playerInventory").containsKey(plasma.itemID)) {
+                        dataIO.itemMasterList.get("playerInventory").put(plasma.itemID, plasma);
+                        System.out.println("You received: " + plasma.itemName + "!");
+                    }
+                    if (trigger != null && !trigger.trim().isEmpty()) {
+                        loadScene(trigger);
+                        lastSceneID = currentScene.getSceneID();
+                        currentScene.printScene(player);
+                        continue;
+                    }
+                }
+
+                if (currentScene.getSceneID().equals("100") && player.playerHealth > 0) {
+                    GenericItem schematic = dataIO.itemMasterList.get("global").get("schematic_001");
+                    if (schematic != null && !dataIO.itemMasterList.get("playerInventory").containsKey(schematic.itemID)) {
+                        dataIO.itemMasterList.get("playerInventory").put(schematic.itemID, schematic);
+                        System.out.println("You received: " + schematic.itemName + "!");
+                    }
+                }
+
+                if (currentScene.getSceneID().equals("100_POSTCOMBAT")) {
+                    GenericItem schematic = dataIO.itemMasterList.get("global").get("schematic_001");
+                    if (schematic != null && !dataIO.itemMasterList.get("playerInventory").containsKey(schematic.itemID)) {
+                        dataIO.itemMasterList.get("playerInventory").put(schematic.itemID, schematic);
+                        System.out.println("You received: " + schematic.itemName + "!");
+                    }
+                }
+
+                if (currentScene.getSceneID().equals("101") && labelLower.contains("share with engineers")) {
+                    if (dataIO.itemMasterList.get("playerInventory").containsKey("schematic_001")) {
+                        dataIO.itemMasterList.get("playerInventory").remove("schematic_001");
+                        System.out.println("You gave the schematic to the engineers.");
+                    } else {
+                        System.out.println("You do not have the schematic to share.");
+                    }
+                    if (trigger != null && !trigger.trim().isEmpty()) {
+                        loadScene(trigger);
+                        lastSceneID = currentScene.getSceneID();
+                        currentScene.printScene(player);
+                        continue;
+                    }
+                }
+
                 if (trigger.equalsIgnoreCase("LOOTING")) {
                     String containerID = sceneManager.findContainerForScene(currentScene.getSceneID());
                     if (containerID != null) {
@@ -226,11 +285,116 @@ public class GameState {
                         loadScene("HaggleFail");
                     }
                     lastSceneID = currentScene.getSceneID();
+                } else if (trigger.equalsIgnoreCase("INTIMIDATE")) {
+                    int d20 = (int)(Math.random() * 20) + 1;
+                    int strength = player.playerBaseStats.playerStrength;
+                    int total = d20 + (strength / 10);
+                    boolean success = total >= 15;
+                    System.out.println(player.playerName + " rolled a " + d20 + " + strength bonus (" + (strength / 10) + ") = " + total + " for Intimidate.");
+                    if (success) {
+                        System.out.println("Intimidate Success!");
+                        loadScene("IntimidateSuccess");
+                    } else {
+                        System.out.println("Intimidate Failed!");
+                        loadScene("IntimidateFail");
+                    }
+                    lastSceneID = currentScene.getSceneID();
+                } else if (trigger.equalsIgnoreCase("REPAIR")) {
+                    int d20 = (int)(Math.random() * 20) + 1;
+                    int intelligence = player.playerBaseStats.playerIntelligence;
+                    int total = d20 + (intelligence / 10);
+                    boolean success = total >= 15;
+                    System.out.println(player.playerName + " rolled a " + d20 + " + intelligence bonus (" + (intelligence / 10) + ") = " + total + " for Repair.");
+                    if (success) {
+                        System.out.println("Repair Success!");
+                        loadScene("REPAIRSUCCESS");
+                    } else {
+                        System.out.println("Repair Failed!");
+                        loadScene("REPAIRFAIL");
+                    }
+                    lastSceneID = currentScene.getSceneID();
+                } else if (trigger.equalsIgnoreCase("REPAIR2")) {
+                    int d20 = (int)(Math.random() * 20) + 1;
+                    int intelligence = player.playerBaseStats.playerIntelligence;
+                    int total = d20 + (intelligence / 10);
+                    boolean success = total >= 15;
+                    System.out.println(player.playerName + " rolled a " + d20 + " + intelligence bonus (" + (intelligence / 10) + ") = " + total + " for Advanced Repair.");
+                    if (success) {
+                        System.out.println("Repair2 Success!");
+                        loadScene("REPAIR2SUCCESS");
+                    } else {
+                        System.out.println("Repair2 Failed!");
+                        loadScene("REPAIR2FAIL");
+                    }
+                    lastSceneID = currentScene.getSceneID();
+                } else if (trigger.startsWith("WHITEFLOWER_ROLL")) {
+                    int d20 = (int)(Math.random() * 20) + 1;
+                    int dex = player.playerBaseStats.playerDexterity;
+                    int total = d20 + (dex / 10);
+                    boolean success = total >= 15;
+                    System.out.println(player.playerName + " rolled a " + d20 + " + dexterity bonus (" + (dex / 10) + ") = " + total + " for Whiteflower event.");
+                    String rollNum = trigger.replace("WHITEFLOWER_ROLL", "");
+                    if (success) {
+                        player.breachesSealed++;
+                        loadScene("WHITEFLOWER_SUCCESS" + rollNum);
+                    } else {
+                        loadScene("WHITEFLOWER_FAIL" + rollNum);
+                    }
+                    lastSceneID = currentScene.getSceneID();
+                } else if (trigger.equalsIgnoreCase("PUZZLECHECK")) {
+                    int d20 = (int)(Math.random() * 20) + 1;
+                    int intelligence = player.playerBaseStats.playerIntelligence;
+                    int total = d20 + (intelligence / 10);
+                    boolean success = total >= 15;
+                    System.out.println(player.playerName + " rolled a " + d20 + " + intelligence bonus (" + (intelligence / 10) + ") = " + total + " for Puzzle.");
+                    if (success) {
+                        System.out.println("Puzzle solved!");
+                        loadScene("106");
+                    } else {
+                        System.out.println("Puzzle failed!");
+                        loadScene("105_FAIL");
+                    }
+                    lastSceneID = currentScene.getSceneID();
                 } else {
                     loadScene(trigger);
                 }
             } else {
                 System.out.println("Invalid choice.");
+            }
+
+            if (currentScene.getSceneID().equals("ACT1_INTAC")) {
+                player.currentFaction = "Immortals";
+            } else if (currentScene.getSceneID().equals("ACT1_BUGGED")) {
+                player.currentFaction = "Shadow Garden";
+            } else if (currentScene.getSceneID().equals("ACT1_ENGINEER") || currentScene.getSceneID().equals("ACT1_GANG") || currentScene.getSceneID().equals("ACT1_NEUTRAL")) {
+                player.currentFaction = "Mortals";
+            }
+
+            if (currentScene.getSceneID().equals("112")) {
+                String faction = player.currentFaction;
+                String nextScene = null;
+                if ("Mortals".equalsIgnoreCase(faction)) {
+                    nextScene = "WINDOWEVENTMORTAL";
+                } else if ("Immortals".equalsIgnoreCase(faction)) {
+                    nextScene = "WINDOWEVENTIMMORTAL";
+                } else if ("Shadow Garden".equalsIgnoreCase(faction)) {
+                    nextScene = "WINDOWEVENTSHADGARDEN";
+                }
+                if (nextScene != null) {
+                    loadScene(nextScene);
+                    lastSceneID = currentScene.getSceneID();
+                    currentScene.printScene(player);
+                    continue;
+                } else {
+                    System.out.println("Faction not set. Cannot determine window event.");
+                }
+            }
+            if (currentScene.getSceneID().equals("109")) {
+                player.playerBaseStats.playerVitality += 10;
+                player.playerBaseStats.playerStrength += 5;
+                player.playerBaseStats.playerDexterity += 5;
+                player.playerBaseStats.playerIntelligence += 5;
+                System.out.println("You feel a surge of power! +10 Vitality, +5 Strength, +5 Dexterity, +5 Intelligence (permanent).");
             }
         }
     }
