@@ -11,3 +11,4 @@ Watcher Acolyte|npc_011|A high priest of the Watchers, final boss of the garden 
 Gang member|npc_010|A low-level gang enforcer, found in the market and slums.|26|true|Neutral|3|5|10
 Cage Fighter|npc_cagefighter_001|A burly fighter in the underground cage, mid-game challenge.|38|true|Neutral|5|10|16
 Servitor|servitor_001|A corrupted servitor, mid-game engineer quest.|42|true|Neutral|7|11|17
+Fused Guardian|npc_012|A monstrous, fused guardian of flesh and machine, blocking the forbidden chamber.|45|true|Neutral|8|10|18

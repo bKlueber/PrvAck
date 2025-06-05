@@ -225,7 +225,7 @@ WHITEFLOWER_FAIL3|You fail to seal the breach. The energy pulses dangerously.|Re
 127|Three Cracked Doors Appear in the Colony. From the Inside. Engineers Want to Seal. Gangs Want to Plunder. Vicar Urges Caution.|Choose a Door->128
 
 128|First Door: Fused Mortals and AI Whispering Code. Second: Living Garden with a Dying Godling. Third: Bending Light Around an Empty Chair.|Enter Door 1->129,Enter Door 2->130,Enter Door 3->131
-129|The Fused Mortals Attack You, Savage And Mindless in Guarding Their Treasures.|Combat->COMBAT(132)
+129|The Fused Mortals Attack You, Savage And Mindless in Guarding Their Treasures.|Combat->COMBAT(npc_012,132)
 130|The Godling Reaches for You. Its Blessing Lingers as a Warm Flame in Your Palm.|Continue->132
 131|You Sit in the Chair. Light Bends. You See Yourself From The Outside. Gaining Insight Into Erebus-9’s Origin.|Continue->132
 132|Regardless of Door, Something Higher Notices You. You Are Taken to a Realm Between Time, Dream, and Code.|Face the Presence->133
