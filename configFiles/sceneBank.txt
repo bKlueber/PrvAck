@@ -55,12 +55,12 @@
 047|'No one's sure why or how we got here,' Ligart Shrugged. 'What we do know is that they saw it first, and some went crazy,' He Added.|Continue->048
 048|'Bing, Bang, Boom. We're here now,' Ligart Explained.|Thanks->050
 049|*[No scene provided for ID 049]*|
-050|'No sweat kid, if you got more tokens and have more questions, I'll be here.'|Return to Market->BACKTOMARKET
+050|'No sweat kid, if you got more tokens and have more questions, I'll be here.'|Return to Market->MARKET1
 
 051|You've Earned Vicar's Trust. The Market Opens to You, But Only Partially. He Has a Task.|Continue->052
-052|'Interested in work?' He Questions, Tossing a Crumpled Map Toward {playerName}. 'Something was taken. I want it back,' Vicar Explained.|Accept Job->053,Decline->BACKTOMARKET
+052|'Interested in work?' He Questions, Tossing a Crumpled Map Toward {playerName}. 'Something was taken. I want it back,' Vicar Explained.|Accept Job->053,Decline->MARKET1
 
-BACKTOMARKET|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->EXPLORE
+MARKET1|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->EXPLORE
 EXPLORE|*No description provided for EXPLORE.*|
 
 053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT
@@ -86,13 +86,13 @@ VICARFAVOUR|He Shrugged Off Concern. 'Speaking of that kind of stuff, I found th
 
 SWORDDESCRIP1|The Blade is Thick, Almost Cleaver-Like, Suggesting Immense Weight, But it Was Light And Thin. Its Metal is Dark, Shaded in Deep, Grey Tones With Subtle Ruinc Engravings.|Continue->SWORDDESCRIP2
 SWORDDESCRIP2|The Guard is Adorned With Wicked, Wing-Like Protrusions That Resemble Horns or Demonic Claws, Curling Outward. At The Center Lies a Grim, Horned Skill Motif, Likely Symbolic of Its First Master. Forged Not For Eleganc, But For Destructuoin.|Continue->SWORDDESCRIP3
-SWORDDESCRIP3|The Power That The Blade Appears to Hold Seems Dormant. Requiring Some Kind of Power Source or Sacrfice to Weild Mightly|Continue->BACKTOMARKET
+SWORDDESCRIP3|The Power That The Blade Appears to Hold Seems Dormant. Requiring Some Kind of Power Source or Sacrfice to Weild Mightly|Continue->MARKET2
 
-062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->BACKTOMARKET
+062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->MARKET2
 063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT(064)
 
 REPAIR|*Repair Minigame*|If Success->REPAIRSUCCESS,If Failure->REPAIRFAIL
-REPAIRSUCCESS|While Repairing the Junction, You Notice a Jammed Panel Humming Strangely. You Discover Scratched Symbols Inside—Ancient, Uneven, Like Carvings from a Dream.|Report to Engineers->065,Ignore->BACKTOMARKET
+REPAIRSUCCESS|While Repairing the Junction, You Notice a Jammed Panel Humming Strangely. You Discover Scratched Symbols Inside—Ancient, Uneven, Like Carvings from a Dream.|Report to Engineers->065,Ignore->MARKET2
 REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
 
 064|You Fend Off an Opprotunist in Rags. He Escapes Into a Vent Shaft, You Spot Markings Burned Into the Metal Near the Scaffold Where You Awoke.|Investigate Markings->067
@@ -101,12 +101,12 @@ REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
 066|They Were Hesitant to Talk More. 'They're signs of some kind, but we have no explination for them.' Another explained.|Investigate For More Markings->067
 
 067|Near The Scaffold, You Discover a Sealed Door. No Hinges, no Handle, Just Vines And White Flowers Growing From The Steel. It Opens Briefly, Reavealing a Garden Bathed in Still Light, Then Vanishes.|Report to Old Lady->068,Report to Ligart->069,Report to Engineers->070
-068|'You Saw One?' The Old Lady's Eyes Narrow. 'They're Not Neant to be Found. They're said to be echos of the sealed.'|Ask More->071,Stay Silent->BACKTOMARKET
-069|'If it vanished, it'll return again,' Ligart Explained, a Smile Fading. 'You're touched, now. Just hope it doesn't stickl.' He Warned.|Ask More->071,Stay Silent->BACKTOMARKET
-070|'They appear here and there, but those doors are never on any map,' The Engineer Responded.|Ask More->071,Stay Silent->BACKTOMARKET
+068|'You Saw One?' The Old Lady's Eyes Narrow. 'They're Not Neant to be Found. They're said to be echos of the sealed.'|Ask More->071,Stay Silent->MARKET3
+069|'If it vanished, it'll return again,' Ligart Explained, a Smile Fading. 'You're touched, now. Just hope it doesn't stickl.' He Warned.|Ask More->071,Stay Silent->MARKET3
+070|'They appear here and there, but those doors are never on any map,' The Engineer Responded.|Ask More->071,Stay Silent->MARKET3
 
 071|They Tell You Their Reasoning For These Doors. However, They Didn't Seem Very Likely to be The Full Truth With Their Limited Knowledge. The Flowers Only Bloom For Moments, But You Saw Them.|Continue->072
-072|You Realize That Something Ancient Lurks Within Erebus-9.|Continue->BACKTOMARKET
+072|You Realize That Something Ancient Lurks Within Erebus-9.|Continue->MARKET4
 073|A Voice Echoes Over a Failing PA: 'All Survivors, Report to Your Sector Representatives. The Colony’s Future Depends on Unity.'|Look for a Map->074,Ignore and Wander->076
 074|A Cracked Display Shows a Layout of Erebus-9. Several Factions Have Claimed Territory. The Map Flickers Between Symbols: A Circuit, A Glitching Eye, a Wrench, and a Knife.|Examine Factions->075,Choose Where to Go->076
 075|You Learn The Following Briefly: Intact AI Control The Centeral Core And Support Protocol Enforcement. Bugged AI Hide in Corrupted Systems And Rewrite Code to Dominate All Life. Engineers Work Under Emergency Lights Near THe Maintenance Decks. Gangs Prowl The Outer Slums, Fighting Each other And Looting The Weak.|Continue->076
