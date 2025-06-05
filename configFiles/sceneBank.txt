@@ -5,7 +5,7 @@
 005|The Dream Continues to Twist And Warp Into a Nightmare. A Shadow Watches From The Void, Its Twisted, Warped Smile Sends Chills Throughout Your Being. You Recognize it, Somehow. U̸̧̲̼̞̲̙̭͈̼̓̅̓̐̓͘͜l̵̺̫̫̖̫͎̠̽̊̂̐̂͊͂t̴͙͖̞̠͍̏̓͐i̵̩͌̽͛͊̐̎̋m̴̦͕͔͈̦̖͙͗̌̌̊͆͂͗͜á̷̭͂͑̆̿̐͛̕͠?|Wake up, Terrified->004
 
 006|Dim Red Lights Blink in The Cryo Bay. You're Still Trapped in Your Pod. Movement Echoes Nearby.|Break Free->007,Stay And Watch->008
-~007|You Tear Yourself Free Just in Time to See a Cryo Pod Open, And Its Occupant Slaughtered. Another Victim Being Pulled up to Free Pods, You Could Join Them if You're Not Careful.|Run->009,Hide->010
+007|You Tear Yourself Free Just in Time to See a Cryo Pod Open, And Its Occupant Slaughtered. Another Victim Being Pulled up to Free Pods, You Could Join Them if You're Not Careful.|Run->009,Hide->010
 008|You Watch in Horror as Someone is Butchered Before Stuffed Into a Pod. The Killers Laugh. You're Next, Unless You Move Now.|Escape Quietly->009,Hide->010
 
 009|You Slip Past the Chaos, Following Emergency Lights. Large, Bay Doors Open Into a Cramped Network of Scaffolding And Catwalks.|Climb up->011,Climb Down->012,Call For Help->013
