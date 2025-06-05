@@ -63,7 +63,7 @@
 MARKET1|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE1
 EXPLORE1|*Insert NPC List*|Trade->[NPC List],Continue->053
 
-053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT
+053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT(057)
 054|You Sneak Between Rusted Buildings and Power Conduits. Gangs Pass Nearby, Unaware.|Continue->055
 055|You Find the Artifact Hidden Beneath a Loose Metal Plate.|Take Artifact->057
 056|You Find a Shady Local Willing to Help. Offering a Small Trade to Get You Safe Passage Through Gang-Controlled Streets.|Trade->057,Haggle->HAGGLE,Intimidate->INTIMIDATE
@@ -74,7 +74,7 @@ HaggleSuccess|The Small Trade Becomes Smaller, and They Escort You Through the S
 HaggleFail|The Small Trade Doesn't Change, and They Escort You Through the Slums.|Continue->055
 IntimidateSuccess|The Small Trade is Forgotten, and They Escort You Through the Slums For Free.|Continue->057
 IntimidateFail|They Forget They Made the Offer to You, and Refuse to Talk to You.|Continue->FirstFailedIntimidation
-FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT
+FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT(057)
 
 057|With the Artifact, You Return to Vicar With It. Leaving the Way You Came to Find It.|Continue->058
 058|Vicar Ligart Looked Silently at the Artifact, Then at You. 'Good Job, But I Bet You Have Questions,' He Commented in a Lower Tone of Voice.|Ask About It->059,Stay Silent->060
@@ -126,10 +126,10 @@ EXPLORE4|*Insert NPC List*|Trade->[NPC List],Continue->077
 079|Gunshots Ring in the Distance. A Man Waves You Over. 'You look tough. You in or out?'|Join Them->084,Reject Offer->076
 080|A Trail of Flickering Consoles and Glitched Screens Leads You Deeper into Darkened Corridors. An Unnerving Voice Whispers Through the Vents.|Investigate->085,Flee->076
 
-081|An Engineer Hands You a Welding Torch. 'The stabilizers are failing. You fix them, we talk future.'|Begin Repairs (Mini-Game/ rolls)->REPAIR2
+081|An Engineer Hands You a Welding Torch. 'The stabilizers are failing. You fix them, we talk future.'|Begin Repairs (Mini-Game/ rolls)->REPAIR2(ACT1_ENGINEER)
 082|'Intact AI were always strictive, but now they’re desperate. And the Bugged ones? They infect minds like code,' She Warns.|Continue->076
 083|The Drone Echoes a Message: 'Human cognition compatible. Recommend alignment with protocol entities. Threat level: unclear.'|Accept Offer to Align->086,Refuse and Leave->076
-084|'Good. You'll prove yourself in the cage first. That’s how we do things down here,' He Laughs.|Fight in the Cage (Combat)->COMBAT2
+084|'Good. You'll prove yourself in the cage first. That’s how we do things down here,' He Laughs.|Fight in the Cage (Combat)->COMBAT2(ACT1_GANG)
 085|You Discover a Terminal Covered in Organic Veins and Flickering Lights. A Twisted AI Voice Calls You 'Little puppet.'|Respond to It->087,Destroy the Terminal->088
 
 086|You're Given a Wrist Node. 'This will keep track of you. And you of us.' The Drone Says Coldly.|Ask Questions->089,Leave With New Affiliation->ACT1_INTAC
