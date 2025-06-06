@@ -15,7 +15,7 @@ public class CharacterCreator { //this will be the class that takes all player i
         boolean classConfirmed = false; //setting these to control the loop that will prompt if the user is sure of their choice
         int classChoice = 0;
 
-        while(!classConfirmed) { //simply says as long as classConfirmed is false to keep looping
+        while(!classConfirmed) {
             System.out.println("Please choose a class");
             System.out.println("1. Guard (Strengthfocused)");
             System.out.println("2. Ranger (Dexterity focused)");
@@ -26,10 +26,11 @@ public class CharacterCreator { //this will be the class that takes all player i
             classChoice = userInput.nextInt();
             userInput.nextLine();
 
-            switch (classChoice) { //so this will display the class info and ask user to confrim before it will continue
-
+            switch (classChoice) {
                 case 1:
-                    classes.userChoseSTR = new StrengthBuild(); 
+                    classes.userChoseSTR = new StrengthBuild();
+                    classes.userChoseDEX = null; 
+                    classes.userChoseINT = null;
                     System.out.println("");
                     System.out.println("Guard Selected - Strength Build -");
                     System.out.println("Stats are:");
@@ -42,7 +43,9 @@ public class CharacterCreator { //this will be the class that takes all player i
                     break;
 
                 case 2: 
-                    classes.userChoseDEX = new DexterityBuild(); 
+                    classes.userChoseDEX = new DexterityBuild();
+                    classes.userChoseSTR = null;
+                    classes.userChoseINT = null; 
                     System.out.println("");
                     System.out.println("Ranger Selected - Dexterity Build -");
                     System.out.println("Stats are:");
@@ -57,6 +60,8 @@ public class CharacterCreator { //this will be the class that takes all player i
 
                 case 3: 
                     classes.userChoseINT = new IntelligenceBuild();
+                    classes.userChoseSTR = null;
+                    classes.userChoseDEX = null; 
                     System.out.println("");
                     System.out.println("Technician Selected - Intelligence Build -");
                     System.out.println("Stats are:");
