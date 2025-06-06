@@ -2,7 +2,7 @@
 002|You Remember Going Into Cryo-Sleep With The Whole Colony, But as The Dream Continues, it Darkens as The Feeling of Disaster Permeates The Dream.|Next->003
 003|A crack Runs Across Reality in Front of The Colony. Sirens Wail, But No One is There to Hear it. The AI Are Alone to Make Glimpses And Stare Into The Abyss Beyond. It Looks Back.|Wake up->004,Keep Dreaming->005
 004|The Cold, Chilling Bite of Reality Wakes You. Your Eyes Jerk Open in Panic. The Ice Thawing as Cryo-Fluid Drips From You. You're Now Awake.|Next->006
-005|The Dream Continues to Twist And Warp Into a Nightmare. A Shadow Watches From The Void, Its Twisted, Warped Smile Sends Chills Throughout Your Being. You Recognize it, Somehow. U̸̧̲̼̞̲̙̭͈̼̓̅̓̐̓͘͜l̵̺̫̫̖̫͎̠̽̊̂̐̂͊͂t̴͙͖̞̠͍̏̓͐i̵̩͌̽͛͊̐̎̋m̴̦͕͔͈̦̖͙͗̌̌̊͆͂͗͜á̷̭͂͑̆̿̐͛̕͠?|Wake up, Terrified->004
+005|The Dream Continues to Twist And Warp Into a Nightmare. A Shadow Watches From The Void, Its Twisted, Warped Smile Sends Chills Throughout Your Being. You Recognize it, Somehow. U̸̧̲̼̞̲̙̭͈̼̓̅̓̐̓͘͜l̵̺̫̫̖̫͎̠̽̊̂̐̂͊͂t̴͙͖̞̠͍̏̓͐i̵̩͌̽͛͊̐̎̋m̴̦͕͔͈̦̖͙͗̌̌̊͆͂͗͜á̷̭͂͑̆̿̐͛̕͠?|Wake up Terrified->004
 
 006|Dim Red Lights Blink in The Cryo Bay. You're Still Trapped in Your Pod. Movement Echoes Nearby.|Break Free->007,Stay And Watch->008
 007|You Tear Yourself Free Just in Time to See a Cryo Pod Open, And Its Occupant Slaughtered. Another Victim Being Pulled up to Free Pods, You Could Join Them if You're Not Careful.|Run->009,Hide->010
@@ -164,9 +164,9 @@ ACT2_SHADOW_ENTRY|You Follow The Scent Of Something Sacred And Forsaken. A Path 
 ACT2_MORTAL_ENTRY|You Remain Within The Chaos Of Flesh And Steel. The Mortals Want Peace, But Their Leaders—Gangs And Engineers—Clash Endlessly.|Attend A Mediation Summit->096
 096|The Engineer Hisses: 'They take everything.' The Gang Leader Growls: 'They hoard everything.' Both Refuse To Yield.|Volunteer To Help->097
 097|Each Leader Requests Vital Items Found Deep Within The Other's Domain. Getting Them Means Navigating Danger And Distrust.|Accept Both Quests->098
-098|In The Gangs’ Turf, The Item Lies At The Heart Of A Collapsing Mall Overtaken By Void Rats And A Memory-Eating Fog.|Solve The Maze, Retrieve The Item->099
+098|In The Gangs’ Turf, The Item Lies At The Heart Of A Collapsing Mall Overtaken By Void Rats And A Memory-Eating Fog.|Solve The Maze and Retrieve The Item->099
 099|You Retrieve The Encrypted Module. But Your Reflection In A Broken Mirror Doesn’t Match Your Actions. Something Is Watching.|Return To Engineers->100
-100|In The Engineer Sector, You Must Reach A Buried Schematic Lost In A Pit Crawling With Corrupted Servitors.|Defeat Servitors, Claim The Schematic->COMBAT(servitor_001,100_POSTCOMBAT)
+100|In The Engineer Sector, You Must Reach A Buried Schematic Lost In A Pit Crawling With Corrupted Servitors.|Defeat Servitors and Claim The Schematic->COMBAT(servitor_001,100_POSTCOMBAT)
 100_POSTCOMBAT|You have defeated the servitors and can now claim the schematic.|Continue->101
 101|Both Leaders Now Look At Each Other Differently. The First Words Of Trust Begin.|Optional: Share Schematic (Unlock Sustainable Power)->102,Don’t Share->103
 102|The Schematic Is Uploaded. Lights Flicker On Across A Thousand Dark Halls. 'You may have saved us all,' The Engineer Whispers.|Begin Act Two: Mortals->111
