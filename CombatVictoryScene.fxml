@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CombatVictoryController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="victoryMessageLable" layoutX="593.0" layoutY="14.0" text="Victory">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="rewardMessageLable" layoutX="617.0" layoutY="90.0" text="Reward">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lootMessage" layoutX="546.0" layoutY="212.0" text="Loot">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnYesLoot" layoutX="640.0" layoutY="215.0" mnemonicParsing="false" text="Yes" />
+      <Button fx:id="btnNoLoot" layoutX="684.0" layoutY="215.0" mnemonicParsing="false" text="No" />
+      <Label fx:id="noLootLable" layoutX="609.0" layoutY="259.0" opacity="0.0" text="Skip Loot">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lableNoGlobalItems" layoutX="501.0" layoutY="259.0" opacity="0.0" text="No global items available for loot.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="yesLootLable" layoutX="333.0" layoutY="259.0" opacity="0.0" text="You find the following items:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="itemsFoundLable" layoutX="609.0" layoutY="266.0" opacity="0.0" text="Items">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="itemLootingLable" layoutX="69.0" layoutY="298.0" opacity="0.0" text="Enter the number of the item to take (or 0 to stop looting):">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="itemLootingInput" layoutX="593.0" layoutY="301.0" opacity="0.0" />
+      <Label fx:id="stopLootingLable" layoutX="800.0" layoutY="298.0" opacity="0.0" text="You stop looting.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="playerLootedItems" layoutX="586.0" layoutY="348.0" opacity="0.0" text="You Looted">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="nothingLeft" layoutX="517.0" layoutY="385.0" opacity="0.0" text="There's nothing left to loot.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
