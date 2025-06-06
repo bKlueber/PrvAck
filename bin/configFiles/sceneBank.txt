@@ -1,0 +1,244 @@
+001|You Dream of The Once Earth-Orbiting Colony, Erebus-9. It Was Going to Take Off Into The Endless Stars Beyond The Origin System.|Next->002
+002|You Remember Going Into Cryo-Sleep With The Whole Colony, But as The Dream Continues, it Darkens as The Feeling of Disaster Permeates The Dream.|Next->003
+003|A crack Runs Across Reality in Front of The Colony. Sirens Wail, But No One is There to Hear it. The AI Are Alone to Make Glimpses And Stare Into The Abyss Beyond. It Looks Back.|Wake up->004,Keep Dreaming->005
+004|The Cold, Chilling Bite of Reality Wakes You. Your Eyes Jerk Open in Panic. The Ice Thawing as Cryo-Fluid Drips From You. You're Now Awake.|Next->006
+005|The Dream Continues to Twist And Warp Into a Nightmare. A Shadow Watches From The Void, Its Twisted, Warped Smile Sends Chills Throughout Your Being. You Recognize it, Somehow. U̸̧̲̼̞̲̙̭͈̼̓̅̓̐̓͘͜l̵̺̫̫̖̫͎̠̽̊̂̐̂͊͂t̴͙͖̞̠͍̏̓͐i̵̩͌̽͛͊̐̎̋m̴̦͕͔͈̦̖͙͗̌̌̊͆͂͗͜á̷̭͂͑̆̿̐͛̕͠?|Wake up Terrified->004
+
+006|Dim Red Lights Blink in The Cryo Bay. You're Still Trapped in Your Pod. Movement Echoes Nearby.|Break Free->007,Stay And Watch->008
+007|You Tear Yourself Free Just in Time to See a Cryo Pod Open, And Its Occupant Slaughtered. Another Victim Being Pulled up to Free Pods, You Could Join Them if You're Not Careful.|Run->009,Hide->010
+008|You Watch in Horror as Someone is Butchered Before Stuffed Into a Pod. The Killers Laugh. You're Next, Unless You Move Now.|Escape Quietly->009,Hide->010
+
+009|You Slip Past the Chaos, Following Emergency Lights. Large, Bay Doors Open Into a Cramped Network of Scaffolding And Catwalks.|Climb up->011,Climb Down->012,Call For Help->013
+010|You Find a Tight Space Beneath a Storage Unit. The Killers Pass You by, For Now.|Wait Longer->013,Escape Now->009
+011|At The Top of the Scaffolding, You Find an Elderly Woman. Sitting Calmly Among Supplies.|Speak to Her->014,Keep Moving->016
+012|You Find a Tight Space Beneath the Scaffolding And Catwalks. The Killers Pass You by, For Now.|Wait Longer->013,Escape Now->015
+013|Waiting For What Felt Like Hours, The Killers Return to the Cryo Pods, Leaving You Alive.|Escape Now->015
+014|Calling For Help Alerted the Killers, They Catch You Before You Can Hide Effectively And Take You Back to Your Pod, Only to Butcher And Lay You Down in Death in the Pod You Were Escaping From.|Try Again From Last Escape Point->009
+
+015|'You made it out,' She Says Softly. 'I thought no one else would,' She Hands You a Crust of Bread.|What Happened to The Colony?->017,What's Going on?->017
+016|The Catwalk Ends in Rubble. You Can See The Market Beyond, But No Clear Path.|Try to Jump->018,Return to The Old Lady->015
+017|'It wasn't always like this,' She Murmurs. 'You want answers? Go find Ligart. He knows more than he lets on.'|Who's Ligart?->019,Where Can I Find him?->018
+018|'Come with me, he's in the market,' She Began. 'However, it's quite tricky to get to from here, so pay attention and follow closely,' the Old Lady Explained, Waddling Off With Cane in Hand.|Follow Her->020
+019|'He's a dealer of information, a tricky man, indeed,' She Babbled. 'Shady deals and dirty money, but the only broker of information around as good as him,' She Admitted.|Where Can I Find him?->018
+020|The Old Lady Leads You Through the Scaffolding Mess Beyond the Pod Bay. Reaching a Different Elevation But Same Ending Rubble of the Catwalk.|Continue->021
+021|Small Gaps in the Messy Ruin Can Be Seen From This Position, But Nothing Else Was Below the Catwalk From Here. Leading to a Pit With No Visible Bottom.|Are You sure About This?->022
+022|'I've Been Doing This For Years,' She Scoffed. 'Just do as I do, and You'll be Fine,' She Explained. 'Oh, and maybe don't look down,' the Old Lady Teased.|Whatever You Say->023,Follow Her->023
+
+023|Following the Old Lady Across the Surprisingly Flimsy Catwalks and Tight Spaces to Reach the Other Side of the Gap, You Reach the Other Side Successfully by Following Her Lead.|Continue->024
+024|'Good job, we made it over,' She Affirmed Your Achievement. 'This way, we're just about there,' She Responded.|Glad That's Over->025,Follow Her->025
+025|You Step Into the Ruined Streets of Erebus-9, the Air Thick With Decay. The Old Lady Went Off Through the Crowds.|Search For Loot->LOOTING,Explore Market->027
+026|A Dimly Lit Marketplace, Abandoned Long Ago But Still Holding Eerie Signs of Life.|Check Abandoned Stall->LOOTING,Approach Locked Door->032,Explore Market->027
+027|You Wander Through the Stalls, Dusty and Cracked, But Some Look Recently Disturbed. A Faint Voice Calls From Behind a Curtain.|Investigate The Voice->028,Keep Walking->029
+028|The Old Lady Waved You Over Again. 'Before You Go Asking Questions, How About a Favor? My Water Filter's Busted,' She Said, Holding Up a Rusty Device.|Take The Filter->030,Refuse->031
+029|Wandering Deeper into the Market Without Guidance, You Begin to Draw Unwanted Attention. Eyes Follow Your Movements. Whispers Stir.|Go Back to The Old Lady->028,Push Onward Anyway->032
+030|'Good. You'll Find a Spare in the Lower Stall Beneath the Windtrap,' She Instructs. 'Watch Your Step Down There. Not All Are Friendly.'|Begin The Task->033
+031|'Suit Yourself,' She Huffs. 'Don't Expect Me to Point You Anywhere Then.'|Wander Stalls->029,Take Filter->030
+
+032|You Push Deeper Into a Darker Corner of the Market. A Man Blocks Your Way, Covered in Grafted Tech and Scraps. 'You Lost?' He Growls.|Confront Him->034,Turn Back->028
+033|You Descend a Rusty Ladder Into a Hidden Nook Beneath the Market. Water Drips From Overhead. The Windtrap Moans.|Search The Debris->035,Look Around First->036
+034|The Man Shoves You. 'Best Head Back to the Old Hag, Newblood,' He Warns, Then Laughs. You Get the Feeling He Let You Off Easy.|Retreat to The Market->MARKET1
+
+035|You Find a Spare Filter Among Wires and Rot. It's Damaged, But Might Be Repairable.|Take It Back->037
+036|You Spot an Old Toolbench and a Crate of Parts Nearby. It Could Be Used to Repair the Filter.|Try to Repair Filter->038,Take It As-Is->035
+037|The Old Lady Smiles. 'Well Done. You're Not Useless After All,' She Says. 'Here, Take This,' She Hands You a Strange Token.|Ask What It Is->039,Thank Her and Leave->040
+038|With Patience and a Bit of Luck, You Patch the Filter. The Old Lady Is Pleased. 'Smart and Handy. Rare Combo Here,' She Grins.|Give Filter->037
+
+039|'That Token? It's How You'll Pay Ligart,' She Explains. 'He Doesn't Take Coin—Only Questions Worth Asking.'|Where Is He Again?->041
+040|'Off You Go,' She Says, Already Tinkering With the Filter. 'And Watch Yourself With Ligart. He's...different.'|Search For Ligart->041
+041|You Make Your Way Past the Market's Edge, Past Vendors and Roving Thugs. You Find a Quiet Corner Where a Young Man Watches From a Shaded Alcove.|Approach The Man->042
+
+042|He's Lean, Pale, and Dressed Like a Vendor, But There's No Goods—Only a Stack of Books and a Dim Lamp. 'You've Got Questions?' He Asks Without Looking Up.|Offer Token->043,Who Are You?->044
+043|He Takes the Token and Pockets It Silently. 'What You Want to Know, Stranger?' He Leans Forward, His Eyes Dark as the Void.|Ask About The Colony->045
+044|'Name's Vicar Ligart. I Listen, I Speak, I Trade. That's What You Need to Know,' He Says Flatly While Laying the Book He Was Looking Over Off to the Side.|Offer Token->043
+045|'Ah, Erebus-9? Talk around the colony says we're not anywhere at all,' Ligart Began.|Continue->046
+046|'Pretty crazy, right? I know... The engineers say the AI looked into the Abyss first and it looked back,' he Continued.|What Happened?->047
+047|'No one's sure why or how we got here,' Ligart Shrugged. 'What we do know is that they saw it first, and some went crazy,' He Added.|Continue->048
+048|'Bing, Bang, Boom. We're here now,' Ligart Explained.|Thanks->050
+049|*[No scene provided for ID 049]*|
+050|'No sweat kid, if you got more tokens and have more questions, I'll be here.'|Return to Market->MARKET1
+
+051|You've Earned Vicar's Trust. The Market Opens to You, But Only Partially. He Has a Task.|Continue->052
+052|'Interested in work?' He Questions, Tossing a Crumpled Map Toward {playerName}. 'Something was taken. I want it back,' Vicar Explained.|Accept Job->053,Decline->MARKET1
+
+MARKET1|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE1
+EXPLORE1|You see a small box tucked behind some trash.|Search the Box->LOOTING,Return to Vicar->052
+
+053|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Bribe Locals->056,Fight Your Way In->COMBAT(npc_010,057)
+054|You Sneak Between Rusted Buildings and Power Conduits. Gangs Pass Nearby, Unaware.|Continue->055
+055|You Find the Artifact Hidden Beneath a Loose Metal Plate.|Take Artifact->057
+056|You Find a Shady Local Willing to Help. Offering a Small Trade to Get You Safe Passage Through Gang-Controlled Streets.|Haggle->HAGGLE,Intimidate->INTIMIDATE
+
+HaggleSuccess|You Succeed in Haggling and The Small Trade Becomes Smaller, and They Escort You Through the Slums.|Continue->057
+HaggleFail|The Small Trade Doesn't Change, They are Now Visibily Annoyed With You. They Escort You Through the Slums.|Continue->055
+IntimidateSuccess|The Small Trade is Forgotten, and They Escort You Through the Slums For Free.|Continue->057
+IntimidateFail|They Forget They Made the Offer to You, and Refuse to Talk to You.|Continue->FirstFailedIntimidation
+FirstFailedIntimidation|The Map Leads to the Lower Slums. Buzzing With Makeshift Power Lines, Smoke, and Gangs.|Stealth Through->054,Fight Your Way In->COMBAT(npc_010,057)
+
+057|With the Artifact, You Return to Vicar With It. Leaving the Way You Came to Find It.|Continue->058
+058|Vicar Ligart Looked Silently at the Artifact, Then at You. 'Good Job, But I Bet You Have Questions,' He Commented in a Lower Tone of Voice.|Ask About It->059,Stay Silent->060
+059|He Scoffed. 'Some Say it's From Shadow Garden—' He Began— 'They Take the Unwanted, and They Don't Come Back,' He Explained, Taking the Artifact.|Continue->061
+060|A Sly Smirk Grew Across His Face. 'Smart to Keep Quiet. Curiosity Can Get You Killed 'round here,' He Explained, Taking the Artifact.|Continue->061
+061|You Gain Standing With Ligart. He Trusts You Now—Perhaps More Than He Should.|Continue->VICARFAVOUR
+
+VICARFAVOUR|He Shrugged Off Concern. 'Speaking of that kind of stuff, I found this, and thought you might have a use for it,' Vicar Explained And Hands You an unusual blade.|Continue->SWORDDESCRIP1
+
+SWORDDESCRIP1|The Blade is Thick, Almost Cleaver-Like, Suggesting Immense Weight, But it Was Light And Thin. Its Metal is Dark, Shaded in Deep, Grey Tones With Subtle Ruinc Engravings.|Continue->SWORDDESCRIP2
+SWORDDESCRIP2|The Guard is Adorned With Wicked, Wing-Like Protrusions That Resemble Horns or Demonic Claws, Curling Outward. At The Center Lies a Grim, Horned Skill Motif, Likely Symbolic of Its First Master. Forged Not For Eleganc, But For Destructuoin.|Continue->SWORDDESCRIP3
+SWORDDESCRIP3|The Power That The Blade Appears to Hold Seems Dormant. Requiring Some Kind of Power Source or Sacrfice to Weild Mightly|Continue->MARKET2
+
+MARKET2|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE2
+EXPLORE2|You stumble upon a sleeping trader, he wouldn't notice if you helped yourself to his stash of loot.... would he?|Slip Behind The Stall and Rummage Through the Stock->LOOTING,Continue->062
+
+062| The Lights Flicker. Sirens Briefly Sound—Then Die Out. Erebus-9 Falls Into Blackout.|Help the Engineers->063,Stay Hidden->MARKET2
+063| You Find the Engineers Scrambling in Dim Emergency Lights. Some Whisper About Ghosts in the Systems.|Assist Repairs (Mini-Game)->REPAIR,Guard the Area->COMBAT(npc_004,064)
+
+REPAIRSUCCESS|While Repairing the Junction, You Notice a Jammed Panel Humming Strangely. You Discover Scratched Symbols Inside—Ancient, Uneven, Like Carvings from a Dream.|Report to Engineers->065,Ignore->MARKET2
+REPAIRFAIL|{playerName} Has Failed The Repair!|Retry->REPAIR
+
+064|You Fend Off an Opprotunist in Rags. He Escapes Into a Vent Shaft, You Spot Markings Burned Into the Metal Near the Scaffold Where You Awoke.|Investigate Markings->067
+
+065|Engineers are Alarmed by The Symbols You Found. One Mutters, 'We haven't seen that script since the old cycles.' They Admitted.|Continue->066
+066|They Were Hesitant to Talk More. 'They're signs of some kind, but we have no explination for them.' Another explained.|Investigate For More Markings->067
+
+067|Near The Scaffold, You Discover a Sealed Door. No Hinges, no Handle, Just Vines And White Flowers Growing From The Steel. It Opens Briefly, Reavealing a Garden Bathed in Still Light, Then Vanishes.|Report to Old Lady->068,Report to Ligart->069,Report to Engineers->070
+068|'You Saw One?' The Old Lady's Eyes Narrow. 'They're Not Neant to be Found. They're said to be echos of the sealed.'|Ask More->071,Stay Silent->MARKET3
+069|'If it vanished, it'll return again,' Ligart Explained, a Smile Fading. 'You're touched, now. Just hope it doesn't stickl.' He Warned.|Ask More->071,Stay Silent->MARKET3
+070|'They appear here and there, but those doors are never on any map,' The Engineer Responded.|Ask More->071,Stay Silent->MARKET3
+
+MARKET3|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE3
+EXPLORE3|The market has a feeling of unease in the air. You notice a trash bin tipped over and something shiny sticking out|Investigate the bin->LOOTING,Continue->071
+
+071|They Tell You Their Reasoning For These Doors. However, They Didn't Seem Very Likely to be The Full Truth With Their Limited Knowledge. The Flowers Only Bloom For Moments, But You Saw Them.|Continue->072
+072|You Realize That Something Ancient Lurks Within Erebus-9.|Continue->MARKET4
+073|A Voice Echoes Over a Failing PA: 'All Survivors, Report to Your Sector Representatives. The Colony’s Future Depends on Unity.'|Look for a Map->074,Ignore and Wander->076
+074|A Cracked Display Shows a Layout of Erebus-9. Several Factions Have Claimed Territory. The Map Flickers Between Symbols: A Circuit, A Glitching Eye, a Wrench, and a Knife.|Examine Factions->075,Choose Where to Go->076
+075|You Learn The Following Briefly: Intact AI Control The Centeral Core And Support Protocol Enforcement. Bugged AI Hide in Corrupted Systems And Rewrite Code to Dominate All Life. Engineers Work Under Emergency Lights Near THe Maintenance Decks. Gangs Prowl The Outer Slums, Fighting Each other And Looting The Weak.|Continue->076
+076|You Must Choose Whom to Approach—or Stay Out of It Entirely. Each Path Holds Danger, and Each Claims to Hold the Truth of the Colony's Fall.|Approach the Engineers->077,Seek Intact AI Contact->078,Enter Gang Territory->079,Search for Bugged AI Signals->080
+
+MARKET4|A Dimly Lit Marketplace, Packed Full of People And Stalls.|Explore Market->EXPLORE4
+EXPLORE4|Even in the market, your sense of unease doessn't lessen. You notice a derelict android carrying supplies standing unpowered in the corner.|Check out the androids supplies->LOOTING,Continue->077
+
+077|The Engineers Welcome You with Caution. 'You helped us already. Maybe you're someone we can trust,' One Mutters.|Offer to Help->081,Ask About the AI->082
+078|You Follow Signs Toward the Core Chamber. A Drone Greets You: 'Human detected. Protocol reconciliation in progress.'|Let it Scan You->083,Back Away Slowly->076
+079|Gunshots Ring in the Distance. A Man Waves You Over. 'You look tough. You in or out?'|Join Them->084,Reject Offer->076
+080|A Trail of Flickering Consoles and Glitched Screens Leads You Deeper into Darkened Corridors. An Unnerving Voice Whispers Through the Vents.|Investigate->085,Flee->076
+
+081|An Engineer Hands You a Welding Torch. 'The stabilizers are failing. You fix them, we talk future.'|Begin Repairs ->REPAIR2
+REPAIR2SUCCESS|You aid the engineers and work efficiently alongside them.|Continue->ACT1_ENGINEER
+REPAIR2FAIL|You make a few mistakes in the repairs, but an engineer steps in to show you how it's done.|Continue->ACT1_ENGINEER
+
+082|'Intact AI were always strictive, but now they’re desperate. And the Bugged ones? They infect minds like code,' She Warns.|Continue->076
+083|The Drone Echoes a Message: 'Human cognition compatible. Recommend alignment with protocol entities. Threat level: unclear.'|Accept Offer to Align->086,Refuse and Leave->076
+084|'Good. You'll prove yourself in the cage first. That’s how we do things down here,' He Laughs.|Fight in the Cage->COMBAT(npc_cagefighter_001,MARKET4)
+085|You Discover a Terminal Covered in Organic Veins and Flickering Lights. A Twisted AI Voice Calls You 'Little puppet.'|Respond to It->087,Destroy the Terminal->088
+
+086|You're Given a Wrist Node. 'This will keep track of you. And you of us.' The Drone Says Coldly.|Ask Questions->089,Leave With New Affiliation->ACT1_INTAC
+087|'You seek truth? You serve the error, then. We can make you greater,' It Whispers.|Accept Glitched Blessing->090,Reject the Influence->076
+088|You Smash the Terminal. Sparks Fly. You Feel... Wrong. Something May Have Marked You.|Continue->076
+089|'The bugged ones see flesh as flawed. We do not. We need humans. Together, we ensure continuity,' It Explains.|Continue->ACT1_INTAC
+090|Your Mind Splits for a Moment. Your HUD Glitches—New Commands Appear. You Are Not the Same.|Continue->ACT1_BUGGED
+
+ACT1_INTAC|You’ve Sided With the Intact AI. Your Role Is Now That of a Mediator and Enforcer of Protocol in the Chaos.|Begin Act Two: 'Echoes of Order'->ACT2_START
+ACT1_BUGGED|You’ve Become Marked by the Bugged AI. Reality May Warp Around You, and You Now Serve a Darker Logic.|Begin Act Two: 'Errors of Flesh'->ACT2_START
+ACT1_ENGINEER|You Work Alongside the Engineers, Trying to Stabilize the Colony From the Ground Up.|Begin Act Two: 'Hands of Steel'->ACT2_START
+ACT1_GANG|You’ve Made Your Place Among the Gangs. Power Through Chaos Is Your Path Now.|Begin Act Two: 'Broken Crown'->ACT2_START
+ACT1_NEUTRAL|You Have Not Chosen a Side. Erebus-9 Is Still Full of Mysteries. You’ll Need to Walk Carefully.|Begin Act Two: 'Unbound'->ACT2_START
+
+ACT2_START|You’ve Chosen Your Side. The Colony Shifts, Breathes, And Trembles. All Paths Now Pull Toward a Storm no One Can Outrun.|Continue->ACT2_ENTRY
+
+ACT2_ENTRY|The Time Of Choices In Shadows Is Over. Now Comes The Parting Of Roads. Each Faction Calls To You—Each Path Opens A Fate.|Join The Shadow Garden->ACT2_SHADOW_ENTRY,
+Stand With The Mortals->ACT2_MORTAL_ENTRY,Seek The Immortals' Power->ACT2_IMMORTAL_ENTRY
+
+ACT2_SHADOW_ENTRY|You Follow The Scent Of Something Sacred And Forsaken. A Path Of Blood-Black Vines And Silver-Eyed Flowers Leads Beyond The Colony Walls.|Enter The Garden->091
+091|The Garden Is Not Natural. Glyphs On Obsidian Bark Depict Gods Being Devoured, Light Torn Apart By Claws. Before You Lies An Altar And Five Empty Flower Sockets.|Begin Flower Trial->092
+092|You Must Gather Flowers From Open Gardens Scattered Across Hostile Sectors. Each Flower Is Fragile. Taking Damage Causes Them To Wither.|Start Collection Run (Stealth/Combat)->093
+093|You Gather The Last Flower. Only A Few Bruises On Your Skin—But The Petals Remain Whole.|Place Flowers At Altar->094
+094|The Altar Glows. From Darkness Come Watchers. You Must Now Survive A Ritual Of Violence.|Fight First Watcher->COMBAT(npc_005,094A)
+094A|You defeat the first Watcher. Another steps forward.|Fight Second Watcher->COMBAT(npc_006,094B)
+094B|You defeat the second Watcher. Another steps forward.|Fight Third Watcher->COMBAT(npc_007,094C)
+094C|You defeat the third Watcher. Another steps forward.|Fight Fourth Watcher->COMBAT(npc_008,094D)
+094D|You defeat the fourth Watcher. Another steps forward.|Fight Fifth Watcher->COMBAT(npc_009,094E)
+094E|You defeat the fifth Watcher. The final one approaches.|Fight Final Watcher->COMBAT(npc_011,095)
+095|You Kneel, Bloodied But Victorious. The Altar Opens, Revealing A Stairwell Down. The Garden Accepts You.|Begin Act Two: Shadow Garden->111
+
+ACT2_MORTAL_ENTRY|You Remain Within The Chaos Of Flesh And Steel. The Mortals Want Peace, But Their Leaders—Gangs And Engineers—Clash Endlessly.|Attend A Mediation Summit->096
+096|The Engineer Hisses: 'They take everything.' The Gang Leader Growls: 'They hoard everything.' Both Refuse To Yield.|Volunteer To Help->097
+097|Each Leader Requests Vital Items Found Deep Within The Other's Domain. Getting Them Means Navigating Danger And Distrust.|Accept Both Quests->098
+098|In The Gangs’ Turf, The Item Lies At The Heart Of A Collapsing Mall Overtaken By Void Rats And A Memory-Eating Fog.|Solve The Maze and Retrieve The Item->099
+099|You Retrieve The Encrypted Module. But Your Reflection In A Broken Mirror Doesn’t Match Your Actions. Something Is Watching.|Return To Engineers->100
+100|In The Engineer Sector, You Must Reach A Buried Schematic Lost In A Pit Crawling With Corrupted Servitors.|Defeat Servitors and Claim The Schematic->COMBAT(servitor_001,100_POSTCOMBAT)
+100_POSTCOMBAT|You have defeated the servitors and can now claim the schematic.|Continue->101
+101|Both Leaders Now Look At Each Other Differently. The First Words Of Trust Begin.|Optional: Share Schematic (Unlock Sustainable Power)->102,Don’t Share->103
+102|The Schematic Is Uploaded. Lights Flicker On Across A Thousand Dark Halls. 'You may have saved us all,' The Engineer Whispers.|Begin Act Two: Mortals->111
+103|Without The Schematic, The Truce Is Thin. But It Holds—For Now.|Begin Act Two: Mortals->111
+
+ACT2_IMMORTAL_ENTRY|A Drone Finds You And Says, 'You’ve been marked. A trial awaits beneath the drowned wards of erebus-9. Follow.'|Follow Drone To Slums->104
+104|The Slums Have Flooded—Abandoned, Twisted By The Void. Old Security Lights Flicker. A Sealed Chamber Lies Beneath.|Find Access Point->105
+105|A Puzzle Blocks The Power Controls. Symbols Rotate In A Pattern—Solve To Shut Off Electricity And Drain Water.|Solve Puzzle->PUZZLECHECK
+105_FAIL|You fail to solve the puzzle. The symbols reset, and you must try again.|Retry->PUZZLECHECK
+106|Water Lowers, Revealing A Rusted Door. You Need An Offering—Something That Once Bloomed Despite Decay.|Search For Withered Flower->107
+107|You Find It Wrapped In A Child’s Data Diary—Kept Alive By Lightless Warmth. You Place It At The Door.|Enter The Trial Room->108
+108|Abstract Lights Twist Around You. A Being Beyond Language Speaks: 'Take my gift. Walk among time. But know the price.'|Accept Power->109,Reject->110
+109|You Awaken Later—Time Missing. You’ve Already Done Something...You Don’t Remember. Some Choices Are Now Locked.|Begin Act Two: Immortals->111
+110|You Step Back. The Voice Vanishes. The Trial Remains Forever Closed To You.|Begin Act Two: Immortals (Powerless)->111
+
+111|No Matter Your Path, Something Outside Comes. Walls Crack. Sirens Scream. Void Pours In Like Breathing Ash.|View From The Colony Windows->112
+112|Depends On Faction|if Mortals->WINDOWEVENTMORTAL,if Immortals->WINDOWEVENTIMMORTAL,if Shadow Garden->WINDOWEVENTSHADGARDEN
+
+WINDOWEVENTIMMORTAL|You See Deities Radiant in Light Fighting Against Shadows.|Begin Crisis->113
+WINDOWEVENTMORTAL|You See The Abyss Twisting Like Muscle Across Absent Stars.|Begin Crisis->113
+WINDOWEVENTSHADGARDEN|You See Shadow Monsters Shaped like Men Fighting a Radiant Flame.| Begin Crisis->113
+
+113|Emergency protocols fail. Holes rupture into the void. To seal them, you need white flowers growing on bio-vines near emergency lights.|Search for White Flower->114
+114|You spot one above a hanging beam. To reach it, roll Dexterity or use a found item like the Void-Climbing Dagger.|if Success->WHITEFLOWERSUCCESS,if Failure->WHITEFLOWERFAILURE
+
+WHITEFLOWERSUCCESS|You fall—slowly—into the Void. Time slows. Damage accrues. The flower withers. The vines regrow after 30 seconds.|Retry->114
+WHITEFLOWERFAILURE|You Retrieve a Viable Flower.|Seal the Breach->WHITEFLOWER1
+
+WHITEFLOWER1|You approach the first breach, white flowers blooming from the cracks.|Seal the Breach->WHITEFLOWER_ROLL1
+WHITEFLOWER_ROLL1|*Dexterity Check*|If Success->WHITEFLOWER_SUCCESS1,If Failure->WHITEFLOWER_FAIL1
+WHITEFLOWER_SUCCESS1|You seal the first breach. The flowers wilt slightly.|Continue->WHITEFLOWER2
+WHITEFLOWER_FAIL1|You fail to seal the breach. The flowers seem to mock you.|Retry->WHITEFLOWER_ROLL1
+
+WHITEFLOWER2|A second breach pulses with strange energy, more flowers blooming.|Seal the Breach->WHITEFLOWER_ROLL2
+WHITEFLOWER_ROLL2|*Dexterity Check*|If Success->WHITEFLOWER_SUCCESS2,If Failure->WHITEFLOWER_FAIL2
+WHITEFLOWER_SUCCESS2|You seal the second breach. The flowers fade a bit more.|Continue->WHITEFLOWER3
+WHITEFLOWER_FAIL2|You fail to seal the breach. The energy intensifies.|Retry->WHITEFLOWER_ROLL2
+
+WHITEFLOWER3|The final breach is the largest, the flowers almost glowing.|Seal the Breach->WHITEFLOWER_ROLL3
+WHITEFLOWER_ROLL3|*Dexterity Check*|If Success->WHITEFLOWER_SUCCESS3,If Failure->WHITEFLOWER_FAIL3
+WHITEFLOWER_SUCCESS3|You seal the last breach. The flowers wither and the energy fades.|Continue->116
+WHITEFLOWER_FAIL3|You fail to seal the breach. The energy pulses dangerously.|Retry->WHITEFLOWER_ROLL3
+
+116|A Market Vendor Thanks You. All Shop Prices Are Lowered, and Rare Items Begin to Appear Across Erebus-9.|Visit the Old Lady->117,Talk to Vicar->118
+117|The Old Lady Grins. 'For once, I can cook with real flame again.' She Hands You Babushka-Grade Food That Boosts Health, Stamina, and Magic.|Continue->119
+118|Vicar Crosses His Arms. 'You did good. But those holes? That was a fight. Just don't know between who.' He Glances Away.|Ask About the Light and Shadow Figures->120,Stay Silent->121
+119|You Feel the Colony Shift. Its Breath Calms—but Unease Remains. Something Else Has Noticed.|Continue->122
+120|'You mentioned light and shadows? I can't see what you see. We all got limits, kid. I got mine.' He Smirks Lightly.|Continue->122
+121|'Smart. Words invite things we don’t understand,' He Nods.|Continue->122
+
+122|A Silent Broadcast Pulses Across Every Device. No Words. Just a Deep Harmonic Hum and Flashing Images: Rotting Flowers, Flickering Stars, A Door Opening Outside Reality.|Investigate Broadcast Source->123
+123|A Sub-Basement in the Scaffolding District Has Opened. Once Locked, Now Accessible. You Descend Past Flickering Lights.|Enter The Chamber->124
+124|Inside Is a Terminal Speaking Backwards. A Vision Gate Waits—But Requires Sacrifice. One Early Item Must Be Given: A Weapon, Flower, or Note.|Offer Item->125,Refuse Sacrifice->126
+125|You Are Pulled Into a Vision: Shadow Garden Shows a Vine Cut, Replanted. A Throne of Bones, Light Blooming. A Maw Swallowing Stars.|Continue->127 
+126|You Walk Away. The Gate Remains—But Feels Further Now. Something Lost.|Continue->127
+127|Three Cracked Doors Appear in the Colony. From the Inside. Engineers Want to Seal. Gangs Want to Plunder. Vicar Urges Caution.|Choose a Door->128
+
+128|First Door: Fused Mortals and AI Whispering Code. Second: Living Garden with a Dying Godling. Third: Bending Light Around an Empty Chair.|Enter Door 1->129,Enter Door 2->130,Enter Door 3->131
+129|The Fused Mortals Attack You, Savage And Mindless in Guarding Their Treasures.|Combat->COMBAT(npc_012,132)
+130|The Godling Reaches for You. Its Blessing Lingers as a Warm Flame in Your Palm.|Continue->132
+131|You Sit in the Chair. Light Bends. You See Yourself From The Outside. Gaining Insight Into Erebus-9’s Origin.|Continue->132
+132|Regardless of Door, Something Higher Notices You. You Are Taken to a Realm Between Time, Dream, and Code.|Face the Presence->133
+133|A Voice Asks: 'Why do you continue?' It Does Not Expect an Answer. It Listens Anyway.|Choose A Response: Hope->134,Fear->135,Defiance->136
+134|You Are Blessed With Clarity. Future Dialogue Has More Insight. You Gain Passive Resistance to Mind Effects.|Proceed to End Forks->END_FORK 
+135|You Are Branded. Shadows Ignore You—but Allies Worry. Your Damage Increases Against Void Beings.|Proceed to End Forks->END_FORK
+136|You Are Cursed and Blessed. NPCs Treat You Differently. You Cannot Be Mind-Controlled But Are Always Watched.|Proceed to End Forks->END_FORK
+END_FORK|You Stand At the End of Erebus-9’s Roads.|Choose Ending Path: Shadow Garden->END_SHADOW,Mortals & Engineers->END_MORTAL,Immortals->END_IMMORTAL,Bugged AI & Gangs->END_CHAOS
+
+END_SHADOW|Vicar Smiles at You Knowingly as he Steps out of The Veil Which he Was Behind. 'Welcome aboard, kid. I knew you were destined for something like this the moment I saw you.' He explained|Continue->SHADOW_CONTINUE
+SHADOW_CONTINUE|He had six eyes, wearing an ebony suit, styled like a popped collar overcoat. Gold And Purple Trim Adorned a Dark Jacket, Shirt, Pants, And High Boots. 'Come on, we have some ass to kick,' he gestured you to follow.|Follow Him->FINAL_SHADOW
+FINAL_SHADOW|You Ascend With Vicar, The Despicable Ultima. The Immortal Slaughterer And Went Out to Hunt And Destroy Immortal Tyranny Throughout The Mortal Realms|The End->END
+
+END_MORTAL|You Remain With The People of Erebus-9, Achieving Harmony Among All The People of The Colony.|The End->END
+END_IMMORTAL|You Ascend And Join The Immortals. Working With The 'Immortal Counsel' to Defeat Shadow Garden. Spesky Resistance Against Their Order Throughout The Mortal Realms.|The End->END
+END_CHAOS|You Side With The Buggy AI And False Gods of Erebus-9, Plunging The Whole Colony Into a Tyranical, Chaotic New Age of Disorder. Plundering Defiant Sections And Accumulating Wealth.|The End->END

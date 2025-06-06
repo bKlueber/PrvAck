@@ -1,0 +1,14 @@
+Bandit|npc_001|A desperate thief lurking in the early colony ruins.|18|true|Neutral|1|3|6
+Warlord|npc_002|A notorious gang boss, late-game threat in the slums.|60|true|EnemyFaction|10|14|24
+Tutorial Dummy|npc_003|Non-hostile dummy for practice.|50|false|null|0|0|0
+Crazed Opportunist|npc_004|A wild-eyed scavenger, dangerous but weak.|22|true|Neutral|2|4|8
+Watcher Disciple|npc_005|A disciplined cultist, appears in the garden trial chain.|32|true|Neutral|4|7|13
+Watcher Apostle|npc_006|A fervent preacher, appears in the garden trial chain.|36|true|Neutral|5|8|15
+Watcher Follower|npc_007|A zealous cultist, first encountered in the garden trial.|28|true|Neutral|3|6|11
+Watcher Dredge|npc_008|A mutated brute, appears in the garden trial chain.|40|true|Neutral|6|9|17
+Watcher Devotee|npc_009|A fanatical leader, appears in the garden trial chain.|44|true|Neutral|7|10|18
+Watcher Acolyte|npc_011|A high priest of the Watchers, final boss of the garden trial.|55|true|Neutral|9|13|22
+Gang member|npc_010|A low-level gang enforcer, found in the market and slums.|26|true|Neutral|3|5|10
+Cage Fighter|npc_cagefighter_001|A burly fighter in the underground cage, mid-game challenge.|38|true|Neutral|5|10|16
+Servitor|servitor_001|A corrupted servitor, mid-game engineer quest.|42|true|Neutral|7|11|17
+Fused Guardian|npc_012|A monstrous, fused guardian of flesh and machine, blocking the forbidden chamber.|45|true|Neutral|8|10|18

@@ -1,0 +1,4 @@
+//Bugs encountered in first playable version 0.1.0
+
+
+//Im sure theres more but lets start here

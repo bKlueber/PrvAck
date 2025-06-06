@@ -1,0 +1,6 @@
+025_Crate|sword_001,medpack_001,helmet_001
+026_Barrel|stick_001,medpack_001,boots_001
+EXPLORE1_Box|medpack_001,dagger_001,filter_001
+EXPLORE2_Stash|bow_002,medpack_001,chip_001
+EXPLORE3_Bin|helmet_001,medpack_001,wrench_001
+EXPLORE4_Android|rifle_001,medpack_001,crystal_001
